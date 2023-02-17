@@ -22,6 +22,11 @@
         main>section:nth-child(2)>form:nth-child(2) input{
             padding: 3px;
         }
+
+        label{
+            opacity: 0.8;
+        }
+
     </style>
 </head>
 <body>
@@ -118,13 +123,13 @@
                 </div>
             </div>
         </div>
-        <form style="position: absolute; right: 80px; top: 83px; color: white; width: 415px">
-            <h4>Rental ID : #00001</h4>
-            <div class="mb-3">
+        <form style="position: absolute; right: 285px; top: 83px; color: white; width: 415px">
+            <h4 style="margin-bottom: 16px">Rental ID : #00001</h4>
+            <div style="margin-bottom: 12px">
                 <label for="exampleInputEmail1" class="form-label">PickUp Location</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="row">
+            <div class="row" style="margin-bottom: 12px">
                 <div class="col">
                     <label for="exampleInputEmail1" class="form-label">PickUp Date</label>
                     <input type="date" class="form-control" aria-label="First name">
@@ -134,7 +139,7 @@
                     <input type="time" class="form-control" aria-label="Last name">
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-bottom: 20px">
                 <div class="col">
                     <label for="exampleInputEmail1" class="form-label">Return Date</label>
                     <input type="date" class="form-control" aria-label="Return Date">
@@ -144,31 +149,32 @@
                     <input type="time" class="form-control" aria-label="Return Time<">
                 </div>
             </div>
-            <div class="row">
-                <div class="mb-3 form-check col">
+            <div class="row" style="margin-bottom: 20px">
+                <div class="form-check col" style="margin-left: 12px">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">With Driver</label>
                 </div>
-                <div class="mb-3 form-check col">
+                <div class="form-check col">
                     <input type="checkbox" class="form-check-input" id="exampleCheck2">
                     <label class="form-check-label" for="exampleCheck2">WithOut Driver</label>
                 </div>
             </div>
-            <div>
+<!--            ddddddddddddddddddddddddddddddd-->
+            <div style="position: absolute; right: -265px; bottom: -50px">
                 <label for="exampleInputEmail1" class="form-label">Bank details for Loss Damage Waiver</label>
-                <p>Bank : BOC - Panadura Branch<br>Account no : 215747856458<br>Account Name : Easy Car Rental Pvt. Ltd - Panadura.<br><br><span class="text-danger">*</span>For Remark USE RENTAL ID</p>
+                <p>Bank : BOC - Panadura Branch<br>Account no : 215747856458<br>Acc Name : Easy Car Rental Pvt. Ltd - Panadura.<br><br><span class="text-danger">*</span>For Remark USE RENTAL ID</p>
             </div>
-            <div>
-                <label for="exampleInputEmail1" class="form-label">Loss Damage Waiver : Rs.10000.00</label>
+            <div style="margin-bottom: 12px">
+                <label for="exampleInputEmail1" class="form-label"><h5><span class="text-danger">***</span>Loss Damage Waiver : Rs.10000.00</h5></label>
             </div>
             <div>
                 <label for="exampleInputEmail1" class="form-label">Pay and upload slip</label>
                 <div class="d-flex">
-                    <div class="bg-white rounded" style="height: 50px; width: 100px"></div>
-                    <button type="submit" class="btn btn-primary">Upload</button>
+                    <div class="bg-white rounded" style="height: 50px; width: 138px"></div>
+                    <button type="submit" class="btn btn-primary" style="padding-top: 2px; width: 100px; height: 37px; margin-left: 15px; margin-top: 5px;">Upload</button>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" style="position: relative; top: 34px; left: 40px; width: 180px; height: 45px; border-radius: 30px">Submit</button>
         </form>
     </section>
 
