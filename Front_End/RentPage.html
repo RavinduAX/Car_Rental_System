@@ -15,6 +15,13 @@
             width: 600px;
             height: 355px;
         }
+
+        main>section:nth-child(2)>form:nth-child(2) label{
+            margin-bottom: 2px;
+        }
+        main>section:nth-child(2)>form:nth-child(2) input{
+            padding: 3px;
+        }
     </style>
 </head>
 <body>
@@ -53,9 +60,9 @@
     <h2 class="text-info text-bg-light bg-opacity-25" style="padding: 6px 6px 6px 135px">Rent For Ride</h2>
 
     <section class="d-flex">
-        <div>
+        <div style="position: relative;left: 80px; top: 30px">
             <div class="carousel slide" id="carouselExampleIndicators"
-                 style="width: 600px; height: 355px; position: relative;left: 30px; top: 30px">
+                 style="width: 600px; height: 355px">
                 <div class="carousel-indicators">
                     <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
                             data-bs-target="#carouselExampleIndicators" type="button"></button>
@@ -91,7 +98,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <div style="position: relative; top: 50px; left: 137px; width: max-content">
+            <div style="position: relative; top: 30px; left: 108px; width: max-content">
                 <h3 class="text-white" style="margin-bottom: 16px">Perodua Axio</h3>
                 <div class="d-flex text-white">
                     <ul style="list-style: none; padding: 0">
@@ -111,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <form style="position: absolute; right: 50px; top: 83px; color: white">
+        <form style="position: absolute; right: 80px; top: 83px; color: white; width: 415px">
             <h4>Rental ID : #00001</h4>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">PickUp Location</label>
@@ -120,21 +127,21 @@
             <div class="row">
                 <div class="col">
                     <label for="exampleInputEmail1" class="form-label">PickUp Date</label>
-                    <input type="text" class="form-control" aria-label="First name">
+                    <input type="date" class="form-control" aria-label="First name">
                 </div>
                 <div class="col">
                     <label for="exampleInputEmail1" class="form-label">PickUp Time</label>
-                    <input type="text" class="form-control" aria-label="Last name">
+                    <input type="time" class="form-control" aria-label="Last name">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="exampleInputEmail1" class="form-label">Return Date</label>
-                    <input type="text" class="form-control" aria-label="Return Date">
+                    <input type="date" class="form-control" aria-label="Return Date">
                 </div>
                 <div class="col">
                     <label for="exampleInputEmail1" class="form-label">Return Time</label>
-                    <input type="text" class="form-control" aria-label="Return Time<">
+                    <input type="time" class="form-control" aria-label="Return Time<">
                 </div>
             </div>
             <div class="row">
