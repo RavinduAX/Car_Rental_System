@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent Vehicle</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/css/all.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("assets/img/bgimage.jpg");
+        }
+
+        .carousel-inner img {
+            width: 600px;
+            height: 355px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar bg-dark" data-bs-theme="dark">
+        <div class="container-fluid d-flex justify-content-between">
+            <div class="d-inline-flex">
+                <img alt="logo-img" height="45px" src="assets/img/logo.png" width="105px">
+                <h3 style="margin-bottom: 6px; margin-left: 15px; color: white">Easy Car Rental Pvt. Ltd.</h3>
+            </div>
+            <div style="position: relative; left: -102px; top: 2px">
+                <ul class="navbar-nav m-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><h5>Home</h5></a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link" href="#"><h5>About Us</h5></a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav m-1">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning link-dark" href="#" role="button">Profile</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link btn btn-danger link-dark" href="#" role="button">Login/Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main style="position: relative">
+    <h2 class="text-info text-bg-light bg-opacity-25" style="padding: 6px 6px 6px 135px">Rent For Ride</h2>
+
+    <div>
+        <div class="carousel slide" id="carouselExampleIndicators"
+             style="width: 600px; height: 355px; position: relative;left: 30px; top: 30px">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                        data-bs-target="#carouselExampleIndicators" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                        type="button"></button>
+                <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators"
+                        type="button"></button>
+                <button aria-label="Slide 4" data-bs-slide-to="3" data-bs-target="#carouselExampleIndicators"
+                        type="button"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img alt="..." class="d-block w-100" src="assets/img/peroduaAxia/front.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img alt="..." class="d-block w-100" src="assets/img/peroduaAxia/side.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img alt="..." class="d-block w-100" src="assets/img/peroduaAxia/back.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img alt="..." class="d-block w-100" src="assets/img/peroduaAxia/interior.jpg">
+                </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div style="position: relative; top: 50px; left: 137px; width: max-content">
+            <h3 class="text-white" style="margin-bottom: 16px">Perodua Axio</h3>
+            <div class="d-flex text-white">
+                <ul style="list-style: none; padding: 0">
+                    <li>Brand : Toyota</li>
+                    <li>No of passengers : 4</li>
+                    <li>Transmission Type : Auto</li>
+                    <li>Fuel Type : Petrol</li>
+                    <li>Colour : Silver</li>
+                </ul>
+                <ul style="list-style: none">
+                    <li>Daily Rate : Rs.2500</li>
+                    <li>Free km : 100km/day</li>
+                    <li>Monthly Rate : Rs.64350</li>
+                    <li>Free km : 2400km/month</li>
+                    <li>Extra km : 30/km</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="assets/js/jquery-3.6.3.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
