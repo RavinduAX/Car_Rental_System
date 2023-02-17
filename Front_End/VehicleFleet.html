@@ -44,8 +44,22 @@
         </div>
     </nav>
 </header>
-<main>
+<main class="position-relative">
     <h2 class="text-info text-bg-light bg-opacity-25" style="padding: 6px 6px 6px 135px">Vehicle Fleet</h2>
+<!--    dropdown sort-->
+    <div class="dropdown position-absolute" style="right: 16px; bottom: 7px">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort By
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">No of passengers</a></li>
+            <li><a class="dropdown-item" href="#">Transmission Type</a></li>
+            <li><a class="dropdown-item" href="#">Brand</a></li>
+            <li><a class="dropdown-item" href="#">Type</a></li>
+            <li><a class="dropdown-item" href="#">Price</a></li>
+            <li><a class="dropdown-item" href="#">Fuel Type</a></li>
+        </ul>
+    </div>
 </main>
 
 <script src="assets/js/jquery-3.6.3.min.js"></script>
