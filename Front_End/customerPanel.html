@@ -18,6 +18,15 @@
         main>nav a:hover{
             color: crimson;
         }
+
+
+        input{
+            padding: 3px!important;
+        }
+        label{
+            opacity: 0.8;
+            margin-bottom: 2px!important;
+        }
     </style>
 </head>
 <body>
@@ -52,33 +61,98 @@
     </nav>
 </header>
 <main class="d-flex">
+
     <nav style="width: 275px; height: 90vh; background-color: #353B48">
         <h3 style="background-color: #535C68; color: white; text-align: center; padding: 10px 0; margin-bottom: 40px";>Your Profile</h3>
-        <ul style="list-style: none; padding-left: 50px">
+        <ul style="list-style: none; padding-left: 37px">
             <li><a href="" role="button"><i class="fa-solid fa-house"></i>&emsp;Dashboard</a></li>
-            <li><a href="" role="button"><i class="fa-solid fa-calendar-days"></i>&emsp;Rental Status</a></li>
             <li><a href="" role="button"><i class="fa-solid fa-rotate-right"></i>&emsp;Update Info</a></li>
         </ul>
     </nav>
 
+<!--Update Info-->
+    <section>
+
+    </section>
 
 </main>
 
-<!--    Dashboard Secion-->
+<!--Dashboard Section-->
 <section style="background-color: whitesmoke; width: 100vw; position: relative">
-    <div style="border: 5px solid grey; border-radius: 10px; position: relative; top: 50px; left: 85px; width: 300px; height: 90px; background-color: grey; color: white">
-        <h5 style="font-size: 22px; position: relative; left: 35px; top: 15px;">Total Rentals</h5>
-        <h4 style="position: relative; left: 210px; bottom: 18px; font-size: 35px">15</h4>
+    <!--Input Fields-->
+    <div class="d-flex" style="position:relative; left: 175px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+        <div style="margin-right: 155px">
+            <h5 class="text-start">Rent Details</h5>
+            <div class="d-flex">
+                <div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail1" class="form-label">Rental ID</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail2" class="form-label">PickUp Date</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2">
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail13" class="form-label">Return Date</label>
+                        <input type="email" class="form-control" id="exampleInputEmail13">
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail14" class="form-label">Vehicle</label>
+                        <input type="email" class="form-control" id="exampleInputEmail14">
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail17" class="form-label">Rental Fee</label>
+                        <input type="email" class="form-control" id="exampleInputEmail17">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h5 class="text-start">Driver Details</h5>
+            <div class="d-flex">
+                <div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail19" class="form-label">Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail19">
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail18" class="form-label">Age</label>
+                        <input type="email" class="form-control" id="exampleInputEmail18">
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail1" class="form-label">Gender</label>
+                        <input type="email" class="form-control" id="exampleInputEmail0">
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail5" class="form-label">Contact No</label>
+                        <input type="email" class="form-control" id="exampleInputEmail5">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-danger" style="position: relative; left: 195px;top: 15px; width: 180px; border-radius: 30px">Cancel Rent</button>
+        </div>
     </div>
-    <div style="overflow-y: scroll; width: 995px; height: 405px; position: relative; left: 155px; top: 110px">
+    <!--table-->
+    <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 100px">
         <table class="table table-bordered table-hover text-center">
             <thead class="bg-danger text-white border-danger-subtle">
             <tr>
                 <th scope="col">Rental ID</th>
+                <th scope="col">Customer</th>
+                <th scope="col">PickUp Location</th>
                 <th scope="col">PickUp Date</th>
+                <th scope="col">PickUp Time</th>
                 <th scope="col">Return Date</th>
-                <th scope="col">Vehicle</th>
+                <th scope="col">Return Time</th>
                 <th scope="col">Rental Fee</th>
+                <th scope="col">Driver</th>
+                <th scope="col">Status</th>
             </tr>
             </thead>
             <tbody class="border-dark">
@@ -102,8 +176,6 @@
             </tbody>
         </table>
     </div>
-
-
 </section>
 
 <script src="assets/js/jquery-3.6.3.min.js"></script>
