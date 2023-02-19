@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Customer Panel</title>
+    <title>Driver Panel</title>
     <meta content="width=device-width initial-scale=1" name="viewport">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/css/all.css">
@@ -61,16 +61,13 @@
     </nav>
 </header>
 <main class="d-flex">
-
     <nav style="width: 275px; height: 90vh; background-color: #353B48">
-        <h3 style="background-color: #535C68; color: white; text-align: center; padding: 10px 0; margin-bottom: 40px";>Your Profile</h3>
+        <h3 style="background-color: #535C68; color: white; text-align: center; padding: 10px 0; margin-bottom: 40px";>Driver Profile</h3>
         <ul style="list-style: none; padding-left: 37px">
-            <li><a href="" role="button"><i class="fa-solid fa-house"></i>&emsp;Dashboard</a></li>
-            <li><a href="" role="button"><i class="fa-solid fa-rotate-right"></i>&emsp;Update Info</a></li>
+            <li><a href="" role="button"><i class="fa-solid fa-calendar-days"></i>&emsp;Work Schedule</a></li>
         </ul>
     </nav>
 
-    <!--Dashboard Section-->
     <section style="background-color: whitesmoke; width: 100vw; position: relative">
         <!--Input Fields-->
         <div class="d-flex" style="position:relative; left: 180px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
@@ -87,7 +84,7 @@
                             <input type="email" class="form-control" id="exampleInputEmail2">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail13" class="form-label">Return Date</label>
+                            <label for="exampleInputEmail13" class="form-label">PickUp Location</label>
                             <input type="email" class="form-control" id="exampleInputEmail13">
                         </div>
                     </div>
@@ -97,38 +94,33 @@
                             <input type="email" class="form-control" id="exampleInputEmail14">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail17" class="form-label">Rental Fee</label>
+                            <label for="exampleInputEmail17" class="form-label">PickUp Time</label>
                             <input type="email" class="form-control" id="exampleInputEmail17">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail99" class="form-label">Return Date</label>
+                            <input type="email" class="form-control" id="exampleInputEmail99">
                         </div>
                     </div>
                 </div>
             </div>
 
             <div>
-                <h5 class="text-start">Driver Details</h5>
+                <h5 class="text-start">Customer Details</h5>
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
                             <label for="exampleInputEmail19" class="form-label">Name</label>
                             <input type="email" class="form-control" id="exampleInputEmail19">
                         </div>
-                        <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail18" class="form-label">Age</label>
-                            <input type="email" class="form-control" id="exampleInputEmail18">
-                        </div>
                     </div>
                     <div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail1" class="form-label">Gender</label>
+                            <label for="exampleInputEmail1" class="form-label">Contact No</label>
                             <input type="email" class="form-control" id="exampleInputEmail0">
-                        </div>
-                        <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail5" class="form-label">Contact No</label>
-                            <input type="email" class="form-control" id="exampleInputEmail5">
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-danger" style="position: relative; left: 195px;top: 15px; width: 180px; border-radius: 30px">Cancel Rent</button>
             </div>
         </div>
         <!--table-->
@@ -143,8 +135,7 @@
                     <th scope="col">PickUp Time</th>
                     <th scope="col">Return Date</th>
                     <th scope="col">Return Time</th>
-                    <th scope="col">Rental Fee</th>
-                    <th scope="col">Driver</th>
+                    <th scope="col">Vehicle</th>
                     <th scope="col">Status</th>
                 </tr>
                 </thead>
@@ -172,36 +163,6 @@
     </section>
 
 </main>
-
-<!--Info Section-->
-<section style="position:relative; background-color: whitesmoke; width: 90%">
-    <div style="position:absolute; width: 330px; height: max-content; right: 0px; left: 0px; top: 0px; bottom: 0px; margin: auto">
-        <form action="" style="border: 1px solid black; border-radius: 10px; padding: 25px">
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail21" class="form-label">NIC No</label>
-                <input type="email" class="form-control" id="exampleInputEmail21">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail22" class="form-label">Username</label>
-                <input type="email" class="form-control" id="exampleInputEmail22">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail23" class="form-label">Password</label>
-                <input type="email" class="form-control" id="exampleInputEmail23">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmai24" class="form-label">Contact No</label>
-                <input type="email" class="form-control" id="exampleInputEmai24">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail25" class="form-label">License No</label>
-                <input type="email" class="form-control" id="exampleInputEmail25">
-            </div>
-            <button type="button" class="btn btn-warning" style="width: 165px; border-radius: 30px; margin: 25px 0 0 55px">Update</button>
-        </form>
-    </div>
-
-</section>
 
 <script src="assets/js/jquery-3.6.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
