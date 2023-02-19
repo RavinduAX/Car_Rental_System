@@ -135,7 +135,7 @@
     </section>
 
 </main>
-<!--Car Details Secion-->
+<!--Car Details Section-->
 <section style="background-color: whitesmoke; width: 100vw; position: relative">
     <!--Input Fields-->
     <div class="d-flex" style="position:relative; left: 103px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
@@ -164,12 +164,12 @@
                 </div>
                 <div style="margin-right: 10px">
                     <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail14" class="form-label">Brand</label>
-                        <input type="email" class="form-control" id="exampleInputEmail14">
+                        <label for="exampleInputEmail144" class="form-label">Brand</label>
+                        <input type="email" class="form-control" id="exampleInputEmail144">
                     </div>
                     <div style="margin-bottom: 9px">
-                        <label for="transmission" class="form-label">Type</label>
-                        <select name="cars" id="transmission" class="form-control">
+                        <label for="type1" class="form-label">Type</label>
+                        <select name="cars" id="type1" class="form-control">
                             <option value="general">Auto</option>
                             <option value="premium">Manual</option>
                         </select>
@@ -263,6 +263,94 @@
                 <th scope="col">Monthly Rate</th>
                 <th scope="col">km/month</th>
                 <th scope="col">Extra km/Rs</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody class="border-dark">
+            <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!--Driver Details Section-->
+<section style="background-color: whitesmoke; width: 100vw; position: relative">
+    <!--Input Fields-->
+    <div class="d-flex" style="position:relative; left: 141px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+        <div style="margin-right: 75px">
+            <div class="d-flex">
+                <div style="margin-right: 10px">
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail221" class="form-label">License No</label>
+                        <input type="email" class="form-control" id="exampleInputEmail221">
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail2" class="form-label">Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2">
+                    </div>
+                </div>
+                <div style="margin-right: 10px">
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail14" class="form-label">Address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail14">
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail17" class="form-label">DOB</label>
+                        <input type="date" class="form-control" id="exampleInputEmail17">
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-bottom: 9px">
+                        <label for="transmission" class="form-label">Gender</label>
+                        <select name="cars" id="transmission" class="form-control">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 9px">
+                        <label for="exampleInputEmail137" class="form-label">Contact No</label>
+                        <input type="email" class="form-control" id="exampleInputEmail137">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
+            <div style="position: relative; top: 88px">
+                <button type="button" class="btn btn-primary" style="width: 110px">Save</button>
+                <button type="button" class="btn btn-danger" style="width: 110px">Update</button>
+                <button type="button" class="btn btn-warning" style="width: 110px">Delete</button>
+            </div>
+
+        </div>
+    </div>
+    <!--table-->
+    <div style="overflow-y: scroll; width: 1200px; height: 360px; position: relative; left: 55px; top: 100px">
+        <table class="table table-bordered table-hover text-center">
+            <thead class="bg-danger text-white border-danger-subtle">
+            <tr>
+                <th scope="col">License No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Dob</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Contact No</th>
                 <th scope="col">Status</th>
             </tr>
             </thead>
