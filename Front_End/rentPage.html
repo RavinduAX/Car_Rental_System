@@ -158,7 +158,7 @@
                     <label class="form-check-label" for="exampleCheck2">WithOut Driver</label>
                 </div>
             </div>
-<!--            ddddddddddddddddddddddddddddddd-->
+
             <div style="position: absolute; right: -265px; bottom: -50px">
                 <label for="exampleInputEmail1" class="form-label">Bank details for Loss Damage Waiver</label>
                 <p>Bank : BOC - Panadura Branch<br>Account no : 215747856458<br>Acc Name : Easy Car Rental Pvt. Ltd - Panadura.<br><br><span class="text-danger">*</span>For Remark USE RENTAL ID</p>
@@ -173,8 +173,39 @@
                     <button type="submit" class="btn btn-primary" style="padding-top: 2px; width: 100px; height: 37px; margin-left: 15px; margin-top: 5px;">Upload</button>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success" style="position: relative; top: 34px; left: 40px; width: 180px; height: 45px; border-radius: 30px">Submit</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="position: relative; top: 34px; left: 40px; width: 180px; height: 45px; border-radius: 30px">Submit</button>
         </form>
+<!--Modal-->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">Rent Placed</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0 bg-dark">
+
+                        <main style="width: 500px; border-radius: 15px">
+<!--                            <h3 class="text-primary text-bg-light bg-opacity-25 text-center" style="padding: 10px; margin-bottom: 20px">Rent Placed</h3>-->
+                            <div class="text-white text-center" style="height: 300px">
+                                <h5 style="color: deepskyblue">Your request placed for review.</h5>
+                                <h5 style="color: deepskyblue">We will notify about your rent through your profile.</h5>
+                                <h5>Your Rental ID</h5>
+                                <h4 class="text-danger">#00001</h4><br>
+                                <h5>*For more information<br>please go to your profile.</h5>
+                                <h5 style="color: goldenrod">Thank You for using Easy Car Rental Service.<br>We wish you have a safe ride.</h5><br><br>
+                            </div>
+                        </main>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
     </section>
 
 

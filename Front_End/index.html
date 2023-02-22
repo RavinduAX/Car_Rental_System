@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<!--Navigation-->
 <header>
     <nav class="navbar navbar-expand-lg navbar bg-dark" data-bs-theme="dark">
         <div class="container-fluid d-flex justify-content-between">
@@ -20,23 +19,23 @@
             <div style="position: relative; left: -102px; top: 2px">
                 <ul class="navbar-nav m-1">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h5>Home</h5></a>
+                        <a class="nav-link" href="#hpHomeSec"><h5>Home</h5></a>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link" href="#"><h5>About Us</h5></a>
+                        <a class="nav-link" href="#hpAboutSec"><h5>About Us</h5></a>
                     </li>
                 </ul>
             </div>
-            <div>
-                <ul class="navbar-nav m-1">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-warning link-dark" href="#" role="button">Profile</a>
-                    </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link btn btn-danger link-dark" href="#" role="button">Login/Register</a>
-                    </li>
-                </ul>
-            </div>
+<!--            <div>-->
+<!--                <ul class="navbar-nav m-1">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link btn btn-warning link-dark" href="#" role="button">Profile</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item ms-2">-->
+<!--                        <a class="nav-link btn btn-danger link-dark" href="#" role="button">Login/Register</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
         </div>
     </nav>
 </header>
@@ -44,16 +43,16 @@
 <!--Main Content-->
 <main>
     <!--Home Section-->
-    <section style="position: relative">
+    <section id="hpHomeSec" style="position: relative">
         <img src="assets/img/homepagewp.png" alt="" style="width: 98.93vw; height: 90vh">
         <div style="position: absolute; top: 170px; right: 110px" >
             <div class="rounded bg-danger" style="width: max-content; padding: 10px 20px"><h5 class="text-white"><b>W E L C O M E</b></h5></div>
             <h1 style="font-size: 44px"><b class="text-white">Enjoy Your <br>Journey with <br>Our <br><span class="text-danger">Comfortable Car</span> .</b></h1>
         </div>
-        <button class="btn btn-danger" style="position: absolute; bottom: 50px; right: 140px; padding: 12px 26px"><b style="font-size: 33px">Rent A Car -></b></button>
+        <button class="btn btn-danger" style="position: absolute; bottom: 50px; right: 140px; padding: 12px 26px"><a
+                href="vehicleFleet.html" style="text-decoration: none; color: white"><b style="font-size: 33px">Rent A Car -></b></a></button>
     </section>
-    <!--AboutUs Section-->
-    <section class="container-fluid bg-dark">
+    <section id="hpAboutSec" class="container-fluid bg-dark">
         <h1 class="text-white text-center" style="padding-top: 25px; padding-bottom: 40px">Why Choose Us ?</h1>
         <div class="d-flex justify-content-evenly">
             <div class="card text-center" style="width: 14rem;">
@@ -96,10 +95,17 @@
             </ul>
         </div>
     </section>
+
+
 </main>
+
+
 
 
 <script src="assets/js/jquery-3.6.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script>
+
+</script>
 </body>
 </html>
