@@ -40,7 +40,7 @@
                         <a class="nav-link btn btn-warning link-dark" href="#" role="button" style="visibility: hidden">Profile</a>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link btn btn-danger link-dark" href="#" role="button" data-bs-toggle="modal" data-bs-target="#custLoginForm">Login/Register</a>
+                        <a class="nav-link btn btn-danger link-dark" href="#" role="button" data-bs-toggle="modal" data-bs-target="#custLoginForm" style="color: white!important;">Login/Register</a>
                     </li>
                 </ul>
             </div>
@@ -74,46 +74,129 @@
                 <button type="button" class="btn btn-danger"><a href="rentPage.html" style="text-decoration: none; color: white">Rent For Hire</a></button>
             </div>
         </div>
+    </section>
+    <!--Login Model-->
+    <div class="modal fade" id="custLoginForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 430px">
+                <div class="modal-header bg-dark text-white">
+                    <h1 class="modal-title fs-3" id="staticBackdropLabel">Customer Login</h1>
 
-<!--        Model-->
-        <div class="modal fade" id="custLoginForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-             aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" style="width: 430px">
-                    <div class="modal-header bg-dark text-white">
-                        <h1 class="modal-title fs-3" id="staticBackdropLabel">Customer Login</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
 
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-0">
+                    <main style="width: 430px">
+                        <img alt="" src="assets/img/cuslogin.png"
+                             style="position: relative; left: 120px; height: 80px; width: 200px; margin: 25px 0 25px 0">
 
-                        <main style="width: 430px">
-                            <img alt="" src="assets/img/cuslogin.png"
-                                 style="position: relative; left: 120px; height: 80px; width: 200px; margin: 25px 0 25px 0">
-
-                            <form style="padding: 0 60px 60px 60px">
-                                <div class="mb-3">
-                                    <label class="form-label" for="exampleInputEmail1" style="margin: 0;">UserName</label>
-                                    <input class="form-control" id="exampleInputEmail1" style="border: 1px solid grey;" type="text">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="exampleInputPassword1" style="margin: 0;">Password</label>
-                                    <input class="form-control" id="exampleInputPassword1" style="border: 1px solid grey;" type="password">
-                                </div>
-                            </form>
-                            <button class="btn text-light position-relative" type="button"
-                                    style="background-color: #3B5998!important; width: 185px; height: 41px; border-radius: 30px!important; margin: 0 0 30px 124px;"> <a href="customerPanel.html" style="text-decoration: none; color: white
+                        <form style="padding: 0 60px 60px 60px">
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleInputEmail1" style="margin: 0;">UserName</label>
+                                <input class="form-control" id="exampleInputEmail1" style="border: 1px solid grey;" type="text">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="exampleInputPassword1" style="margin: 0;">Password</label>
+                                <input class="form-control" id="exampleInputPassword1" style="border: 1px solid grey;" type="password">
+                            </div>
+                        </form>
+                        <button class="btn text-light position-relative" type="button"
+                                style="background-color: #3B5998!important; width: 185px; height: 41px; border-radius: 30px!important; margin: 0 0 30px 124px;"> <a href="customerPanel.html" style="text-decoration: none; color: white
         ;">Login</a></button>
-                            <h5 class="text-center" style="margin-bottom: 16px" >or</h5>
-                            <button type="button" class="btn btn-link text-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="text-decoration: none; position: relative; left: 124px; font-size: 17px; margin-bottom: 25px">Create a new account</button>
-                        </main>
+                        <h5 class="text-center" style="margin-bottom: 16px" >or</h5>
+                        <button type="button" class="btn btn-link text-primary" data-bs-toggle="modal" data-bs-target="#custRegForm" style="text-decoration: none; position: relative; left: 124px; font-size: 17px; margin-bottom: 25px">Create a new account</button>
+                    </main>
 
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!--Register Model-->
+    <div class="modal fade" id="custRegForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 615px">
+                <div class="modal-header bg-dark text-white">
+                    <h1 class="modal-title fs-3" id="staticBackdropLabel1">Customer Registration</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
 
-    </section>
+                    <main style="display: flex; justify-content: center">
+                        <section style="border-radius: 15px; background-color: white">
+                            <form class="d-flex justify-content-evenly">
+                                <div style="padding: 30px">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputPassword5" class="form-label">Password</label>
+                                        <input type="password" id="inputPassword5" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword2" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword2">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword3" class="form-label">Email</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword3">
+                                    </div>
+                                    <div class="mb-3" style="margin-bottom: 30px!important;">
+                                        <label for="exampleInputEmail4" class="form-label">Contact No</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail4">
+                                    </div>
+                                    <h5 style="position: relative; top: 59px">Have an account ?</h5>
+                                    <button type="button" style="text-decoration: none; font-size: 18px!important; position:relative; top: 45px; left: 108px" class="btn btn-link fs-6 text-primary" data-bs-toggle="modal" data-bs-target="#custLoginForm">Login</button>
+                                </div>
+
+                                <div style="padding: 30px">
+                                    <div>
+                                        <div class="d-flex">
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword5" class="form-label">NIC No</label>
+                                                <input type="text" class="form-control" id="exampleInputPassword5">
+                                            </div>
+<!--                                            <button type="button" class="btn btn-primary" id="btnNicUpload">Upload</button>-->
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                            <div class="d-block">
+                                                <label for="exampleInputPassword5" class="form-label d-block">Upload NIC BackSide photo</label>
+                                                <img src="" alt="" width="200px" height="100px">
+                                            </div>
+                                            <button type="button" class="btn btn-primary" id="btnNicUpload" style="height: 38px; margin-top: 94px; margin-left: 10px">Upload</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex">
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword6" class="form-label">License No</label>
+                                                <input type="text" class="form-control" id="exampleInputPassword6">
+                                            </div>
+<!--                                            <button type="button" class="btn btn-primary" id="btnLicenseUpload">Upload</button>-->
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                            <div class="d-block">
+                                                <label for="exampleInputPassword5" class="form-label d-block">Upload License Frontside photo</label>
+                                                <img src="" alt="" width="200px" height="100px">
+                                            </div>
+                                            <button type="button" class="btn btn-primary" id="btnLicenseUpload" style="height: 38px; margin-top: 117px; margin-left: -13px">Upload</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+<!--                            <button class="btn btn-primary text-white" id="btnRegister">Register</button>-->
+                            <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#custLoginForm" style="position:relative; left: 318px; top: -23px; width: 155px; height: 39px; border-radius: 30px">Register</button>
+                        </section>
+
+                    </main>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <script src="assets/js/jquery-3.6.3.min.js"></script>
