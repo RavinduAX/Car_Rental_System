@@ -15,7 +15,7 @@
             margin-bottom: 20px;
             font-size: 20px;
         }
-        main>nav a:hover{
+        ul>li>button:hover{
             color: crimson;
         }
 
@@ -40,20 +40,20 @@
             <div style="position: relative; left: -102px; top: 2px">
                 <ul class="navbar-nav m-1">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h5>Home</h5></a>
+                        <a class="nav-link" href="index.html"><h5>Home</h5></a>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link" href="#"><h5>About Us</h5></a>
+                        <a class="nav-link" href="index.html"><h5>About Us</h5></a>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul class="navbar-nav m-1">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warning link-dark" href="#" role="button">Profile</a>
+                        <a class="nav-link btn btn-warning link-dark" href="#custPDashboardSec" role="button">Profile</a>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link btn btn-danger link-dark" href="#" role="button">Login/Register</a>
+                        <a class="nav-link btn btn-danger link-dark" href="index.html" role="button">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -63,15 +63,15 @@
 <main class="d-flex">
 
     <nav style="width: 275px; height: 90vh; background-color: #353B48">
-        <h3 style="background-color: #535C68; color: white; text-align: center; padding: 10px 0; margin-bottom: 40px";>Your Profile</h3>
+        <h3 id="pnlName" style="background-color: #535C68; color: deepskyblue; text-align: center; padding: 10px 0; margin-bottom: 40px";>Dashboard</h3>
         <ul style="list-style: none; padding-left: 37px">
-            <li><a href="" role="button"><i class="fa-solid fa-house"></i>&emsp;Dashboard</a></li>
-            <li><a href="" role="button"><i class="fa-solid fa-rotate-right"></i>&emsp;Update Info</a></li>
+            <li><button id="btnCustPdash" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-house"></i>&emsp;Dashboard</button></li>
+            <li><button id="btnCustPInfo" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-rotate-right"></i>&emsp;Update Info</button></li>
         </ul>
     </nav>
 
     <!--Dashboard Section-->
-    <section style="background-color: whitesmoke; width: 100vw; position: relative">
+    <section id="custPDashboardSec" style="background-color: whitesmoke; width: 100vw; position: relative">
         <!--Input Fields-->
         <div class="d-flex" style="position:relative; left: 180px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
             <div style="margin-right: 155px">
@@ -170,40 +170,39 @@
             </table>
         </div>
     </section>
+    <!--Info Section-->
+    <section id="custPInfoSec" style="position:relative; background-color: whitesmoke; width: 100vw">
+        <div style="position:absolute; width: 330px; height: max-content; right: 0px; left: 0px; top: 0px; bottom: 0px; margin: auto">
+            <form action="" style="border: 1px solid black; border-radius: 10px; padding: 25px">
+                <div style="margin-bottom: 9px">
+                    <label for="exampleInputEmail21" class="form-label">NIC No</label>
+                    <input type="email" class="form-control" id="exampleInputEmail21">
+                </div>
+                <div style="margin-bottom: 9px">
+                    <label for="exampleInputEmail22" class="form-label">Username</label>
+                    <input type="email" class="form-control" id="exampleInputEmail22">
+                </div>
+                <div style="margin-bottom: 9px">
+                    <label for="exampleInputEmail23" class="form-label">Password</label>
+                    <input type="email" class="form-control" id="exampleInputEmail23">
+                </div>
+                <div style="margin-bottom: 9px">
+                    <label for="exampleInputEmai24" class="form-label">Contact No</label>
+                    <input type="email" class="form-control" id="exampleInputEmai24">
+                </div>
+                <div style="margin-bottom: 9px">
+                    <label for="exampleInputEmail25" class="form-label">License No</label>
+                    <input type="email" class="form-control" id="exampleInputEmail25">
+                </div>
+                <button type="button" class="btn btn-warning" style="width: 165px; border-radius: 30px; margin: 25px 0 0 55px">Update</button>
+            </form>
+        </div>
 
+    </section>
 </main>
-
-<!--Info Section-->
-<section style="position:relative; background-color: whitesmoke; width: 90%">
-    <div style="position:absolute; width: 330px; height: max-content; right: 0px; left: 0px; top: 0px; bottom: 0px; margin: auto">
-        <form action="" style="border: 1px solid black; border-radius: 10px; padding: 25px">
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail21" class="form-label">NIC No</label>
-                <input type="email" class="form-control" id="exampleInputEmail21">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail22" class="form-label">Username</label>
-                <input type="email" class="form-control" id="exampleInputEmail22">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail23" class="form-label">Password</label>
-                <input type="email" class="form-control" id="exampleInputEmail23">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmai24" class="form-label">Contact No</label>
-                <input type="email" class="form-control" id="exampleInputEmai24">
-            </div>
-            <div style="margin-bottom: 9px">
-                <label for="exampleInputEmail25" class="form-label">License No</label>
-                <input type="email" class="form-control" id="exampleInputEmail25">
-            </div>
-            <button type="button" class="btn btn-warning" style="width: 165px; border-radius: 30px; margin: 25px 0 0 55px">Update</button>
-        </form>
-    </div>
-
-</section>
 
 <script src="assets/js/jquery-3.6.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/custPanelSpa.js"></script>
 </body>
 </html>

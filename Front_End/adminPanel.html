@@ -40,20 +40,20 @@
             <div style="position: relative; left: -102px; top: 2px">
                 <ul class="navbar-nav m-1">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><h5>Home</h5></a>
+                        <a class="nav-link" href="index.html"><h5>Home</h5></a>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link" href="#"><h5>About Us</h5></a>
+                        <a class="nav-link" href="index.html"><h5>About Us</h5></a>
                     </li>
                 </ul>
             </div>
             <div>
                 <ul class="navbar-nav m-1">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warning link-dark" href="#" role="button">Profile</a>
+                        <a class="nav-link btn btn-warning link-dark" href="#admPDashbrdSec" role="button">Profile</a>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link btn btn-danger link-dark" href="#" role="button">Login/Register</a>
+                        <a class="nav-link btn btn-danger link-dark" href="index.html" role="button">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -61,16 +61,21 @@
     </nav>
 </header>
 <main class="d-flex">
+<!--    navigation-->
     <nav style="width: 275px; height: 90vh; background-color: #353B48">
-        <h3 style="background-color: #535C68; color: white; text-align: center; padding: 10px 0; margin-bottom: 40px";>Admin Panel</h3>
+        <h3 id="pnlName" style="background-color: #535C68; color: deepskyblue; text-align: center; padding: 10px 0; margin-bottom: 40px";>Dashboard</h3>
         <ul style="list-style: none; padding-left: 37px">
-            <li><a href="" role="button"><i class="fa-solid fa-house"></i>&emsp;Dashboard</a></li>
-            <li><a href="" role="button"><i class="fa-solid fa-rotate-right"></i>&emsp;Update Info</a></li>
+            <li><button id="btnAdmPDash" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-house"></i>&emsp;Dashboard</></li>
+            <li><button id="btnAdmPRentDetailCar" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-car"></i></i>&emsp;Rent Car</button></li>
+            <li><button id="btnAdmPReturnCar" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-sharp fa-solid fa-rotate-right"></i>&emsp;Return Car</button></li>
+            <li><button id="btnAdmPCusDetail" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-id-card"></i>&emsp;Cust. Details</button></li>
+            <li><button id="btnAdmPCarDetail" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-list"></i>&emsp;Car Details</button></li>
+            <li><button id="btnAdmPDrivrDetail" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-person"></i>&emsp;Driver Details</button></li>
         </ul>
     </nav>
 
     <!--Dashboard Section-->
-    <section style="background-color: whitesmoke; width: 100vw">
+    <section id="admPDashbrdSec" style="background-color: whitesmoke; width: 100vw">
         <div style="margin: 35px 0 40px 24px">
             <div class="text-center bg-primary text-white border-primary" style="border: 5px solid; border-radius: 10px; padding: 12px; width: 295px">
                 <h5 style="margin-bottom: 12px">No of registered users</h5>
@@ -132,525 +137,526 @@
             </div>
         </div>
     </section>
+    <!--Car Details Section-->
+    <section id="admPCarDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
+        <!--Input Fields-->
+        <div class="d-flex" style="position:relative; left: 103px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+            <div style="margin-right: 100px">
+                <div class="d-flex">
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail1" class="form-label">Registration No</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+                        </div>
+                        <!--                        dropdown-->
+                        <div style="margin-bottom: 9px">
+                            <label for="type" class="form-label">Type</label>
+                            <select name="cars" id="type" class="form-control">
+                                <option value="general">General</option>
+                                <option value="premium">Premium</option>
+                                <option value="luxury">Luxury</option>
+                            </select>
+                        </div>
 
-</main>
-<!--Car Details Section-->
-<section style="background-color: whitesmoke; width: 100vw; position: relative">
-    <!--Input Fields-->
-    <div class="d-flex" style="position:relative; left: 103px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
-        <div style="margin-right: 100px">
-            <div class="d-flex">
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail1" class="form-label">Registration No</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
+
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail13" class="form-label">Colour</label>
+                            <input type="email" class="form-control" id="exampleInputEmail13">
+                        </div>
                     </div>
-                    <!--                        dropdown-->
-                    <div style="margin-bottom: 9px">
-                        <label for="type" class="form-label">Type</label>
-                        <select name="cars" id="type" class="form-control">
-                            <option value="general">General</option>
-                            <option value="premium">Premium</option>
-                            <option value="luxury">Luxury</option>
-                        </select>
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail144" class="form-label">Brand</label>
+                            <input type="email" class="form-control" id="exampleInputEmail144">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="type1" class="form-label">Type</label>
+                            <select name="cars" id="type1" class="form-control">
+                                <option value="general">Auto</option>
+                                <option value="premium">Manual</option>
+                            </select>
+                        </div>
                     </div>
-
-
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail13" class="form-label">Colour</label>
-                        <input type="email" class="form-control" id="exampleInputEmail13">
+                    <div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail30" class="form-label">Passengers</label>
+                            <input type="email" class="form-control" id="exampleInputEmail30">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="fuelType" class="form-label">Type</label>
+                            <select name="cars" id="fuelType" class="form-control">
+                                <option value="general">Petrol</option>
+                                <option value="premium">Diesel</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail144" class="form-label">Brand</label>
-                        <input type="email" class="form-control" id="exampleInputEmail144">
+                <div class="d-flex">
+                    <div style="margin-bottom: 9px; margin-right: 10px">
+                        <label for="exampleInputEmail36" class="form-label">Front</label>
+                        <input type="email" class="form-control" id="exampleInputEmail36" style="width: 100px">
                     </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="type1" class="form-label">Type</label>
-                        <select name="cars" id="type1" class="form-control">
-                            <option value="general">Auto</option>
-                            <option value="premium">Manual</option>
-                        </select>
+                    <div style="margin-bottom: 9px; margin-right: 10px">
+                        <label for="exampleInputEmail37" class="form-label">Side</label>
+                        <input type="email" class="form-control" id="exampleInputEmail37" style="width: 100px">
+                    </div>
+                    <div style="margin-bottom: 9px; margin-right: 10px">
+                        <label for="exampleInputEmail38" class="form-label">Back</label>
+                        <input type="email" class="form-control" id="exampleInputEmail38" style="width: 100px">
+                    </div>
+                    <div style="margin-bottom: 9px; margin-right: 10px">
+                        <label for="exampleInputEmail39" class="form-label">Interior</label>
+                        <input type="email" class="form-control" id="exampleInputEmail39" style="width: 100px">
+                    </div>
+                    <button type="button" class="btn btn-success" style="width: 100px; height: 38px; border-radius: 30px; position:relative; top: 22px; left: 22px">Upload</button>
+                </div>
+            </div>
+
+            <div>
+                <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
+                <div class="d-flex">
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail19" class="form-label">Daily Rate</label>
+                            <input type="email" class="form-control" id="exampleInputEmail19">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail33" class="form-label">Monthly Rate</label>
+                            <input type="email" class="form-control" id="exampleInputEmail33">
+                        </div>
+                        <div style="margin-bottom: 30px">
+                            <label for="exampleInputEmail34" class="form-label">Price for extra km</label>
+                            <input type="email" class="form-control" id="exampleInputEmail34">
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail1" class="form-label">Free km / day</label>
+                            <input type="email" class="form-control" id="exampleInputEmail0">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail5" class="form-label">Free km / month</label>
+                            <input type="email" class="form-control" id="exampleInputEmail5">
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail30" class="form-label">Passengers</label>
-                        <input type="email" class="form-control" id="exampleInputEmail30">
+                <div class="d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-primary" style="width: 110px">Save</button>
+                    <button type="button" class="btn btn-danger" style="width: 110px">Update</button>
+                    <button type="button" class="btn btn-warning" style="width: 110px">Delete</button>
+                </div>
+            </div>
+
+        </div>
+        <!--table-->
+        <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 92px">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="bg-danger text-white border-danger-subtle">
+                <tr>
+                    <th scope="col">Reg No</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Passengers</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Transmission</th>
+                    <th scope="col">Fuel</th>
+                    <th scope="col">Colour</th>
+                    <th scope="col">Daily Rate</th>
+                    <th scope="col">km/day</th>
+                    <th scope="col">Monthly Rate</th>
+                    <th scope="col">km/month</th>
+                    <th scope="col">Extra km/Rs</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody class="border-dark">
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Driver Details Section-->
+    <section id="admPDrivrDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
+        <!--Input Fields-->
+        <div class="d-flex" style="position:relative; left: 141px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+            <div style="margin-right: 75px">
+                <div class="d-flex">
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail221" class="form-label">License No</label>
+                            <input type="email" class="form-control" id="exampleInputEmail221">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail2" class="form-label">Name</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2">
+                        </div>
                     </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="fuelType" class="form-label">Type</label>
-                        <select name="cars" id="fuelType" class="form-control">
-                            <option value="general">Petrol</option>
-                            <option value="premium">Diesel</option>
-                        </select>
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail14" class="form-label">Address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail14">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail17" class="form-label">DOB</label>
+                            <input type="date" class="form-control" id="exampleInputEmail17">
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 9px">
+                            <label for="transmission" class="form-label">Gender</label>
+                            <select name="cars" id="transmission" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail137" class="form-label">Contact No</label>
+                            <input type="email" class="form-control" id="exampleInputEmail137">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="d-flex">
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail36" class="form-label">Front</label>
-                    <input type="email" class="form-control" id="exampleInputEmail36" style="width: 100px">
+
+            <div>
+                <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
+                <div style="position: relative; top: 88px">
+                    <button type="button" class="btn btn-primary" style="width: 110px">Save</button>
+                    <button type="button" class="btn btn-danger" style="width: 110px">Update</button>
+                    <button type="button" class="btn btn-warning" style="width: 110px">Delete</button>
                 </div>
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail37" class="form-label">Side</label>
-                    <input type="email" class="form-control" id="exampleInputEmail37" style="width: 100px">
-                </div>
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail38" class="form-label">Back</label>
-                    <input type="email" class="form-control" id="exampleInputEmail38" style="width: 100px">
-                </div>
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail39" class="form-label">Interior</label>
-                    <input type="email" class="form-control" id="exampleInputEmail39" style="width: 100px">
-                </div>
-                <button type="button" class="btn btn-success" style="width: 100px; height: 38px; border-radius: 30px; position:relative; top: 22px; left: 22px">Upload</button>
+
             </div>
         </div>
-
-        <div>
-            <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
-            <div class="d-flex">
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail19" class="form-label">Daily Rate</label>
-                        <input type="email" class="form-control" id="exampleInputEmail19">
+        <!--table-->
+        <div style="overflow-y: scroll; width: 1200px; height: 360px; position: relative; left: 55px; top: 100px">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="bg-danger text-white border-danger-subtle">
+                <tr>
+                    <th scope="col">License No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Dob</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Contact No</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody class="border-dark">
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Customer Details Section-->
+    <section id="admPCustDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
+        <!--Input Fields-->
+        <div class="d-flex" style="position:relative; left: 180px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+            <div style="margin-right: 155px">
+                <div class="d-flex">
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail2" class="form-label">Password</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail13" class="form-label">Contact No</label>
+                            <input type="email" class="form-control" id="exampleInputEmail13">
+                        </div>
                     </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail33" class="form-label">Monthly Rate</label>
-                        <input type="email" class="form-control" id="exampleInputEmail33">
-                    </div>
-                    <div style="margin-bottom: 30px">
-                        <label for="exampleInputEmail34" class="form-label">Price for extra km</label>
-                        <input type="email" class="form-control" id="exampleInputEmail34">
-                    </div>
-                </div>
-                <div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail1" class="form-label">Free km / day</label>
-                        <input type="email" class="form-control" id="exampleInputEmail0">
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail5" class="form-label">Free km / month</label>
-                        <input type="email" class="form-control" id="exampleInputEmail5">
+                    <div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail14" class="form-label">Address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail14">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail17" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail17">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-evenly">
-                <button type="button" class="btn btn-primary" style="width: 110px">Save</button>
-                <button type="button" class="btn btn-danger" style="width: 110px">Update</button>
-                <button type="button" class="btn btn-warning" style="width: 110px">Delete</button>
+
+            <div>
+                <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
+                <div class="d-flex">
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail19" class="form-label">NIC No</label>
+                            <input type="email" class="form-control" id="exampleInputEmail19">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail18" class="form-label">NIC Image</label>
+                            <input type="email" class="form-control" id="exampleInputEmail18">
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail1" class="form-label">License No</label>
+                            <input type="email" class="form-control" id="exampleInputEmail0">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail5" class="form-label">License Image</label>
+                            <input type="email" class="form-control" id="exampleInputEmail5">
+                        </div>
+                    </div>
+                </div>
+                <div style="position:absolute; left: 355px; width: max-content">
+                    <button class="btn btn-success" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Verify</button>
+                    <button class="btn btn-primary" style="position: relative; top: 15px; width: 130px; border-radius: 30px; margin-right: 50px">Deny</button>
+                    <button class="btn btn-warning" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Update</button>
+                    <button class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Delete</button>
+                </div>
+
             </div>
         </div>
-
-    </div>
-    <!--table-->
-    <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 92px">
-        <table class="table table-bordered table-hover text-center">
-            <thead class="bg-danger text-white border-danger-subtle">
-            <tr>
-                <th scope="col">Reg No</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Passengers</th>
-                <th scope="col">Type</th>
-                <th scope="col">Transmission</th>
-                <th scope="col">Fuel</th>
-                <th scope="col">Colour</th>
-                <th scope="col">Daily Rate</th>
-                <th scope="col">km/day</th>
-                <th scope="col">Monthly Rate</th>
-                <th scope="col">km/month</th>
-                <th scope="col">Extra km/Rs</th>
-                <th scope="col">Status</th>
-            </tr>
-            </thead>
-            <tbody class="border-dark">
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<!--Driver Details Section-->
-<section style="background-color: whitesmoke; width: 100vw; position: relative">
-    <!--Input Fields-->
-    <div class="d-flex" style="position:relative; left: 141px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
-        <div style="margin-right: 75px">
-            <div class="d-flex">
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail221" class="form-label">License No</label>
-                        <input type="email" class="form-control" id="exampleInputEmail221">
+        <!--table-->
+        <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 100px">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="bg-danger text-white border-danger-subtle">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact No</th>
+                    <th scope="col">Nic No</th>
+                    <th scope="col">License No</th>
+                </tr>
+                </thead>
+                <tbody class="border-dark">
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Car Rent Details Section-->
+    <section id="admPCarRentDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
+        <!--Input Fields-->
+        <div class="d-flex" style="position:relative; left: 148px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+            <div style="margin-right: 45px">
+                <div class="d-flex">
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail1" class="form-label">Rental ID</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail2" class="form-label">PickUp Date</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2">
+                        </div>
                     </div>
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail714" class="form-label">Customer</label>
+                            <input type="email" class="form-control" id="exampleInputEmail714">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail177" class="form-label">Return Date</label>
+                            <input type="email" class="form-control" id="exampleInputEmail177">
+                        </div>
+                    </div>
+                    <div style="margin-right: 10px">
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail1654" class="form-label">Vehicle</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1654">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail917" class="form-label">Damage Weaver</label>
+                            <input type="email" class="form-control" id="exampleInputEmail917">
+                        </div>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail14" class="form-label">Driver</label>
+                            <input type="email" class="form-control" id="exampleInputEmail14">
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="exampleInputEmail17" class="form-label">Bank Slip</label>
+                            <input type="email" class="form-control" id="exampleInputEmail17">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column" style="margin-top: 16px; margin-right: 10px">
+                <button class="btn btn-primary" style="position: relative; top: 15px; width: 130px; border-radius: 30px; margin-bottom: 10px">Accept Rent</button>
+                <button class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Deny Rent</button>
+            </div>
+
+
+        </div>
+        <!--table-->
+        <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 100px">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="bg-danger text-white border-danger-subtle">
+                <tr>
+                    <th scope="col">Rental ID</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Vehicle</th>
+                    <th scope="col">Driver</th>
+                    <th scope="col">Pickup Location</th>
+                    <th scope="col">Pickup Date</th>
+                    <th scope="col">Pickup Time</th>
+                    <th scope="col">Return Date</th>
+                    <th scope="col">Return Time</th>
+                    <th scope="col">Damage Fee</th>
+                    <th scope="col">Rental Fee</th>
+                </tr>
+                </thead>
+                <tbody class="border-dark">
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Car Return Section-->
+    <section id="admPCarReturnSec" style="background-color: whitesmoke; width: 100vw; position: relative">
+        <!--Input Fields-->
+        <div class="d-flex" style="position:relative; left: 246px; top: 52px; width: max-content;">
+            <div style=" border: 2px solid gray; margin-right: 80px; border-radius: 10px; width: 400px; height: max-content; padding: 25px">
+                <div class="d-flex">
                     <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail2" class="form-label">Name</label>
+                        <label for="exampleInputEmail2" class="form-label">Rental ID</label>
                         <input type="email" class="form-control" id="exampleInputEmail2">
                     </div>
+                    <button class="btn btn-dark text-white" style="width: 110px; height: max-content; position: relative;top: 25px; left: 60px; border-radius: 30px">Search</button>
+                    <button class="btn btn-success" style="height: max-content; position: absolute; top: -40px; left: 300px">+New</button>
                 </div>
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail14" class="form-label">Address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail14">
+                <div style="margin-top: 30px">
+                    <div style="margin-bottom: 9px; margin-right: 10px">
+                        <label for="exampleInputEmail2" class="form-label">Customer</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2">
                     </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail17" class="form-label">DOB</label>
-                        <input type="date" class="form-control" id="exampleInputEmail17">
-                    </div>
-                </div>
-                <div>
-                    <div style="margin-bottom: 9px">
-                        <label for="transmission" class="form-label">Gender</label>
-                        <select name="cars" id="transmission" class="form-control">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail137" class="form-label">Contact No</label>
-                        <input type="email" class="form-control" id="exampleInputEmail137">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
-            <div style="position: relative; top: 88px">
-                <button type="button" class="btn btn-primary" style="width: 110px">Save</button>
-                <button type="button" class="btn btn-danger" style="width: 110px">Update</button>
-                <button type="button" class="btn btn-warning" style="width: 110px">Delete</button>
-            </div>
-
-        </div>
-    </div>
-    <!--table-->
-    <div style="overflow-y: scroll; width: 1200px; height: 360px; position: relative; left: 55px; top: 100px">
-        <table class="table table-bordered table-hover text-center">
-            <thead class="bg-danger text-white border-danger-subtle">
-            <tr>
-                <th scope="col">License No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Dob</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Contact No</th>
-                <th scope="col">Status</th>
-            </tr>
-            </thead>
-            <tbody class="border-dark">
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<!--Customer Details Section-->
-<section style="background-color: whitesmoke; width: 100vw; position: relative">
-    <!--Input Fields-->
-    <div class="d-flex" style="position:relative; left: 180px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
-        <div style="margin-right: 155px">
-            <div class="d-flex">
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail1" class="form-label">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail2" class="form-label">Password</label>
+                    <div style="margin-bottom: 9px; margin-right: 10px">
+                        <label for="exampleInputEmail2" class="form-label">Vehicle</label>
                         <input type="email" class="form-control" id="exampleInputEmail2">
                     </div>
                     <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail13" class="form-label">Contact No</label>
-                        <input type="email" class="form-control" id="exampleInputEmail13">
+                        <label for="exampleInputEmail2" class="form-label">Driver</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2">
                     </div>
-                </div>
-                <div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail14" class="form-label">Address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail14">
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail17" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail17">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
-            <div class="d-flex">
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail19" class="form-label">NIC No</label>
-                        <input type="email" class="form-control" id="exampleInputEmail19">
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail18" class="form-label">NIC Image</label>
-                        <input type="email" class="form-control" id="exampleInputEmail18">
-                    </div>
-                </div>
-                <div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail1" class="form-label">License No</label>
-                        <input type="email" class="form-control" id="exampleInputEmail0">
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail5" class="form-label">License Image</label>
-                        <input type="email" class="form-control" id="exampleInputEmail5">
-                    </div>
-                </div>
-            </div>
-            <div style="position:absolute; left: 355px; width: max-content">
-                <button class="btn btn-success" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Verify</button>
-                <button class="btn btn-primary" style="position: relative; top: 15px; width: 130px; border-radius: 30px; margin-right: 50px">Deny</button>
-                <button class="btn btn-warning" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Update</button>
-                <button class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Delete</button>
-            </div>
-
-        </div>
-    </div>
-    <!--table-->
-    <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 100px">
-        <table class="table table-bordered table-hover text-center">
-            <thead class="bg-danger text-white border-danger-subtle">
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Password</th>
-                <th scope="col">Email</th>
-                <th scope="col">Contact No</th>
-                <th scope="col">Nic No</th>
-                <th scope="col">License No</th>
-            </tr>
-            </thead>
-            <tbody class="border-dark">
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<!--Car Rent Details Section-->
-<section style="background-color: whitesmoke; width: 100vw; position: relative">
-    <!--Input Fields-->
-    <div class="d-flex" style="position:relative; left: 148px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
-        <div style="margin-right: 45px">
-            <div class="d-flex">
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail1" class="form-label">Rental ID</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div style="margin-bottom: 9px">
+                    <div style="margin-bottom: 9px; margin-right: 10px">
                         <label for="exampleInputEmail2" class="form-label">PickUp Date</label>
                         <input type="email" class="form-control" id="exampleInputEmail2">
                     </div>
-                </div>
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail714" class="form-label">Customer</label>
-                        <input type="email" class="form-control" id="exampleInputEmail714">
+                    <div style="margin-bottom: 9px; margin-right: 10px">
+                        <label for="exampleInputEmail2" class="form-label">Return Date</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2">
                     </div>
                     <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail177" class="form-label">Return Date</label>
-                        <input type="email" class="form-control" id="exampleInputEmail177">
-                    </div>
-                </div>
-                <div style="margin-right: 10px">
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail1654" class="form-label">Vehicle</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1654">
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail917" class="form-label">Damage Weaver</label>
-                        <input type="email" class="form-control" id="exampleInputEmail917">
-                    </div>
-                </div>
-                <div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail14" class="form-label">Driver</label>
-                        <input type="email" class="form-control" id="exampleInputEmail14">
-                    </div>
-                    <div style="margin-bottom: 9px">
-                        <label for="exampleInputEmail17" class="form-label">Bank Slip</label>
-                        <input type="email" class="form-control" id="exampleInputEmail17">
+                        <label for="exampleInputEmail2" class="form-label">Damage Weaver</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2">
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="d-flex flex-column" style="margin-top: 16px; margin-right: 10px">
-            <button class="btn btn-primary" style="position: relative; top: 15px; width: 130px; border-radius: 30px; margin-bottom: 10px">Accept Rent</button>
-            <button class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Deny Rent</button>
-        </div>
 
-
-    </div>
-    <!--table-->
-    <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 100px">
-        <table class="table table-bordered table-hover text-center">
-            <thead class="bg-danger text-white border-danger-subtle">
-            <tr>
-                <th scope="col">Rental ID</th>
-                <th scope="col">Customer</th>
-                <th scope="col">Vehicle</th>
-                <th scope="col">Driver</th>
-                <th scope="col">Pickup Location</th>
-                <th scope="col">Pickup Date</th>
-                <th scope="col">Pickup Time</th>
-                <th scope="col">Return Date</th>
-                <th scope="col">Return Time</th>
-                <th scope="col">Damage Fee</th>
-                <th scope="col">Rental Fee</th>
-            </tr>
-            </thead>
-            <tbody class="border-dark">
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-<!--Car Return Section-->
-<section style="background-color: whitesmoke; width: 100vw; position: relative">
-    <!--Input Fields-->
-    <div class="d-flex" style="position:relative; left: 246px; top: 52px; width: max-content;">
-        <div style=" border: 2px solid gray; margin-right: 80px; border-radius: 10px; width: 400px; height: max-content; padding: 25px">
-            <div class="d-flex">
-                <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmail2" class="form-label">Rental ID</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2">
+            <div>
+                <div style=" border: 2px solid gray; margin-bottom: 20px; border-radius: 10px; width: 355px; padding: 25px">
+                    <div class="input-group mb-3">
+                        <label for="exampleInputEmail2" class="form-label">Rental Fee&emsp;:&emsp;</label>
+                        <h4 class="text-info" style="margin: 0">2300.00</h4>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="exampleInputEmail2" class="form-label" style="margin-left: 51px">Pay&emsp;:&emsp;</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <button class="btn btn-danger" style="margin-left: 114px; margin-bottom: 16px; width: 105px; border-radius: 30px; height: 33px; padding: 0">Pay</button>
+                    <div class="input-group">
+                        <label for="exampleInputEmail2" class="form-label" style="margin-left: 25px">Balance&emsp;:&emsp;</label>
+                        <h4 class="text-danger" style="margin: 0">2300.00</h4>
+                    </div>
                 </div>
-                <button class="btn btn-dark text-white" style="width: 110px; height: max-content; position: relative;top: 25px; left: 60px; border-radius: 30px">Search</button>
-                <button class="btn btn-success" style="height: max-content; position: absolute; top: -40px; left: 300px">+New</button>
-            </div>
-            <div style="margin-top: 30px">
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail2" class="form-label">Customer</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2">
-                </div>
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail2" class="form-label">Vehicle</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2">
-                </div>
-                <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmail2" class="form-label">Driver</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2">
-                </div>
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail2" class="form-label">PickUp Date</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2">
-                </div>
-                <div style="margin-bottom: 9px; margin-right: 10px">
-                    <label for="exampleInputEmail2" class="form-label">Return Date</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2">
-                </div>
-                <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmail2" class="form-label">Damage Weaver</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2">
+                <div style=" border: 2px solid gray; border-radius: 10px; width: 355px; padding: 25px">
+                    <div class="input-group mb-3">
+                        <label for="exampleInputEmail2" class="form-label">Damage Weaver&emsp;:&emsp;</label>
+                        <h4 class="text-info" style="margin: 0">2300.00</h4>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="exampleInputEmail2" class="form-label" style="margin-left: 28px">Damage Fee&emsp;:&emsp;</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <button class="btn btn-danger" style="margin-left: 154px; margin-bottom: 16px; width: 105px; border-radius: 30px; height: 33px; padding: 0">Pay</button>
+                    <div class="input-group">
+                        <label for="exampleInputEmail2" class="form-label" style="margin-left: 64px">Balance&emsp;:&emsp;</label>
+                        <h4 class="text-danger" style="margin: 0">2300.00</h4>
+                    </div>
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary" style="position: absolute; right: 293px; bottom: 65px; width: 210px; height: 50px; border-radius: 30px">Submit</button>
+    </section>
+</main>
 
-        <div>
-            <div style=" border: 2px solid gray; margin-bottom: 20px; border-radius: 10px; width: 355px; padding: 25px">
-                <div class="input-group mb-3">
-                    <label for="exampleInputEmail2" class="form-label">Rental Fee&emsp;:&emsp;</label>
-                    <h4 class="text-info" style="margin: 0">2300.00</h4>
-                </div>
-                <div class="input-group mb-3">
-                    <label for="exampleInputEmail2" class="form-label" style="margin-left: 51px">Pay&emsp;:&emsp;</label>
-                    <input type="text" class="form-control">
-                </div>
-                <button class="btn btn-danger" style="margin-left: 114px; margin-bottom: 16px; width: 105px; border-radius: 30px; height: 33px; padding: 0">Pay</button>
-                <div class="input-group">
-                    <label for="exampleInputEmail2" class="form-label" style="margin-left: 25px">Balance&emsp;:&emsp;</label>
-                    <h4 class="text-danger" style="margin: 0">2300.00</h4>
-                </div>
-            </div>
-            <div style=" border: 2px solid gray; border-radius: 10px; width: 355px; padding: 25px">
-                <div class="input-group mb-3">
-                    <label for="exampleInputEmail2" class="form-label">Damage Weaver&emsp;:&emsp;</label>
-                    <h4 class="text-info" style="margin: 0">2300.00</h4>
-                </div>
-                <div class="input-group mb-3">
-                    <label for="exampleInputEmail2" class="form-label" style="margin-left: 28px">Damage Fee&emsp;:&emsp;</label>
-                    <input type="text" class="form-control">
-                </div>
-                <button class="btn btn-danger" style="margin-left: 154px; margin-bottom: 16px; width: 105px; border-radius: 30px; height: 33px; padding: 0">Pay</button>
-                <div class="input-group">
-                    <label for="exampleInputEmail2" class="form-label" style="margin-left: 64px">Balance&emsp;:&emsp;</label>
-                    <h4 class="text-danger" style="margin: 0">2300.00</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="btn btn-primary" style="position: absolute; right: 293px; bottom: 65px; width: 210px; height: 50px; border-radius: 30px">Submit</button>
-</section>
 
 
 <script src="assets/js/jquery-3.6.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/adminPanelSpa.js"></script>
 </body>
 </html>
