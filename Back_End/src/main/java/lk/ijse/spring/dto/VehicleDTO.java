@@ -1,22 +1,15 @@
-package lk.ijse.spring.entity;
+package lk.ijse.spring.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @ToString
-
-@Entity
-public class Vehicle {
-    @Id
+public class VehicleDTO {
     private String regNo;
     private String brand;
     private String type;
@@ -36,7 +29,4 @@ public class Vehicle {
     private String sideImg;
     private String backImg;
     private String interiorImg;
-
-    @OneToOne(mappedBy = "vehicle")
-    private Rental rental;
 }
