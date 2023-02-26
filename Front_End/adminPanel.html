@@ -295,50 +295,57 @@
         <!--Input Fields-->
         <div class="d-flex" style="position:relative; left: 141px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
 
-            <form style="margin-right: 75px">
+            <form id="dsformDriver" style="margin-right: 75px">
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
                             <label for="dstxtLicenseNo" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="dstxtLicenseNo" name="dsLicenseNo">
+                            <input type="text" class="form-control" id="dstxtLicenseNo" name="licenseNo">
                         </div>
                         <div style="margin-bottom: 9px">
                             <label for="dstxtName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="dstxtName" name="dsName">
+                            <input type="text" class="form-control" id="dstxtName" name="name">
                         </div>
                     </div>
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
                             <label for="dstxtAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="dstxtAddress" name="dsAddress">
+                            <input type="text" class="form-control" id="dstxtAddress" name="address">
                         </div>
                         <div style="margin-bottom: 9px">
                             <label for="dstxtDob" class="form-label">DOB</label>
-                            <input type="date" class="form-control" id="dstxtDob" name="dsDob">
+                            <input type="date" class="form-control" id="dstxtDob" name="dob">
                         </div>
                     </div>
                     <div>
                         <div style="margin-bottom: 9px">
                             <label for="dstxtGender" class="form-label">Gender</label>
-                            <select name="dsGender" id="dstxtGender" class="form-control">
+                            <select name="gender" id="dstxtGender" class="form-control">
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail137" class="form-label">Contact No</label>
-                            <input type="email" class="form-control" id="exampleInputEmail137">
+                            <label for="dstxtContactNo" class="form-label">Contact No</label>
+                            <input type="number" class="form-control" id="dstxtContactNo" name="contactNo">
+                        </div>
+                        <div style="position:absolute; right: 335px; top: 9px">
+                            <label for="dstxtStatus" class="form-label">Status</label>
+                            <select name="status" id="dstxtStatus" class="form-control">
+                                <option value="free">Free</option>
+                                <option value="on_ride">OnRide</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </form>
 
             <div>
-                <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
+                <button class="btn btn-info" style="position:absolute; right: 0; top: -45px" id="dsbtnNew">+New</button>
                 <div style="position: relative; top: 88px">
-                    <button type="button" class="btn btn-primary" style="width: 110px">Save</button>
-                    <button type="button" class="btn btn-danger" style="width: 110px">Update</button>
-                    <button type="button" class="btn btn-warning" style="width: 110px">Delete</button>
+                    <button type="button" class="btn btn-primary" style="width: 110px" id="dsbtnSave">Save</button>
+                    <button type="button" class="btn btn-danger" style="width: 110px" id="dsbtnUpdate">Update</button>
+                    <button type="button" class="btn btn-warning" style="width: 110px" id="dsbtnDelete">Delete</button>
                 </div>
 
             </div>
@@ -357,24 +364,8 @@
                     <th scope="col">Status</th>
                 </tr>
                 </thead>
-                <tbody class="border-dark">
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
+                <tbody class="border-dark" id="dstblDriver">
+
                 </tbody>
             </table>
         </div>

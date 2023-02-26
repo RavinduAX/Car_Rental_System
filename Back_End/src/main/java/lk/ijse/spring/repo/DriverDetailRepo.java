@@ -1,5 +1,8 @@
 package lk.ijse.spring.repo;
 
-public interface DriverDetailRepo {
+import lk.ijse.spring.entity.Driver;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DriverDetailRepo extends JpaRepository<Driver, String> {
 
 }

@@ -1,4 +1,41 @@
 package lk.ijse.spring.service.impl;
 
-public class DriverDetailServiceImpl {
+import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.entity.Driver;
+import lk.ijse.spring.repo.DriverDetailRepo;
+import lk.ijse.spring.service.DriverDetailService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+
+@Service
+@Transactional
+public class DriverDetailServiceImpl implements DriverDetailService {
+    @Autowired
+    DriverDetailRepo repo;
+    @Autowired
+    ModelMapper mapper;
+
+    @Override
+    public void addDriver(DriverDTO dto) {
+        if(repo.existsById(dto.getLicenseNo())){
+            throw new RuntimeException("Driver "+dto.getLicenseNo()+ " Already Exists");
+        }
+        repo.save(mapper.map(dto, Driver.class));
+    }
+    @Override
+    public void updateDriver(DriverDTO dto) {
+
+    }
+    @Override
+    public void deleteDriver(String licenseNo) {
+
+    }
+    @Override
+    public ArrayList<DriverDTO> getAllDrivers() {
+        return null;
+    }
 }
