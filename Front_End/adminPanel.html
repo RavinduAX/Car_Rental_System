@@ -65,7 +65,7 @@
     <nav style="width: 275px; height: 90vh; background-color: #353B48">
         <h3 id="pnlName" style="background-color: #535C68; color: deepskyblue; text-align: center; padding: 10px 0; margin-bottom: 40px";>Dashboard</h3>
         <ul style="list-style: none; padding-left: 37px">
-            <li><button id="btnAdmPDash" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-house"></i>&emsp;Dashboard</></li>
+            <li><button id="btnAdmPDash" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-house"></i>&emsp;Dashboard</button></li>
             <li><button id="btnAdmPRentDetailCar" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-car"></i></i>&emsp;Rent Car</button></li>
             <li><button id="btnAdmPReturnCar" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-sharp fa-solid fa-rotate-right"></i>&emsp;Return Car</button></li>
             <li><button id="btnAdmPCusDetail" class="btn btn-link" style="text-decoration: none; color: white; font-size: 18px;"><i class="fa-solid fa-id-card"></i>&emsp;Cust. Details</button></li>
@@ -294,32 +294,33 @@
     <section id="admPDrivrDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
         <!--Input Fields-->
         <div class="d-flex" style="position:relative; left: 141px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
-            <div style="margin-right: 75px">
+
+            <form style="margin-right: 75px">
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail221" class="form-label">License No</label>
-                            <input type="email" class="form-control" id="exampleInputEmail221">
+                            <label for="dstxtLicenseNo" class="form-label">License No</label>
+                            <input type="text" class="form-control" id="dstxtLicenseNo" name="dsLicenseNo">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail2" class="form-label">Name</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2">
+                            <label for="dstxtName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="dstxtName" name="dsName">
                         </div>
                     </div>
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail14" class="form-label">Address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail14">
+                            <label for="dstxtAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="dstxtAddress" name="dsAddress">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail17" class="form-label">DOB</label>
-                            <input type="date" class="form-control" id="exampleInputEmail17">
+                            <label for="dstxtDob" class="form-label">DOB</label>
+                            <input type="date" class="form-control" id="dstxtDob" name="dsDob">
                         </div>
                     </div>
                     <div>
                         <div style="margin-bottom: 9px">
-                            <label for="transmission" class="form-label">Gender</label>
-                            <select name="cars" id="transmission" class="form-control">
+                            <label for="dstxtGender" class="form-label">Gender</label>
+                            <select name="dsGender" id="dstxtGender" class="form-control">
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -330,7 +331,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <div>
                 <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
@@ -658,5 +659,6 @@
 <script src="assets/js/jquery-3.6.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/adminPanelSpa.js"></script>
+<script src="assets/js/mapping/driverDetail.js"></script>
 </body>
 </html>
