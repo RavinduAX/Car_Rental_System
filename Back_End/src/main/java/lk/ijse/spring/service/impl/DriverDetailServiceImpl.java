@@ -30,7 +30,10 @@ public class DriverDetailServiceImpl implements DriverDetailService {
     }
     @Override
     public void updateDriver(DriverDTO dto) {
-
+        if(!repo.existsById(dto.getLicenseNo())){
+            throw new RuntimeException("Driver "+dto.getLicenseNo()+" Not available to update");
+        }
+        repo.save(mapper.map(dto, Driver.class));
     }
     @Override
     public void deleteDriver(String licenseNo) {

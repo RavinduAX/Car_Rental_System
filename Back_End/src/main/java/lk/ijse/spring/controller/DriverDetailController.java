@@ -22,9 +22,15 @@ public class DriverDetailController {
     }
 
     @GetMapping
-    public ResponseUtil getAllCustomer(){
+    public ResponseUtil getAllDrier(){
         ArrayList<DriverDTO> all = service.getAllDrivers();
         return new ResponseUtil("200", "Sucess", all);
+    }
+
+    @PutMapping
+    public ResponseUtil updateDriver(@RequestBody DriverDTO dto){
+        service.updateDriver(dto);
+        return new ResponseUtil("200", dto.toString()+" Updated", null);
     }
 
 

@@ -23,6 +23,7 @@ $('#dsbtnSave').click(function () {
         });
 });
 
+//get All Driver
 function loadAllDrivers(){
     $('#dstblDriver').empty();
     $.ajax({
@@ -67,5 +68,42 @@ function setTextFieldValues(licenseNo,name,address,dob,gender,contactno,status){
 // $('#btnAdmPDrivrDetail').click(function () {
 //     loadAllDrivers();
 // });
+
+//update Driver
+$('#dsbtnUpdate').click(function () {
+    let driverLicenseNo = $('#dstxtLicenseNo').val();
+    let driverName = $('#dstxtName').val();
+    let driverAddress = $('#dstxtAddress').val();
+    let driverDob = $('#dstxtDob').val();
+    let driverGender = $('#dstxtGender').val()
+    let driverContact = $('#dstxtContactNo').val();
+    let driverStatus = $('#dstxtStatus').val();
+
+    var driver = {
+        licenseNo: driverLicenseNo,
+        name: driverName,
+        address: driverAddress,
+        dob: driverDob,
+        gender: driverGender,
+        contactNo: driverContact,
+        status: driverStatus
+    };
+
+    $.ajax({
+        url: baseURL + 'driverDetail',
+        method: 'put',
+        contentType: 'application/json',
+        data: JSON.stringify(driver),
+        dataType: 'json',
+        success: function (res) {
+            alert(res.message);
+            loadAllDrivers();
+        },
+        error: function (error) {
+            let cause = JSON.parse(error.responseText).message;
+            alert(cause);
+        }
+    });
+});
 
 
