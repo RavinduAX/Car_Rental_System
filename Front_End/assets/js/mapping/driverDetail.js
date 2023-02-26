@@ -106,4 +106,17 @@ $('#dsbtnUpdate').click(function () {
     });
 });
 
+//delete Driver
+$('#dsbtnDelete').click(function () {
+    let id = $('#dstxtLicenseNo').val();
+
+    $.ajax({
+        url: baseURL+'driverDetail?id='+id+"",
+        method: 'delete',
+        success: function () {
+            loadAllDrivers();
+        }
+    });
+});
+
 
