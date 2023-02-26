@@ -119,4 +119,7 @@ $('#dsbtnDelete').click(function () {
     });
 });
 
+$('#dsbtnNew').click(function () {
+    setTextFieldValues("","","","","","","");
+});
 
