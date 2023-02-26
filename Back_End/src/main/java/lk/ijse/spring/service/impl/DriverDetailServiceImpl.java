@@ -5,11 +5,13 @@ import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.DriverDetailRepo;
 import lk.ijse.spring.service.DriverDetailService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -36,6 +38,7 @@ public class DriverDetailServiceImpl implements DriverDetailService {
     }
     @Override
     public ArrayList<DriverDTO> getAllDrivers() {
-        return null;
+        List<Driver> all = repo.findAll();
+        return mapper.map(all, new TypeToken<ArrayList<DriverDTO>>() {}.getType());
     }
 }
