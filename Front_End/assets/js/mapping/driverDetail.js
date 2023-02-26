@@ -7,7 +7,7 @@ $('#dsbtnSave').click(function () {
     var formData = $('#dsformDriver').serialize();
 
     $.ajax({
-        url: baseURL+"driverDetail",
+        url: baseURL+"driver",
         method: 'post',
         data: formData,
         dataType: 'json',
@@ -27,7 +27,7 @@ $('#dsbtnSave').click(function () {
 function loadAllDrivers(){
     $('#dstblDriver').empty();
     $.ajax({
-        url: baseURL+'driverDetail',
+        url: baseURL+'driver',
         method: 'get',
         dataType: 'json',
         success: function (resp) {
@@ -90,7 +90,7 @@ $('#dsbtnUpdate').click(function () {
     };
 
     $.ajax({
-        url: baseURL + 'driverDetail',
+        url: baseURL + 'driver',
         method: 'put',
         contentType: 'application/json',
         data: JSON.stringify(driver),
@@ -111,7 +111,7 @@ $('#dsbtnDelete').click(function () {
     let id = $('#dstxtLicenseNo').val();
 
     $.ajax({
-        url: baseURL+'driverDetail?id='+id+"",
+        url: baseURL+'driver?id='+id+"",
         method: 'delete',
         success: function () {
             loadAllDrivers();

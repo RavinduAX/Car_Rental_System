@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/driverDetail")
+@RequestMapping("/driver")
 @CrossOrigin
 public class DriverDetailController {
     @Autowired
