@@ -12,4 +12,6 @@ public interface CarDetailService {
     public void deleteCar(String id);
 
     public ArrayList<VehicleDTO> getAllCars();
+
+    public void uploadCarImages(String frontImgPath, String sideImgPath, String backImgPath, String interiorImgPath, String id);
 }

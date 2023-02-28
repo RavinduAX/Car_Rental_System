@@ -23,7 +23,7 @@ public class VehicleDTO {
     private double priceForExtraKm;
     private String color;
     private String status;
-    private int mileage;
+    private String milage;
 
     private String frontImg;
     private String sideImg;

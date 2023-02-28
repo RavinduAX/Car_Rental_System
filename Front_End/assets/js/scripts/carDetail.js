@@ -6,7 +6,7 @@ $('#crsbtnSave').click(function () {
     let freeKmForDay = $('#crstxtFreeKmDay').val();
     let freeKmForMonth = $('#crstxtFreeKmMonth').val();
     let fuelType = $('#crstxtFuelType').val();
-    let milage = '0';
+    let milage = "0";
     let monthlyRate = $('#crstxtMonthlyRate').val();
     let noOfPassengers = $('#crstxtPassengers').val();
     let priceForExtraKm = $('#crstxtPriceForExtra').val();
