@@ -137,3 +137,66 @@ function crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsT
     $('#crstxtFreeKmMonth').val(crsKmMonth);
     $('#crstxtPriceForExtra').val(crsExtraKmPrice);
 }
+
+$('#crsbtnUpdate').click(function () {
+    let regNo = $('#crstxtRegNo').val();
+    let brand = $('#crstxtBrand').val();
+    let color = $('#crstxtColor').val();
+    let dailyRate = $('#crstxtDailyRate').val();
+    let freeKmForDay = $('#crstxtFreeKmDay').val();
+    let freeKmForMonth = $('#crstxtFreeKmMonth').val();
+    let fuelType = $('#crstxtFuelType').val();
+    let milage = "0";
+    let monthlyRate = $('#crstxtMonthlyRate').val();
+    let noOfPassengers = $('#crstxtPassengers').val();
+    let priceForExtraKm = $('#crstxtPriceForExtra').val();
+    let status = $('#dstxtStatus').val();
+    let transmissionType = $('#crstxtTransmissionType').val();
+    let type = $('#crstxtType').val();
+
+    let vehicle = {
+        regNo:regNo,
+        brand:brand,
+        color:color,
+        dailyRate:dailyRate,
+        freeKmForDay:freeKmForDay,
+        freeKmForMonth:freeKmForMonth,
+        fuelType:fuelType,
+        milage:milage,
+        monthlyRate:monthlyRate,
+        noOfPassengers:noOfPassengers,
+        priceForExtraKm:priceForExtraKm,
+        status:status,
+        transmissionType:transmissionType,
+        type:type
+    }
+
+    $.ajax({
+        url: baseURL + 'car',
+        method: 'put',
+        contentType: 'application/json',
+        data: JSON.stringify(vehicle),
+        success: function (res) {
+            loadAllCars();
+            crsSetTextFieldValues("","","","","","","","","","","","");
+            alert(res.message);
+        },
+        error: function (error){
+            var jsObject = JSON.parse(error.responseText);
+            alert(jsObject.message);
+        }
+    });
+});
+
+$('#crsbtnDelete').click(function () {
+    let regNo = $('#crstxtRegNo').val();
+
+    $.ajax({
+        url: baseURL + 'car?id='+regNo+"",
+        method: 'delete',
+        success: function () {
+            loadAllCars();
+        }
+    });
+});
+

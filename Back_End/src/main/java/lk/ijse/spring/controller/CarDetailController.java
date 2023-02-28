@@ -59,4 +59,16 @@ public class CarDetailController {
         return new ResponseUtil("200", "Success", all);
     }
 
+    @PutMapping
+    public ResponseUtil updateCar(@RequestBody VehicleDTO dto){
+        service.updateCar(dto);
+        return new ResponseUtil("200", dto.getRegNo()+" Updated", null);
+    }
+
+    @DeleteMapping
+    public ResponseUtil deleteCustomer(String id){
+        service.deleteCar(id);
+        return new ResponseUtil("200", id+" Deleted", null);
+    }
+
 }

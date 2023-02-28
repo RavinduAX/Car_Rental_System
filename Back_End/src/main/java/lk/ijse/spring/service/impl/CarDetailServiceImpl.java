@@ -33,12 +33,18 @@ public class CarDetailServiceImpl implements CarDetailService {
 
     @Override
     public void updateCar(VehicleDTO dto) {
-
+        if(!repo.existsById(dto.getRegNo())){
+            throw new RuntimeException("Not Available fot update");
+        }
+        repo.save(mapper.map(dto, Vehicle.class));
     }
 
     @Override
     public void deleteCar(String id) {
-
+        if(!repo.existsById(id)){
+            throw new RuntimeException( id + " Not Available fot delete");
+        }
+        repo.deleteById(id);
     }
 
     @Override
