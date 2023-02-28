@@ -54,4 +54,17 @@ public class CustomerDetailController {
         ArrayList<CustomerDTO> all = service.getAllCustomers();
         return new ResponseUtil("200", "Success", all);
     }
+
+    @PutMapping
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
+        service.updateCustomer(dto);
+        return new ResponseUtil("200", dto.getNicNo()+" Updated", null);
+    }
+
+    @DeleteMapping(params = "id")
+    public ResponseUtil deleteCustomer(String id){
+        service.deleteCustomer(id);
+        return new ResponseUtil("200", "Deleted", null);
+    }
+
 }

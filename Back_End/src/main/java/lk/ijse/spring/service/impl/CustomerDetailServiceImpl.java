@@ -31,12 +31,18 @@ public class CustomerDetailServiceImpl implements CustomerDetailService {
 
     @Override
     public void updateCustomer(CustomerDTO dto) {
-
+        if(!repo.existsById(dto.getNicNo())){
+            throw new RuntimeException("Customer "+dto.getNicNo()+" Not Available To Update");
+        }
+        repo.save(mapper.map(dto, Customer.class));
     }
 
     @Override
     public void deleteCustomer(String id) {
-
+        if(!repo.existsById(id)){
+            throw new RuntimeException("Customer "+id+" Not Available To Delete");
+        }
+        repo.deleteById(id);
     }
 
     @Override

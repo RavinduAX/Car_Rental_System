@@ -31,12 +31,12 @@ $('#csregbtnRegister').click(function () {
             success: function (res) {
                 uploadCustomerImgs(nicNo);
                 loadAllCustomers();
+                csSetTextFieldValues("","","","","","","");
                 alert(res.message);
             },
             error: function (error){
                 var jsObject = JSON.parse(error.responseText);
                 alert(jsObject.message);
-                csSetTextFieldValues("","","","","","","");
             }
     });
 });
@@ -113,4 +113,52 @@ function csSetTextFieldValues(cdName, cdAddress, cdPassword, cdEmail, cdContactN
 
 $('#csbtnNew').click(function () {
     csSetTextFieldValues("","","","","","","");
+});
+
+$('#csbtnUpdate').click(function () {
+    let nicNo = $('#cstxtNicNo').val();
+    let address = $('#cstxtAddress').val();
+    let contactNo = $('#cstxtContactNo').val();
+    let email = $('#cstxtEmail').val();
+    let licenceNo = $('#cstxtLicenseNo').val();
+    let name = $('#cstxtName').val();
+    let password = $('#cstxtPassword').val();
+
+    let customer = {
+        nicNo: nicNo,
+        address: address,
+        contactNo: contactNo,
+        email: email,
+        licenceNo: licenceNo,
+        name: name,
+        password: password
+    }
+
+    $.ajax({
+        url: baseURL+"customer",
+        method: 'put',
+        contentType: 'application/json',
+        data: JSON.stringify(customer),
+        dataType: 'json',   //***
+        success: function (res) {
+            loadAllCustomers();
+            csSetTextFieldValues("","","","","","","");
+            alert(res.message);
+        },
+        error: function (error){
+            var jsObject = JSON.parse(error.responseText);
+            alert(jsObject.message);}
+    });
+});
+
+$('#csbtnDelete').click(function () {
+    let nicNo = $('#cstxtNicNo').val();
+
+    $.ajax({
+        url: baseURL + "customer?id="+nicNo+"",
+        method: 'delete',
+        success: function () {
+            loadAllCustomers();
+        }
+    });
 });
