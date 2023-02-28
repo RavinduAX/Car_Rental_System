@@ -140,18 +140,18 @@
     <!--Car Details Section-->
     <section id="admPCarDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
         <!--Input Fields-->
-        <div class="d-flex" style="position:relative; left: 103px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+        <form id="crsformCar" class="d-flex" style="position:relative; left: 103px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
             <div style="margin-right: 100px">
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail1" class="form-label">Registration No</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <label for="crstxtRegNo" class="form-label">Registration No</label>
+                            <input type="text" class="form-control" id="crstxtRegNo" name="regNo">
                         </div>
-                        <!--                        dropdown-->
+                        <!--dropdown-->
                         <div style="margin-bottom: 9px">
-                            <label for="type" class="form-label">Type</label>
-                            <select name="cars" id="type" class="form-control">
+                            <label for="crstxtType" class="form-label">Type</label>
+                            <select name="type" id="crstxtType" class="form-control">
                                 <option value="general">General</option>
                                 <option value="premium">Premium</option>
                                 <option value="luxury">Luxury</option>
@@ -160,18 +160,18 @@
 
 
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail13" class="form-label">Colour</label>
-                            <input type="email" class="form-control" id="exampleInputEmail13">
+                            <label for="crstxtColor" class="form-label">Colour</label>
+                            <input type="text" class="form-control" id="crstxtColor" name="color">
                         </div>
                     </div>
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail144" class="form-label">Brand</label>
-                            <input type="email" class="form-control" id="exampleInputEmail144">
+                            <label for="crstxtBrand" class="form-label">Brand</label>
+                            <input type="text" class="form-control" id="crstxtBrand" name="brand">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="type1" class="form-label">Type</label>
-                            <select name="cars" id="type1" class="form-control">
+                            <label for="crstxtTransmissionType" class="form-label">Transmission</label>
+                            <select name="transmissionType" id="crstxtTransmissionType" class="form-control">
                                 <option value="general">Auto</option>
                                 <option value="premium">Manual</option>
                             </select>
@@ -179,12 +179,12 @@
                     </div>
                     <div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail30" class="form-label">Passengers</label>
-                            <input type="email" class="form-control" id="exampleInputEmail30">
+                            <label for="crstxtPassengers" class="form-label">Passengers</label>
+                            <input type="text" class="form-control" id="crstxtPassengers" name="noOfPassengers">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="fuelType" class="form-label">Type</label>
-                            <select name="cars" id="fuelType" class="form-control">
+                            <label for="crstxtFuelType" class="form-label">Fuel</label>
+                            <select name="fuelType" id="crstxtFuelType" class="form-control">
                                 <option value="general">Petrol</option>
                                 <option value="premium">Diesel</option>
                             </select>
@@ -193,61 +193,61 @@
                 </div>
                 <div class="d-flex">
                     <div style="margin-bottom: 9px; margin-right: 10px">
-                        <label for="exampleInputEmail36" class="form-label">Front</label>
-                        <input type="email" class="form-control" id="exampleInputEmail36" style="width: 100px">
+                        <label for="crstxtFrontImg" class="form-label">Front</label>
+                        <input type="text" class="form-control" id="crstxtFrontImg" name="frontImg" style="width: 100px">
                     </div>
                     <div style="margin-bottom: 9px; margin-right: 10px">
-                        <label for="exampleInputEmail37" class="form-label">Side</label>
-                        <input type="email" class="form-control" id="exampleInputEmail37" style="width: 100px">
+                        <label for="crstxtSideImg" class="form-label">Side</label>
+                        <input type="text" class="form-control" id="crstxtSideImg" name="sideImg" style="width: 100px">
                     </div>
                     <div style="margin-bottom: 9px; margin-right: 10px">
-                        <label for="exampleInputEmail38" class="form-label">Back</label>
-                        <input type="email" class="form-control" id="exampleInputEmail38" style="width: 100px">
+                        <label for="crstxtBackImg" class="form-label">Back</label>
+                        <input type="text" class="form-control" id="crstxtBackImg" name="backImg" style="width: 100px">
                     </div>
                     <div style="margin-bottom: 9px; margin-right: 10px">
-                        <label for="exampleInputEmail39" class="form-label">Interior</label>
-                        <input type="email" class="form-control" id="exampleInputEmail39" style="width: 100px">
+                        <label for="crstxtInteriorImg" class="form-label">Interior</label>
+                        <input type="text" class="form-control" id="crstxtInteriorImg" name="interiorImg" style="width: 100px">
                     </div>
-                    <button type="button" class="btn btn-success" style="width: 100px; height: 38px; border-radius: 30px; position:relative; top: 22px; left: 22px">Upload</button>
+                    <button id="crsbtnUpload" type="button" class="btn btn-success" style="width: 100px; height: 38px; border-radius: 30px; position:relative; top: 22px; left: 22px">Upload</button>
                 </div>
             </div>
 
             <div>
-                <button class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
+                <button id="crsbtnNew" class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail19" class="form-label">Daily Rate</label>
-                            <input type="email" class="form-control" id="exampleInputEmail19">
+                            <label for="crstxtDailyRate" class="form-label">Daily Rate</label>
+                            <input type="text" class="form-control" id="crstxtDailyRate" name="dailyRate">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail33" class="form-label">Monthly Rate</label>
-                            <input type="email" class="form-control" id="exampleInputEmail33">
+                            <label for="crstxtMonthlyRate" class="form-label">Monthly Rate</label>
+                            <input type="text" class="form-control" id="crstxtMonthlyRate" name="monthlyRate">
                         </div>
                         <div style="margin-bottom: 30px">
-                            <label for="exampleInputEmail34" class="form-label">Price for extra km</label>
-                            <input type="email" class="form-control" id="exampleInputEmail34">
+                            <label for="crstxtPriceForExtra" class="form-label">Price for extra km</label>
+                            <input type="text" class="form-control" id="crstxtPriceForExtra" name="priceForExtraKm">
                         </div>
                     </div>
                     <div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail1" class="form-label">Free km / day</label>
-                            <input type="email" class="form-control" id="exampleInputEmail0">
+                            <label for="crstxtFreeKmDay" class="form-label">Free km / day</label>
+                            <input type="text" class="form-control" id="crstxtFreeKmDay" name="freeKmForDay">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail5" class="form-label">Free km / month</label>
-                            <input type="email" class="form-control" id="exampleInputEmail5">
+                            <label for="crstxtFreeKmMonth" class="form-label">Free km / month</label>
+                            <input type="text" class="form-control" id="crstxtFreeKmMonth" name="freeKmForMonth">
                         </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-evenly">
-                    <button type="button" class="btn btn-primary" style="width: 110px">Save</button>
-                    <button type="button" class="btn btn-danger" style="width: 110px">Update</button>
-                    <button type="button" class="btn btn-warning" style="width: 110px">Delete</button>
+                    <button id="crsbtnSave" type="button" class="btn btn-primary" style="width: 110px">Save</button>
+                    <button id="crsbtnUpdate" type="button" class="btn btn-danger" style="width: 110px">Update</button>
+                    <button id="crsbtnDelete" type="button" class="btn btn-warning" style="width: 110px">Delete</button>
                 </div>
             </div>
 
-        </div>
+        </form>
         <!--table-->
         <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 92px">
             <table class="table table-bordered table-hover text-center">
@@ -268,24 +268,8 @@
                     <th scope="col">Status</th>
                 </tr>
                 </thead>
-                <tbody class="border-dark">
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
+                <tbody id="crstblCar" class="border-dark">
+
                 </tbody>
             </table>
         </div>
@@ -373,31 +357,31 @@
     <!--Customer Details Section-->
     <section id="admPCustDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
         <!--Input Fields-->
-        <div class="d-flex" style="position:relative; left: 180px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
+        <form id="csformCustomer" class="d-flex" style="position:relative; left: 180px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
             <div style="margin-right: 155px">
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail1" class="form-label">Name</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <label for="cstxtName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="cstxtName" name="name">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail2" class="form-label">Password</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2">
+                            <label for="cstxtPassword" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="cstxtPassword" name="password">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail13" class="form-label">Contact No</label>
-                            <input type="email" class="form-control" id="exampleInputEmail13">
+                            <label for="cstxtContactNo" class="form-label">Contact No</label>
+                            <input type="text" class="form-control" id="cstxtContactNo" name="contactNo">
                         </div>
                     </div>
                     <div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail14" class="form-label">Address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail14">
+                            <label for="cstxtAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="cstxtAddress" name="address">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail17" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail17">
+                            <label for="cstxtEmail" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="cstxtEmail" name="email">
                         </div>
                     </div>
                 </div>
@@ -408,34 +392,34 @@
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail19" class="form-label">NIC No</label>
-                            <input type="email" class="form-control" id="exampleInputEmail19">
+                            <label for="cstxtNicNo" class="form-label">NIC No</label>
+                            <input type="text" class="form-control" id="cstxtNicNo" name="nicNo">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail18" class="form-label">NIC Image</label>
-                            <input type="email" class="form-control" id="exampleInputEmail18">
+                            <label for="cstxtNicImg" class="form-label">NIC Image</label>
+                            <input type="file" class="form-control" style="width: 180px" id="cstxtNicImg" name="nicImg">
                         </div>
                     </div>
                     <div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail1" class="form-label">License No</label>
-                            <input type="email" class="form-control" id="exampleInputEmail0">
+                            <label for="cstxtLicenseNo" class="form-label">License No</label>
+                            <input type="text" class="form-control" id="cstxtLicenseNo" name="licenceNo">
                         </div>
                         <div style="margin-bottom: 9px">
-                            <label for="exampleInputEmail5" class="form-label">License Image</label>
-                            <input type="email" class="form-control" id="exampleInputEmail5">
+                            <label for="cstxtLicenseImg" class="form-label">License Image</label>
+                            <input type="file" class="form-control" style="width: 180px" id="cstxtLicenseImg" name="licenceImg">
                         </div>
                     </div>
                 </div>
                 <div style="position:absolute; left: 355px; width: max-content">
-                    <button class="btn btn-success" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Verify</button>
-                    <button class="btn btn-primary" style="position: relative; top: 15px; width: 130px; border-radius: 30px; margin-right: 50px">Deny</button>
-                    <button class="btn btn-warning" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Update</button>
-                    <button class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px">Delete</button>
+                    <button type="button" class="btn btn-success" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnVerify">Verify</button>
+                    <button type="button" class="btn btn-primary" style="position: relative; top: 15px; width: 130px; border-radius: 30px; margin-right: 50px" id="csbtnDeny">Deny</button>
+                    <button type="button" class="btn btn-warning" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnUpdate">Update</button>
+                    <button type="button" class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnDelete">Delete</button>
                 </div>
 
             </div>
-        </div>
+        </form>
         <!--table-->
         <div style="overflow-y: scroll; width: 1200px; height: 270px; position: relative; left: 55px; top: 100px">
             <table class="table table-bordered table-hover text-center">
@@ -450,24 +434,8 @@
                     <th scope="col">License No</th>
                 </tr>
                 </thead>
-                <tbody class="border-dark">
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
+                <tbody class="border-dark" id="cstblCustomer">
+
                 </tbody>
             </table>
         </div>
@@ -650,6 +618,6 @@
 <script src="assets/js/jquery-3.6.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/adminPanelSpa.js"></script>
-<script src="assets/js/mapping/driverDetail.js"></script>
+<script src="assets/js/scripts/driverDetail.js"></script>
 </body>
 </html>
