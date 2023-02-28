@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/customer")
@@ -48,5 +49,9 @@ public class CustomerDetailController {
         }
     }
 
-
+    @GetMapping
+    public ResponseUtil getAllCustomer(){
+        ArrayList<CustomerDTO> all = service.getAllCustomers();
+        return new ResponseUtil("200", "Success", all);
+    }
 }

@@ -5,11 +5,13 @@ import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.CustomerDetailRepo;
 import lk.ijse.spring.service.CustomerDetailService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -39,7 +41,8 @@ public class CustomerDetailServiceImpl implements CustomerDetailService {
 
     @Override
     public ArrayList<CustomerDTO> getAllCustomers() {
-        return null;
+        List<Customer> all = repo.findAll();
+        return mapper.map(all, new TypeToken<ArrayList<CustomerDTO>>() {}.getType());
     }
 
     @Override

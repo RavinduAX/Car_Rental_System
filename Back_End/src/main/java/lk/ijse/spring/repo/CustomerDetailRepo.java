@@ -15,4 +15,6 @@ public interface CustomerDetailRepo extends JpaRepository<Customer, String> {
 //    void updateCustomerFilePaths(@Param("nicImg") String nicImg, @Param("licenceImg") String licenceImg, @Param("nicNo") String nicNo);
     @Query(value = "UPDATE Customer SET nicImg=?1 , licenceImg=?2 WHERE nicNo=?3")
     void updateCustomerFilePaths(String nicImg, String licenceImg, String nicNo);
+
+
 }

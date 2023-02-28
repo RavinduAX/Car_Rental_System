@@ -1,4 +1,6 @@
-let baseURL = "http://localhost:8080/Back_End_war/"
+// let baseURL = "http://localhost:8080/Back_End_war/"
+
+loadAllCustomers();
 
 //Add Save Customer
 $('#csregbtnRegister').click(function () {
@@ -28,11 +30,13 @@ $('#csregbtnRegister').click(function () {
             dataType: 'json',   //***
             success: function (res) {
                 uploadCustomerImgs(nicNo);
+                loadAllCustomers();
                 alert(res.message);
             },
             error: function (error){
                 var jsObject = JSON.parse(error.responseText);
                 alert(jsObject.message);
+                csSetTextFieldValues("","","","","","","");
             }
     });
 });
@@ -65,3 +69,48 @@ function uploadCustomerImgs(id){
         }
     });
 }
+
+//Get All Customer
+function loadAllCustomers(){
+    $('#cstblCustomer').empty();
+    $.ajax({
+        url: baseURL+"customer",
+        method: 'get',
+        dataType: 'json',
+        success: function (resp){
+            for (let cus of resp.data) {
+                var row = '<tr><td>'+cus.name+'</td><td>'+cus.address+'</td><td>'+cus.password+'</td><td>'+cus.email+'</td><td>'+cus.contactNo+'</td><td>'+cus.nicNo+'</td><td>'+cus.licenceNo+'</td></tr>'
+                $('#cstblCustomer').append(row);
+                csBindRowClickEvents();
+            }
+        }
+    });
+}
+
+function csBindRowClickEvents(){
+    $('#cstblCustomer>tr').click(function () {
+        let cdName = $(this).children(':eq(0)').text();
+        let cdAddress = $(this).children(':eq(1)').text();
+        let cdPassword = $(this).children(':eq(2)').text();
+        let cdEmail = $(this).children(':eq(3)').text();
+        let cdContactNo = $(this).children(':eq(4)').text();
+        let cdNicNo = $(this).children(':eq(5)').text();
+        let cdLicenseNo = $(this).children(':eq(6)').text();
+
+        csSetTextFieldValues(cdName, cdAddress, cdPassword, cdEmail, cdContactNo, cdNicNo, cdLicenseNo);
+    });
+}
+
+function csSetTextFieldValues(cdName, cdAddress, cdPassword, cdEmail, cdContactNo, cdNicNo, cdLicenseNo){
+    $('#cstxtName').val(cdName);
+    $('#cstxtAddress').val(cdAddress);
+    $('#cstxtPassword').val(cdPassword);
+    $('#cstxtEmail').val(cdEmail);
+    $('#cstxtContactNo').val(cdContactNo);
+    $('#cstxtNicNo').val(cdNicNo);
+    $('#cstxtLicenseNo').val(cdLicenseNo);
+}
+
+$('#csbtnNew').click(function () {
+    csSetTextFieldValues("","","","","","","");
+});

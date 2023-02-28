@@ -13,7 +13,7 @@ $('#dsbtnSave').click(function () {
         dataType: 'json',
         success: function (res) {
             alert(res.message);
-            setTextFieldValues("","","","","","","");
+            dsSetTextFieldValues("","","","","","","");
             loadAllDrivers();
         },
         error: function (error){
@@ -35,13 +35,13 @@ function loadAllDrivers(){
                 var row = '<tr><td>'+d.licenseNo+'</td><td>'+d.name+'</td><td>'+d.address+'</td><td>'+d.dob+'</td><td>'+d.gender+'</td><td>'+d.contactNo+'</td><td>'+d.status+'</td></tr>'
                 $('#dstblDriver').append(row);
             }
-            bindRowClickEvents();
-            setTextFieldValues("","","","","","","");
+            dsBindRowClickEvents();
+            dsSetTextFieldValues("","","","","","","");
         }
     });
 }
 
-function bindRowClickEvents(){
+function dsBindRowClickEvents(){
     $('#dstblDriver>tr').click(function () {
         let licenseNo = $(this).children(':eq(0)').text();
         let name = $(this).children(':eq(1)').text();
@@ -51,11 +51,11 @@ function bindRowClickEvents(){
         let contactno = $(this).children(':eq(5)').text();
         let status = $(this).children(':eq(6)').text();
 
-        setTextFieldValues(licenseNo,name,address,dob,gender,contactno,status);
+        dsSetTextFieldValues(licenseNo,name,address,dob,gender,contactno,status);
     });
 }
 
-function setTextFieldValues(licenseNo,name,address,dob,gender,contactno,status){
+function dsSetTextFieldValues(licenseNo,name,address,dob,gender,contactno,status){
     $('#dstxtLicenseNo').val(licenseNo);
     $('#dstxtName').val(name);
     $('#dstxtAddress').val(address);
@@ -120,6 +120,6 @@ $('#dsbtnDelete').click(function () {
 });
 
 $('#dsbtnNew').click(function () {
-    setTextFieldValues("","","","","","","");
+    dsSetTextFieldValues("","","","","","","");
 });
 
