@@ -41,7 +41,7 @@ $('#crsbtnSave').click(function () {
         success: function (res) {
             uploadCarImgs(regNo);
             loadAllCars();
-            // csSetTextFieldValues("","","","","","","");
+            crsSetTextFieldValues("","","","","","","","","","","","");
             alert(res.message);
         },
         error: function (error){
@@ -98,8 +98,42 @@ function loadAllCars(){
                 var row = '<tr><td>'+car.regNo+'</td><td>'+car.brand+'</td><td>'+car.noOfPassengers+'</td><td>'+car.type+'</td><td>'+car.transmissionType+'</td><td>'+car.fuelType+'</td><td>'+car.color+'</td><td>'+car.dailyRate+'</td><td>'+car.freeKmForDay+'</td><td>'+car.monthlyRate+'</td><td>'+car.freeKmForMonth+'</td><td>'+car.priceForExtraKm+'</td><td>'+car.status+'</td></tr>'
                 $('#crstblCar').append(row);
             }
-            // bindRowClickEvents();
+            crsBindRowClickEvents()
             // setTextFieldValues("","","","");
         }
     });
+}
+
+function crsBindRowClickEvents(){
+    $('#crstblCar>tr').click(function () {
+        let crsRegNo = $(this).children(':eq(0)').text();
+        let crsBrand = $(this).children(':eq(1)').text();
+        let crsPassengerNo = $(this).children(':eq(2)').text();
+        let crsType = $(this).children(':eq(3)').text();
+        let crsTransmission = $(this).children(':eq(4)').text();
+        let crsFuel = $(this).children(':eq(5)').text();
+        let crsColor = $(this).children(':eq(6)').text();
+        let crsDailyRate = $(this).children(':eq(7)').text();
+        let crsKmDay = $(this).children(':eq(8)').text();
+        let crsMonthlyRate = $(this).children(':eq(9)').text();
+        let crsKmMonth = $(this).children(':eq(10)').text();
+        let crsExtraKmPrice = $(this).children(':eq(11)').text();
+
+        crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsTransmission, crsFuel, crsColor, crsDailyRate, crsKmDay, crsMonthlyRate, crsKmMonth, crsExtraKmPrice);
+    });
+}
+
+function crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsTransmission, crsFuel, crsColor, crsDailyRate, crsKmDay, crsMonthlyRate, crsKmMonth, crsExtraKmPrice){
+    $('#crstxtRegNo').val(crsRegNo);
+    $('#crstxtBrand').val(crsBrand);
+    $('#crstxtPassengers').val(crsPassengerNo);
+    $('#crstxtType').val(crsType);
+    $('#crstxtTransmissionType').val(crsTransmission);
+    $('#crstxtFuelType').val(crsFuel);
+    $('#crstxtColor').val(crsColor);
+    $('#crstxtDailyRate').val(crsDailyRate);
+    $('#crstxtFreeKmDay').val(crsKmDay);
+    $('#crstxtMonthlyRate').val(crsMonthlyRate);
+    $('#crstxtFreeKmMonth').val(crsKmMonth);
+    $('#crstxtPriceForExtra').val(crsExtraKmPrice);
 }
