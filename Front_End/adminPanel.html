@@ -141,7 +141,7 @@
     <section id="admPCarDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">
         <!--Input Fields-->
         <form id="crsformCar" class="d-flex" style="position:relative; left: 103px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
-            <div style="margin-right: 100px">
+            <div style="margin-right: 40px">
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
@@ -194,21 +194,20 @@
                 <div class="d-flex">
                     <div style="margin-bottom: 9px; margin-right: 10px">
                         <label for="crstxtFrontImg" class="form-label">Front</label>
-                        <input type="text" class="form-control" id="crstxtFrontImg" name="frontImg" style="width: 100px">
+                        <input type="file" class="form-control" id="crstxtFrontImg" name="frontImg" style="width: 150px">
                     </div>
                     <div style="margin-bottom: 9px; margin-right: 10px">
                         <label for="crstxtSideImg" class="form-label">Side</label>
-                        <input type="text" class="form-control" id="crstxtSideImg" name="sideImg" style="width: 100px">
+                        <input type="file" class="form-control" id="crstxtSideImg" name="sideImg" style="width: 150px">
                     </div>
                     <div style="margin-bottom: 9px; margin-right: 10px">
                         <label for="crstxtBackImg" class="form-label">Back</label>
-                        <input type="text" class="form-control" id="crstxtBackImg" name="backImg" style="width: 100px">
+                        <input type="file" class="form-control" id="crstxtBackImg" name="backImg" style="width: 150px">
                     </div>
                     <div style="margin-bottom: 9px; margin-right: 10px">
                         <label for="crstxtInteriorImg" class="form-label">Interior</label>
-                        <input type="text" class="form-control" id="crstxtInteriorImg" name="interiorImg" style="width: 100px">
+                        <input type="file" class="form-control" id="crstxtInteriorImg" name="interiorImg" style="width: 150px">
                     </div>
-                    <button id="crsbtnUpload" type="button" class="btn btn-success" style="width: 100px; height: 38px; border-radius: 30px; position:relative; top: 22px; left: 22px">Upload</button>
                 </div>
             </div>
 
@@ -242,8 +241,8 @@
                 </div>
                 <div class="d-flex justify-content-evenly">
                     <button id="crsbtnSave" type="button" class="btn btn-primary" style="width: 110px">Save</button>
-                    <button id="crsbtnUpdate" type="button" class="btn btn-danger" style="width: 110px">Update</button>
-                    <button id="crsbtnDelete" type="button" class="btn btn-warning" style="width: 110px">Delete</button>
+                    <button id="crsbtnUpdate" type="button" class="btn btn-warning" style="width: 110px">Update</button>
+                    <button id="crsbtnDelete" type="button" class="btn btn-danger" style="width: 110px">Delete</button>
                 </div>
             </div>
 
@@ -328,8 +327,8 @@
                 <button class="btn btn-info" style="position:absolute; right: 0; top: -45px" id="dsbtnNew">+New</button>
                 <div style="position: relative; top: 88px">
                     <button type="button" class="btn btn-primary" style="width: 110px" id="dsbtnSave">Save</button>
-                    <button type="button" class="btn btn-danger" style="width: 110px" id="dsbtnUpdate">Update</button>
-                    <button type="button" class="btn btn-warning" style="width: 110px" id="dsbtnDelete">Delete</button>
+                    <button type="button" class="btn btn-warning" style="width: 110px" id="dsbtnUpdate">Update</button>
+                    <button type="button" class="btn btn-danger" style="width: 110px" id="dsbtnDelete">Delete</button>
                 </div>
 
             </div>
@@ -620,5 +619,6 @@
 <script src="assets/js/adminPanelSpa.js"></script>
 <script src="assets/js/scripts/driverDetail.js"></script>
 <script src="assets/js/scripts/customerDetail.js"></script>
+<script src="assets/js/scripts/carDetail.js"></script>
 </body>
 </html>
