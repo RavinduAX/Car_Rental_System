@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/car")
@@ -50,6 +51,12 @@ public class CarDetailController {
             e.printStackTrace();
             return new ResponseUtil("500", "Error", null);
         }
+    }
+
+    @GetMapping
+    public ResponseUtil getAllCars(){
+        ArrayList<VehicleDTO> all = service.getAllCars();
+        return new ResponseUtil("200", "Success", all);
     }
 
 }

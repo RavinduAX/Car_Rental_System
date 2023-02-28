@@ -1,3 +1,5 @@
+loadAllCars();
+
 $('#crsbtnSave').click(function () {
     let regNo = $('#crstxtRegNo').val();
     let brand = $('#crstxtBrand').val();
@@ -38,7 +40,7 @@ $('#crsbtnSave').click(function () {
         data: JSON.stringify(vehicle),
         success: function (res) {
             uploadCarImgs(regNo);
-            // loadAllCustomers();
+            loadAllCars();
             // csSetTextFieldValues("","","","","","","");
             alert(res.message);
         },
@@ -79,6 +81,25 @@ function uploadCarImgs(id){
         success: function (res) {
             console.log("Uploaded");
             // clearSignupTextFields();
+        }
+    });
+}
+
+function loadAllCars(){
+    $('#crstblCar').empty();
+    
+    $.ajax({
+        url: baseURL + 'car',
+        method: 'get',
+        dataType: 'json',
+        success: function (resp) {
+            // console.log(resp);
+            for (let car of resp.data) {
+                var row = '<tr><td>'+car.regNo+'</td><td>'+car.brand+'</td><td>'+car.noOfPassengers+'</td><td>'+car.type+'</td><td>'+car.transmissionType+'</td><td>'+car.fuelType+'</td><td>'+car.color+'</td><td>'+car.dailyRate+'</td><td>'+car.freeKmForDay+'</td><td>'+car.monthlyRate+'</td><td>'+car.freeKmForMonth+'</td><td>'+car.priceForExtraKm+'</td><td>'+car.status+'</td></tr>'
+                $('#crstblCar').append(row);
+            }
+            // bindRowClickEvents();
+            // setTextFieldValues("","","","");
         }
     });
 }
