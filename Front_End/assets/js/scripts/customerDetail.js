@@ -1,4 +1,4 @@
-// let baseURL = "http://localhost:8080/Back_End_war/"
+let csbaseURL = "http://localhost:8080/Back_End_war/"
 
 loadAllCustomers();
 
@@ -23,7 +23,7 @@ $('#csregbtnRegister').click(function () {
     }
 
     $.ajax({
-            url: baseURL+"customer",
+            url: csbaseURL+'customer',
             method: 'post',
             contentType: 'application/json',
             data: JSON.stringify(customer),
@@ -57,7 +57,7 @@ function uploadCustomerImgs(id){
     data.append("licenceImg", fileObjectLicence, fileNameLicence);
 
     $.ajax({
-        url: baseURL + "customer/up/" + id,
+        url: csbaseURL + "customer/up/" + id,
         method: "PUT",
         async: true,
         contentType: false,
@@ -74,7 +74,7 @@ function uploadCustomerImgs(id){
 function loadAllCustomers(){
     $('#cstblCustomer').empty();
     $.ajax({
-        url: baseURL+"customer",
+        url: csbaseURL+"customer",
         method: 'get',
         dataType: 'json',
         success: function (resp){
@@ -109,13 +109,15 @@ function csSetTextFieldValues(cdName, cdAddress, cdPassword, cdEmail, cdContactN
     $('#cstxtContactNo').val(cdContactNo);
     $('#cstxtNicNo').val(cdNicNo);
     $('#cstxtLicenseNo').val(cdLicenseNo);
+
+    csSearchAndLoadImages(cdNicNo);
 }
 
 $('#csbtnNew').click(function () {
     csSetTextFieldValues("","","","","","","");
 });
 
-$('#csbtnUpdate').click(function () {
+function csUpdateCustomer(){
     let nicNo = $('#cstxtNicNo').val();
     let address = $('#cstxtAddress').val();
     let contactNo = $('#cstxtContactNo').val();
@@ -135,7 +137,7 @@ $('#csbtnUpdate').click(function () {
     }
 
     $.ajax({
-        url: baseURL+"customer",
+        url: csbaseURL+"customer",
         method: 'put',
         contentType: 'application/json',
         data: JSON.stringify(customer),
@@ -149,16 +151,47 @@ $('#csbtnUpdate').click(function () {
             var jsObject = JSON.parse(error.responseText);
             alert(jsObject.message);}
     });
-});
+}
 
-$('#csbtnDelete').click(function () {
+$('#csbtnDeny').click(function () {
     let nicNo = $('#cstxtNicNo').val();
 
     $.ajax({
-        url: baseURL + "customer?id="+nicNo+"",
+        url: csbaseURL + "customer?id="+nicNo+"",
         method: 'delete',
         success: function () {
             loadAllCustomers();
         }
     });
 });
+
+function csSearchAndLoadImages(id) {
+    console.log(id);
+    $('#cstxtNicImg').empty();
+    $('#cstxtLicenseImg').empty();
+
+    $.ajax({
+        url: csbaseURL+'customer?id='+id+"",
+        method: 'get',
+        success: function (res) {
+            let customer = res.data;
+            console.log(customer);
+
+            let nicPath = customer.nicImg;
+            let nicImg = nicPath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//customers//")[1];
+            let nicImgSrc = "assets/savedImages//customers//" + nicImg;
+
+            let licencePath = customer.licenceImg;
+            let licenceImg = licencePath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//customers//")[1];
+            let licenceImgSrc = "assets/savedImages//customers//" + licenceImg;
+
+            $('#cstxtNicImg').attr('src',nicImgSrc);
+            $('#cstxtNicImg1').attr('src',nicImgSrc);
+            $('#cstxtLicenseImg').attr('src',licenceImgSrc);
+            $('#cstxtLicenseImg1').attr('src',licenceImgSrc);
+
+        }
+    });
+
+}
+

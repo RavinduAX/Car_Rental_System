@@ -59,5 +59,13 @@ public class CustomerDetailServiceImpl implements CustomerDetailService {
         repo.updateCustomerFilePaths(nicImgPath, licenceImgPath, id);
     }
 
+    @Override
+    public CustomerDTO searchAndLoadImages(String id) {
+        if(!repo.existsById(id)){
+            throw new RuntimeException("Customer "+ id +" Not Found");
+        }
+        return mapper.map(repo.findCustomerByNicNo(id), CustomerDTO.class);
+    }
+
 
 }

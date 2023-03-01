@@ -1,4 +1,4 @@
-let baseURL = "http://localhost:8080/Back_End_war/"
+let dsbaseURL = "http://localhost:8080/Back_End_war/"
 
 loadAllDrivers();
 
@@ -7,7 +7,7 @@ $('#dsbtnSave').click(function () {
     var formData = $('#dsformDriver').serialize();
 
     $.ajax({
-        url: baseURL+"driver",
+        url: dsbaseURL+"driver",
         method: 'post',
         data: formData,
         dataType: 'json',
@@ -27,7 +27,7 @@ $('#dsbtnSave').click(function () {
 function loadAllDrivers(){
     $('#dstblDriver').empty();
     $.ajax({
-        url: baseURL+'driver',
+        url: dsbaseURL+'driver',
         method: 'get',
         dataType: 'json',
         success: function (resp) {
@@ -90,7 +90,7 @@ $('#dsbtnUpdate').click(function () {
     };
 
     $.ajax({
-        url: baseURL + 'driver',
+        url: dsbaseURL + 'driver',
         method: 'put',
         contentType: 'application/json',
         data: JSON.stringify(driver),
@@ -111,7 +111,7 @@ $('#dsbtnDelete').click(function () {
     let id = $('#dstxtLicenseNo').val();
 
     $.ajax({
-        url: baseURL+'driver?id='+id+"",
+        url: dsbaseURL+'driver?id='+id+"",
         method: 'delete',
         success: function () {
             loadAllDrivers();

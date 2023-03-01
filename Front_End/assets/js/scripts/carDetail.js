@@ -1,3 +1,5 @@
+let crsbaseURL = "http://localhost:8080/Back_End_war/"
+
 loadAllCars();
 
 $('#crsbtnSave').click(function () {
@@ -34,7 +36,7 @@ $('#crsbtnSave').click(function () {
     }
 
     $.ajax({
-        url: baseURL + 'car',
+        url: crsbaseURL + 'car',
         method: 'post',
         contentType: 'application/json',
         data: JSON.stringify(vehicle),
@@ -72,7 +74,7 @@ function uploadCarImgs(id){
     data.append("interiorImg", fileObjectInterior, fileNameInterior);
 
     $.ajax({
-        url: baseURL + "car/up/" + id,
+        url: crsbaseURL + "car/up/" + id,
         method: "PUT",
         async: true,
         contentType: false,
@@ -89,7 +91,7 @@ function loadAllCars(){
     $('#crstblCar').empty();
     
     $.ajax({
-        url: baseURL + 'car',
+        url: crsbaseURL + 'car',
         method: 'get',
         dataType: 'json',
         success: function (resp) {
@@ -172,7 +174,7 @@ $('#crsbtnUpdate').click(function () {
     }
 
     $.ajax({
-        url: baseURL + 'car',
+        url: crsbaseURL + 'car',
         method: 'put',
         contentType: 'application/json',
         data: JSON.stringify(vehicle),
@@ -192,7 +194,7 @@ $('#crsbtnDelete').click(function () {
     let regNo = $('#crstxtRegNo').val();
 
     $.ajax({
-        url: baseURL + 'car?id='+regNo+"",
+        url: crsbaseURL + 'car?id='+regNo+"",
         method: 'delete',
         success: function () {
             loadAllCars();

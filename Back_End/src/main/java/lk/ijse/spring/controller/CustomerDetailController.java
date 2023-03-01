@@ -67,4 +67,10 @@ public class CustomerDetailController {
         return new ResponseUtil("200", "Deleted", null);
     }
 
+    @GetMapping(params = "id")
+    public ResponseUtil searchAndLoadImages(String id){
+        CustomerDTO dto = service.searchAndLoadImages(id);
+        return new ResponseUtil("200", "Success", dto);
+    }
+
 }

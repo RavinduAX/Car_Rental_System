@@ -394,9 +394,24 @@
                             <label for="cstxtNicNo" class="form-label">NIC No</label>
                             <input type="text" class="form-control" id="cstxtNicNo" name="nicNo">
                         </div>
-                        <div style="margin-bottom: 9px">
+                        <div style="margin-bottom: 9px; display: flex; flex-direction: column">
                             <label for="cstxtNicImg" class="form-label">NIC Image</label>
-                            <input type="image" class="form-control" style="width: 180px" id="cstxtNicImg" name="nicImg">
+<!--                            <input type="image" class="form-control" style="width: 180px" id="cstxtNicImg" name="nicImg">-->
+                            <img data-bs-toggle="modal" data-bs-target="#csnicModal" src="" alt="" style="width: 180px; height: 95px; border: 1px solid grey; border-radius: 10px;" id="cstxtNicImg" name="nicImg">
+                        </div>
+                        <!--modal-->
+                        <div id="csnicModal" class="modal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width: 531px">
+                                    <div class="modal-header" style="padding: 8px">
+                                        <h5 class="modal-title">NIC Image</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-0">
+                                        <img style="width: 530px; height: 320px" id="cstxtNicImg1" src="" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -404,17 +419,32 @@
                             <label for="cstxtLicenseNo" class="form-label">License No</label>
                             <input type="text" class="form-control" id="cstxtLicenseNo" name="licenceNo">
                         </div>
-                        <div style="margin-bottom: 9px">
+                        <div style="margin-bottom: 9px; display: flex; flex-direction: column">
                             <label for="cstxtLicenseImg" class="form-label">License Image</label>
-                            <input type="image" class="form-control" style="width: 180px" id="cstxtLicenseImg" name="licenceImg">
+<!--                            <input type="image" class="form-control" style="width: 180px" id="cstxtLicenseImg" name="licenceImg">-->
+                            <img data-bs-toggle="modal" data-bs-target="#cslicenceModal"  src="" alt="" style="width: 180px; height: 95px; border: 1px solid grey; border-radius: 10px" id="cstxtLicenseImg" name="licenceImg">
+                        </div>
+                        <!--modal-->
+                        <div id="cslicenceModal" class="modal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width: 531px">
+                                    <div class="modal-header" style="padding: 8px">
+                                        <h5 class="modal-title">License Image</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body p-0">
+                                        <img style="width: 530px; height: 320px" id="cstxtLicenseImg1" src="" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div style="position:absolute; left: 355px; width: max-content">
+                <div style="position:absolute; left: 248px; top: 148px; width: max-content">
                     <button type="button" class="btn btn-success" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnVerify">Verify</button>
                     <button type="button" class="btn btn-primary" style="position: relative; top: 15px; width: 130px; border-radius: 30px; margin-right: 50px" id="csbtnDeny">Deny</button>
-                    <button type="button" class="btn btn-warning" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnUpdate">Update</button>
-                    <button type="button" class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnDelete">Delete</button>
+<!--                    <button type="button" class="btn btn-warning" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnUpdate">Update</button>-->
+<!--                    <button type="button" class="btn btn-danger" style="position: relative; top: 15px; width: 130px; border-radius: 30px" id="csbtnDelete">Delete</button>-->
                 </div>
 
             </div>
