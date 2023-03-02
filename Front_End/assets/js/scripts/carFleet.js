@@ -61,6 +61,9 @@ function loadAllfCars(){
             for (let car of resp.data) {
                 var row = '<tr><td>'+car.name+'</td><td>'+car.type+'</td><td>'+car.thumbnail+'</td></tr>'
                 $('#vftblVehicle').append(row);
+                //fill cardetail brand combobox
+                var opt = '<option value='+car.name+'>'+car.name+'</option>'
+                $('#crstxtBrand').append(opt);
                 cfBindRowClickEvents();
             }
         }

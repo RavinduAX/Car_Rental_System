@@ -14,7 +14,7 @@ $('#crsbtnSave').click(function () {
     let monthlyRate = $('#crstxtMonthlyRate').val();
     let noOfPassengers = $('#crstxtPassengers').val();
     let priceForExtraKm = $('#crstxtPriceForExtra').val();
-    let status = $('#dstxtStatus').val();
+    let status = $('#crstxtStatus').val();
     let transmissionType = $('#crstxtTransmissionType').val();
     let type = $('#crstxtType').val();
 
@@ -43,7 +43,7 @@ $('#crsbtnSave').click(function () {
         success: function (res) {
             uploadCarImgs(regNo);
             loadAllCars();
-            crsSetTextFieldValues("","","","","","","","","","","","");
+            crsSetTextFieldValues("","","","","","","","","","","","","");
             alert(res.message);
         },
         error: function (error){
@@ -120,12 +120,13 @@ function crsBindRowClickEvents(){
         let crsMonthlyRate = $(this).children(':eq(9)').text();
         let crsKmMonth = $(this).children(':eq(10)').text();
         let crsExtraKmPrice = $(this).children(':eq(11)').text();
+        let crsStatus = $(this).children(':eq(12)').text();
 
-        crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsTransmission, crsFuel, crsColor, crsDailyRate, crsKmDay, crsMonthlyRate, crsKmMonth, crsExtraKmPrice);
+        crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsTransmission, crsFuel, crsColor, crsDailyRate, crsKmDay, crsMonthlyRate, crsKmMonth, crsExtraKmPrice, crsStatus);
     });
 }
 
-function crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsTransmission, crsFuel, crsColor, crsDailyRate, crsKmDay, crsMonthlyRate, crsKmMonth, crsExtraKmPrice){
+function crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsTransmission, crsFuel, crsColor, crsDailyRate, crsKmDay, crsMonthlyRate, crsKmMonth, crsExtraKmPrice, crsStatus){
     $('#crstxtRegNo').val(crsRegNo);
     $('#crstxtBrand').val(crsBrand);
     $('#crstxtPassengers').val(crsPassengerNo);
@@ -138,6 +139,7 @@ function crsSetTextFieldValues(crsRegNo, crsBrand, crsPassengerNo, crsType, crsT
     $('#crstxtMonthlyRate').val(crsMonthlyRate);
     $('#crstxtFreeKmMonth').val(crsKmMonth);
     $('#crstxtPriceForExtra').val(crsExtraKmPrice);
+    $('#crstxtStatus').val(crsStatus);
 }
 
 $('#crsbtnUpdate').click(function () {
@@ -152,7 +154,7 @@ $('#crsbtnUpdate').click(function () {
     let monthlyRate = $('#crstxtMonthlyRate').val();
     let noOfPassengers = $('#crstxtPassengers').val();
     let priceForExtraKm = $('#crstxtPriceForExtra').val();
-    let status = $('#dstxtStatus').val();
+    let status = $('#crstxtStatus').val();
     let transmissionType = $('#crstxtTransmissionType').val();
     let type = $('#crstxtType').val();
 
@@ -180,7 +182,7 @@ $('#crsbtnUpdate').click(function () {
         data: JSON.stringify(vehicle),
         success: function (res) {
             loadAllCars();
-            crsSetTextFieldValues("","","","","","","","","","","","");
+            crsSetTextFieldValues("","","","","","","","","","","","","");
             alert(res.message);
         },
         error: function (error){
@@ -198,7 +200,12 @@ $('#crsbtnDelete').click(function () {
         method: 'delete',
         success: function () {
             loadAllCars();
+            crsSetTextFieldValues("","","","","","","","","","","","","");
         }
     });
+});
+
+$('#crsbtnNew').click(function () {
+    crsSetTextFieldValues("","","","","","","","","","","","","");
 });
 

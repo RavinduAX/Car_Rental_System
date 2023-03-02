@@ -168,13 +168,24 @@
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
                             <label for="crstxtBrand" class="form-label">Brand</label>
-                            <input type="text" class="form-control" id="crstxtBrand" name="brand">
+<!--                            <input type="text" class="form-control" id="crstxtBrand" name="brand">-->
+                            <select name="brand" id="crstxtBrand" class="form-control">
+
+                            </select>
                         </div>
                         <div style="margin-bottom: 9px">
                             <label for="crstxtTransmissionType" class="form-label">Transmission</label>
                             <select name="transmissionType" id="crstxtTransmissionType" class="form-control">
                                 <option value="general">Auto</option>
                                 <option value="premium">Manual</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 9px">
+                            <label for="crstxtStatus" class="form-label">Status</label>
+                            <select name="status" id="crstxtStatus" class="form-control">
+                                <option value="free">Free</option>
+                                <option value="onride">OnRide</option>
+                                <option value="maintenance">Maintenance</option>
                             </select>
                         </div>
                     </div>
@@ -213,7 +224,7 @@
             </div>
 
             <div>
-                <button id="crsbtnNew" class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
+                <button id="crsbtnNew" type="button" class="btn btn-info" style="position:absolute; right: 0; top: -45px">+New</button>
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
