@@ -18,7 +18,7 @@
         main>nav a:hover{
             color: crimson;
         }
-        input{
+        input, select{
             padding: 3px!important;
             border: 1px solid grey!important;
         }
@@ -142,6 +142,7 @@
         <!--Input Fields-->
         <form id="crsformCar" class="d-flex" style="position:relative; left: 103px; top: 52px; border: 2px solid gray; border-radius: 10px; width: max-content; padding: 10px">
             <div style="margin-right: 40px">
+                <button type="button" id="crsbtnVehicleFleet" data-bs-toggle="modal" data-bs-target="#manageVfModal" class="btn btn-secondary" style="position:absolute; left: 0; top: -45px">Manage Vehicle Fleet</button>
                 <div class="d-flex">
                     <div style="margin-right: 10px">
                         <div style="margin-bottom: 9px">
@@ -272,6 +273,60 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="manageVfModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width: 625px; height: 570px">
+                    <div class="modal-header bg-dark text-white">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Manage Vehicle Fleet</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="d-flex" style="justify-content: space-between; margin-bottom: 25px">
+                            <div class="mb-3" style="width: 180px">
+                                <label for="vftxtCarName" class="form-label">Car Name</label>
+                                <input type="text" class="form-control" id="vftxtCarName" name="name">
+                            </div>
+                            <div class="mb-3" style="width: 180px">
+                                <label for="vftxtCarType" class="form-label">Car Type</label>
+                                <select name="type" id="vftxtCarType" class="form-control">
+                                    <option value="general">General</option>
+                                    <option value="premium">Premium</option>
+                                    <option value="luxury">Luxury</option>
+                                </select>
+                            </div>
+                            <div class="mb-3" style="width: 180px">
+                                <label for="vftxtThumbnail" class="form-label">Thumbnail</label>
+                                <input type="file" class="form-control" id="vftxtThumbnail" name="thumbnail">
+                            </div>
+                        </div>
+                        <div style="height: 290px; overflow-y: scroll">
+                            <table class="table table-bordered">
+                                <thead class="table-secondary">
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Thumbnail</th>
+                                </tr>
+                                </thead>
+                                <tbody id="vftblVehicle">
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="vfbtnSave">Save</button>
+                        <button type="button" class="btn btn-warning" id="vfbtnUpdate">Update</button>
+                        <button type="button" class="btn btn-danger" id="vfbtnDelete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
     <!--Driver Details Section-->
     <section id="admPDrivrDetailSec" style="background-color: whitesmoke; width: 100vw; position: relative">

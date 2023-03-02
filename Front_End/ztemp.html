@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 625px; height: 570px">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Manage Vehicle Fleet</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="d-flex" style="justify-content: space-between; margin-bottom: 25px">
+                    <div class="mb-3" style="width: 180px">
+                        <label for="vftxtCarName" class="form-label">Car Name</label>
+                        <input type="text" class="form-control" id="vftxtCarName" name="name">
+                    </div>
+                    <div class="mb-3" style="width: 180px">
+                        <label for="vftxtCarType" class="form-label">Car Type</label>
+                        <select name="type" id="vftxtCarType" class="form-control">
+                            <option value="general">General</option>
+                            <option value="premium">Premium</option>
+                            <option value="luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <div class="mb-3" style="width: 180px">
+                        <label for="vftxtThumbnail" class="form-label">Thumbnail</label>
+                        <input type="file" class="form-control" id="vftxtThumbnail" name="thumbnail">
+                    </div>
+                </div>
+                <div style="height: 290px; overflow-y: scroll">
+                    <table class="table table-bordered">
+                        <thead class="table-secondary">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Thumbnail</th>
+                        </tr>
+                        </thead>
+                        <tbody id="vftblVehicle">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="vfbtnSave">Save</button>
+                <button type="button" class="btn btn-warning" id="vfbtnUpdate">Update</button>
+                <button type="button" class="btn btn-danger" id="vfbtnDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/jquery-3.6.3.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
