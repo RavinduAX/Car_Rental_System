@@ -283,40 +283,40 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-
-                        <div class="d-flex" style="justify-content: space-between; margin-bottom: 25px">
-                            <div class="mb-3" style="width: 180px">
-                                <label for="vftxtCarName" class="form-label">Car Name</label>
-                                <input type="text" class="form-control" id="vftxtCarName" name="name">
+                        <form id="vfFormCar">
+                            <div class="d-flex" style="justify-content: space-between; margin-bottom: 25px">
+                                <div class="mb-3" style="width: 180px">
+                                    <label for="vftxtCarName" class="form-label">Car Name</label>
+                                    <input type="text" class="form-control" id="vftxtCarName" name="name">
+                                </div>
+                                <div class="mb-3" style="width: 180px">
+                                    <label for="vftxtCarType" class="form-label">Car Type</label>
+                                    <select name="type" id="vftxtCarType" class="form-control">
+                                        <option value="general">General</option>
+                                        <option value="premium">Premium</option>
+                                        <option value="luxury">Luxury</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3" style="width: 180px">
+                                    <label for="vftxtThumbnail" class="form-label">Thumbnail</label>
+                                    <input type="file" class="form-control" id="vftxtThumbnail" name="thumbnail">
+                                </div>
                             </div>
-                            <div class="mb-3" style="width: 180px">
-                                <label for="vftxtCarType" class="form-label">Car Type</label>
-                                <select name="type" id="vftxtCarType" class="form-control">
-                                    <option value="general">General</option>
-                                    <option value="premium">Premium</option>
-                                    <option value="luxury">Luxury</option>
-                                </select>
-                            </div>
-                            <div class="mb-3" style="width: 180px">
-                                <label for="vftxtThumbnail" class="form-label">Thumbnail</label>
-                                <input type="file" class="form-control" id="vftxtThumbnail" name="thumbnail">
-                            </div>
-                        </div>
-                        <div style="height: 290px; overflow-y: scroll">
-                            <table class="table table-bordered">
-                                <thead class="table-secondary">
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Thumbnail</th>
-                                </tr>
-                                </thead>
-                                <tbody id="vftblVehicle">
+                            <div style="height: 290px; overflow-y: scroll">
+                                <table class="table table-bordered">
+                                    <thead class="table-secondary">
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Thumbnail</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="vftblVehicle">
 
-                                </tbody>
-                            </table>
-                        </div>
-
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" id="vfbtnSave">Save</button>
