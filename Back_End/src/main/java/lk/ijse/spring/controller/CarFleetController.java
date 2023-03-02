@@ -52,4 +52,10 @@ public class CarFleetController {
         return new ResponseUtil("200", "Success", all);
     }
 
+    @DeleteMapping(params = "name")
+    public ResponseUtil deleteCar(String name){
+        service.deletefCar(name);
+        return new ResponseUtil("200", name + "Deleted", null);
+    }
+
 }

@@ -7,14 +7,12 @@ $('#vfbtnSave').click(function () {
     let vfcName = $('#vftxtCarName').val();
     let vfcType = $('#vftxtCarType').val();
     let vfcImg = $('#vftxtThumbnail').val();
-    console.log(vfcName + vfcImg);
 
     let fleet = {
         name:vfcName,
         type:vfcType,
         thumbnail:vfcImg
     }
-    console.log(fleet);
 
     $.ajax({
         url: cfbaseURL+'fleet',
@@ -26,6 +24,7 @@ $('#vfbtnSave').click(function () {
             uploadThumbnailImg(vfcName);
             alert(resp.message);
             loadAllfCars();
+            cfSetTextFieldValues("","","");
         }
     });
 });
@@ -62,9 +61,40 @@ function loadAllfCars(){
             for (let car of resp.data) {
                 var row = '<tr><td>'+car.name+'</td><td>'+car.type+'</td><td>'+car.thumbnail+'</td></tr>'
                 $('#vftblVehicle').append(row);
-                // csBindRowClickEvents();
+                cfBindRowClickEvents();
             }
         }
     });
 }
+
+function cfBindRowClickEvents(){
+    $('#vftblVehicle>tr').click(function () {
+        let cfName = $(this).children(':eq(0)').text();
+        let cfType = $(this).children(':eq(1)').text();
+        let cfThumb = $(this).children(':eq(2)').text();
+
+        cfSetTextFieldValues(cfName, cfType, cfThumb);
+    });
+}
+
+function cfSetTextFieldValues(cfName, cfType, cfThumb){
+    $('#vftxtCarName').val(cfName);
+    $('#vftxtCarType').val(cfType);
+    $('#vftxtThumbnail').val(cfThumb);
+}
+
+//delete
+$('#vfbtnDelete').click(function () {
+    let vfCarName = $('#vftxtCarName').val();
+
+    $.ajax({
+        url: cfbaseURL+'fleet?name='+vfCarName+"",
+        method: 'delete',
+        success: function () {
+            loadAllfCars();
+            cfSetTextFieldValues("","","");
+        }
+    });
+
+});
 

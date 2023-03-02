@@ -37,7 +37,10 @@ public class CarFleetServiceImpl implements CarFleetService {
 
     @Override
     public void deletefCar(String name) {
-
+        if(!repo.existsByName(name)){
+            throw new RuntimeException("Car "+name+" not available to delete");
+        }
+        repo.deleteByName(name);
     }
 
     @Override

@@ -15,4 +15,6 @@ public interface CarFleetRepo extends JpaRepository<CarFleet, Integer> {
     @Query(value = "UPDATE CarFleet SET thumbnail=?1 WHERE name=?2")
     void updateCarFleetFilePath(String thumbImg, String name);
 
+    void deleteByName(String name);
+
 }

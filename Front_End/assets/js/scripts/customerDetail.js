@@ -149,7 +149,8 @@ function csUpdateCustomer(){
         },
         error: function (error){
             var jsObject = JSON.parse(error.responseText);
-            alert(jsObject.message);}
+            alert(jsObject.message);
+        }
     });
 }
 
