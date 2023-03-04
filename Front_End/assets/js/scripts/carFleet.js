@@ -1,6 +1,7 @@
 let cfbaseURL = "http://localhost:8080/Back_End_war/"
 
 loadAllfCars();
+// setVFleet();
 
 //save
 $('#vfbtnSave').click(function () {
@@ -58,6 +59,7 @@ function loadAllfCars(){
         method: 'get',
         dataType: 'json',
         success: function (resp) {
+            setVFleet(resp.data);
             for (let car of resp.data) {
                 var row = '<tr><td>'+car.name+'</td><td>'+car.type+'</td><td>'+car.thumbnail+'</td></tr>'
                 $('#vftblVehicle').append(row);
@@ -102,3 +104,32 @@ $('#vfbtnDelete').click(function () {
 
 });
 
+
+// // set vehicle fleet
+function setVFleet(vdata) {
+    for (let c of vdata) {
+        let brand = c.name;
+        let thumbImgPath = c.thumbnail;
+        let thumbImg = thumbImgPath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//Thumbnails//")[1];
+        let thumbImgSrc = "assets/savedImages//Thumbnails//" + thumbImg;
+        console.log(thumbImgSrc);
+        $.ajax({
+            url: cfbaseURL+'car?brand='+brand+"",
+            method: 'get',
+            dataType: 'json',
+            success: function (resp) {
+                let vCard = `<div class="card" style="width: 18rem;">
+                    <img src="${thumbImgSrc}" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i>${brand}</i></h5>
+                        <p class="card-text">Rate(Rs) : ${resp.data.dailyRate}/day<br>Free km : 100/day<br><br>Rate(Rs) : ${resp.data.monthlyRate}/month<br>Free km : 2400/month<br></p>
+                        <button type="button" class="btn btn-danger"><a href="rentPage.html" style="text-decoration: none; color: white">Rent For Hire</a></button>
+                    </div>
+                </div>`;
+
+                $('#vfSection').append(vCard);
+
+            }
+        });
+    }
+}

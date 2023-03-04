@@ -14,4 +14,6 @@ public interface CarDetailService {
     public ArrayList<VehicleDTO> getAllCars();
 
     public void uploadCarImages(String frontImgPath, String sideImgPath, String backImgPath, String interiorImgPath, String id);
+
+    public VehicleDTO getVehicleInfo(String brand);
 }

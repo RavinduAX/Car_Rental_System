@@ -65,10 +65,18 @@ public class CarDetailController {
         return new ResponseUtil("200", dto.getRegNo()+" Updated", null);
     }
 
-    @DeleteMapping
-    public ResponseUtil deleteCustomer(String id){
+    @DeleteMapping(params = "id")
+    public ResponseUtil deleteCar(String id){
         service.deleteCar(id);
         return new ResponseUtil("200", id+" Deleted", null);
     }
+
+    @GetMapping(params = "brand")
+    public ResponseUtil getCarInfo(String brand){
+        VehicleDTO dto = service.getVehicleInfo(brand);
+        return new ResponseUtil("200", "Sucess", dto);
+    }
+
+
 
 }

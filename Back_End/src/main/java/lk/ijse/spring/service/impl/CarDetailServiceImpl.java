@@ -60,4 +60,12 @@ public class CarDetailServiceImpl implements CarDetailService {
         }
         repo.updateCarFilePaths(frontImgPath, sideImgPath, backImgPath, interiorImgPath, id);
     }
+
+    @Override
+    public VehicleDTO getVehicleInfo(String brand) {
+        if(!repo.existsByBrand(brand)){
+            throw new RuntimeException("Car "+ brand +" Not Found");
+        }
+        return mapper.map(repo.getVehicleInfo(brand), VehicleDTO.class);
+    }
 }
