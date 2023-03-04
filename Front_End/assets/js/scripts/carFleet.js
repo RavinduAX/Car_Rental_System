@@ -107,18 +107,25 @@ $('#vfbtnDelete').click(function () {
 
 // // set vehicle fleet
 function setVFleet(vdata) {
+    $('#vfDiv1').empty();
+    $('#vfDiv2').empty();
+    $('#vfDiv3').empty();
+
     for (let c of vdata) {
         let brand = c.name;
         let thumbImgPath = c.thumbnail;
         let thumbImg = thumbImgPath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//Thumbnails//")[1];
         let thumbImgSrc = "assets/savedImages//Thumbnails//" + thumbImg;
-        console.log(thumbImgSrc);
-        $.ajax({
-            url: cfbaseURL+'car?brand='+brand+"",
-            method: 'get',
-            dataType: 'json',
-            success: function (resp) {
-                let vCard = `<div class="card" style="width: 18rem;">
+        let type = c.type;
+
+        if (type === 'general'){
+            $('#vfDiv1txt').text("General Cars");
+            $.ajax({
+                url: cfbaseURL+'car?brand='+brand+"",
+                method: 'get',
+                dataType: 'json',
+                success: function (resp) {
+                    let vCard = `<div class="card" style="width: 18rem;">
                     <img src="${thumbImgSrc}" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title"><i>${brand}</i></h5>
@@ -127,9 +134,51 @@ function setVFleet(vdata) {
                     </div>
                 </div>`;
 
-                $('#vfSection').append(vCard);
+                    $('#vfDiv1').append(vCard);
+                }
+            });
+        }else if (type === 'premium'){
+            $('#vfDiv2txt').text("Premium Cars");
 
-            }
-        });
+            $.ajax({
+                url: cfbaseURL+'car?brand='+brand+"",
+                method: 'get',
+                dataType: 'json',
+                success: function (resp) {
+                    let vCard = `<div class="card" style="width: 18rem;">
+                    <img src="${thumbImgSrc}" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i>${brand}</i></h5>
+                        <p class="card-text">Rate(Rs) : ${resp.data.dailyRate}/day<br>Free km : 100/day<br><br>Rate(Rs) : ${resp.data.monthlyRate}/month<br>Free km : 2400/month<br></p>
+                        <button type="button" class="btn btn-danger"><a href="rentPage.html" style="text-decoration: none; color: white">Rent For Hire</a></button>
+                    </div>
+                </div>`;
+
+                    $('#vfDiv2').append(vCard);
+                }
+            });
+        }else if (type === 'luxury'){
+            $('#vfDiv3txt').text("Luxury Cars");
+
+            $.ajax({
+                url: cfbaseURL+'car?brand='+brand+"",
+                method: 'get',
+                dataType: 'json',
+                success: function (resp) {
+                    let vCard = `<div class="card" style="width: 18rem;">
+                    <img src="${thumbImgSrc}" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i>${brand}</i></h5>
+                        <p class="card-text">Rate(Rs) : ${resp.data.dailyRate}/day<br>Free km : 100/day<br><br>Rate(Rs) : ${resp.data.monthlyRate}/month<br>Free km : 2400/month<br></p>
+                        <button type="button" class="btn btn-danger"><a href="rentPage.html" style="text-decoration: none; color: white">Rent For Hire</a></button>
+                    </div>
+                </div>`;
+
+                    $('#vfDiv3').append(vCard);
+                }
+            });
+        }
+
+
     }
 }
