@@ -1,7 +1,7 @@
 let cfbaseURL = "http://localhost:8080/Back_End_war/"
 
 loadAllfCars();
-// setVFleet();
+bindRentBtnEvent();
 
 //save
 $('#vfbtnSave').click(function () {
@@ -10,13 +10,13 @@ $('#vfbtnSave').click(function () {
     let vfcImg = $('#vftxtThumbnail').val();
 
     let fleet = {
-        name:vfcName,
-        type:vfcType,
-        thumbnail:vfcImg
+        name: vfcName,
+        type: vfcType,
+        thumbnail: vfcImg
     }
 
     $.ajax({
-        url: cfbaseURL+'fleet',
+        url: cfbaseURL + 'fleet',
         method: 'post',
         contentType: 'application/json',
         data: JSON.stringify(fleet),
@@ -25,7 +25,7 @@ $('#vfbtnSave').click(function () {
             uploadThumbnailImg(vfcName);
             alert(resp.message);
             loadAllfCars();
-            cfSetTextFieldValues("","","");
+            cfSetTextFieldValues("", "", "");
         }
     });
 });
@@ -52,19 +52,19 @@ function uploadThumbnailImg(names) {
 }
 
 //getall
-function loadAllfCars(){
+function loadAllfCars() {
     $('#vftblVehicle').empty();
     $.ajax({
-        url: cfbaseURL+'fleet',
+        url: cfbaseURL + 'fleet',
         method: 'get',
         dataType: 'json',
         success: function (resp) {
             setVFleet(resp.data);
             for (let car of resp.data) {
-                var row = '<tr><td>'+car.name+'</td><td>'+car.type+'</td><td>'+car.thumbnail+'</td></tr>'
+                var row = '<tr><td>' + car.name + '</td><td>' + car.type + '</td><td>' + car.thumbnail + '</td></tr>'
                 $('#vftblVehicle').append(row);
                 //fill cardetail brand combobox
-                var opt = '<option>'+car.name+'</option>'
+                var opt = '<option>' + car.name + '</option>'
                 $(opt).attr('value', car.name);
                 $('#crstxtBrand').append(opt);
                 cfBindRowClickEvents();
@@ -73,7 +73,7 @@ function loadAllfCars(){
     });
 }
 
-function cfBindRowClickEvents(){
+function cfBindRowClickEvents() {
     $('#vftblVehicle>tr').click(function () {
         let cfName = $(this).children(':eq(0)').text();
         let cfType = $(this).children(':eq(1)').text();
@@ -83,7 +83,7 @@ function cfBindRowClickEvents(){
     });
 }
 
-function cfSetTextFieldValues(cfName, cfType, cfThumb){
+function cfSetTextFieldValues(cfName, cfType, cfThumb) {
     $('#vftxtCarName').val(cfName);
     $('#vftxtCarType').val(cfType);
     $('#vftxtThumbnail').val(cfThumb);
@@ -94,11 +94,11 @@ $('#vfbtnDelete').click(function () {
     let vfCarName = $('#vftxtCarName').val();
 
     $.ajax({
-        url: cfbaseURL+'fleet?name='+vfCarName+"",
+        url: cfbaseURL + 'fleet?name=' + vfCarName + "",
         method: 'delete',
         success: function () {
             loadAllfCars();
-            cfSetTextFieldValues("","","");
+            cfSetTextFieldValues("", "", "");
         }
     });
 
@@ -118,10 +118,10 @@ function setVFleet(vdata) {
         let thumbImgSrc = "assets/savedImages//Thumbnails//" + thumbImg;
         let type = c.type;
 
-        if (type === 'general'){
+        if (type === 'general') {
             $('#vfDiv1txt').text("General Cars");
             $.ajax({
-                url: cfbaseURL+'car?brand='+brand+"",
+                url: cfbaseURL + 'car?brand=' + brand + "",
                 method: 'get',
                 dataType: 'json',
                 success: function (resp) {
@@ -130,18 +130,17 @@ function setVFleet(vdata) {
                     <div class="card-body text-center">
                         <h5 class="card-title"><i>${brand}</i></h5>
                         <p class="card-text">Rate(Rs) : ${resp.data.dailyRate}/day<br>Free km : 100/day<br><br>Rate(Rs) : ${resp.data.monthlyRate}/month<br>Free km : 2400/month<br></p>
-                        <button type="button" class="btn btn-danger"><a href="rentPage.html" style="text-decoration: none; color: white">Rent For Hire</a></button>
+                        <button type="button" class="btn btn-danger"><a href="#" data-bs-target="#custMustLogin" data-bs-toggle="modal" style="text-decoration: none; color: white">Rent For Hire</a></button>
                     </div>
                 </div>`;
-
                     $('#vfDiv1').append(vCard);
                 }
             });
-        }else if (type === 'premium'){
+        } else if (type === 'premium') {
             $('#vfDiv2txt').text("Premium Cars");
 
             $.ajax({
-                url: cfbaseURL+'car?brand='+brand+"",
+                url: cfbaseURL + 'car?brand=' + brand + "",
                 method: 'get',
                 dataType: 'json',
                 success: function (resp) {
@@ -150,18 +149,18 @@ function setVFleet(vdata) {
                     <div class="card-body text-center">
                         <h5 class="card-title"><i>${brand}</i></h5>
                         <p class="card-text">Rate(Rs) : ${resp.data.dailyRate}/day<br>Free km : 100/day<br><br>Rate(Rs) : ${resp.data.monthlyRate}/month<br>Free km : 2400/month<br></p>
-                        <button type="button" class="btn btn-danger"><a href="rentPage.html" style="text-decoration: none; color: white">Rent For Hire</a></button>
+                        <button type="button" class="btn btn-danger"><a href="#" data-bs-target="#custMustLogin" data-bs-toggle="modal" style="text-decoration: none; color: white">Rent For Hire</a></button>
                     </div>
                 </div>`;
 
                     $('#vfDiv2').append(vCard);
                 }
             });
-        }else if (type === 'luxury'){
+        } else if (type === 'luxury') {
             $('#vfDiv3txt').text("Luxury Cars");
 
             $.ajax({
-                url: cfbaseURL+'car?brand='+brand+"",
+                url: cfbaseURL + 'car?brand=' + brand + "",
                 method: 'get',
                 dataType: 'json',
                 success: function (resp) {
@@ -170,7 +169,7 @@ function setVFleet(vdata) {
                     <div class="card-body text-center">
                         <h5 class="card-title"><i>${brand}</i></h5>
                         <p class="card-text">Rate(Rs) : ${resp.data.dailyRate}/day<br>Free km : 100/day<br><br>Rate(Rs) : ${resp.data.monthlyRate}/month<br>Free km : 2400/month<br></p>
-                        <button type="button" class="btn btn-danger"><a href="rentPage.html" style="text-decoration: none; color: white">Rent For Hire</a></button>
+                        <button type="button" class="btn btn-danger"><a href="#" data-bs-target="#custMustLogin" data-bs-toggle="modal" style="text-decoration: none; color: white">Rent For Hire</a></button>       
                     </div>
                 </div>`;
 
@@ -178,7 +177,12 @@ function setVFleet(vdata) {
                 }
             });
         }
-
-
     }
+}
+
+function bindRentBtnEvent() {
+    $('#vfSection div div div').click(function () {
+        console.log("k")
+    });
+
 }
