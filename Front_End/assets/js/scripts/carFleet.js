@@ -1,7 +1,6 @@
 let cfbaseURL = "http://localhost:8080/Back_End_war/"
 
 loadAllfCars();
-bindRentBtnEvent();
 
 //save
 $('#vfbtnSave').click(function () {
@@ -180,9 +179,4 @@ function setVFleet(vdata) {
     }
 }
 
-function bindRentBtnEvent() {
-    $('#vfSection div div div').click(function () {
-        console.log("k")
-    });
 
-}
