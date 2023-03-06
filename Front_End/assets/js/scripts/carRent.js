@@ -71,6 +71,28 @@ $("#prtxtSelectCar").change(function () {
 
             $('#prlstDetail2').append(detail2);
 
+            let frontPath = car.frontImg;
+            let frontImg = frontPath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//cars//")[1];
+            let frontImgSrc = "assets/savedImages//cars//" + frontImg;
+
+            let sidePath = car.sideImg;
+            let sideImg = sidePath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//cars//")[1];
+            let sideImgSrc = "assets/savedImages//cars//" + sideImg;
+
+            let backPath = car.backImg;
+            let backImg = backPath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//cars//")[1];
+            let backImgSrc = "assets/savedImages//cars//" + backImg;
+
+            let intrPath = car.interiorImg;
+            let intrImg = intrPath.split("D:\\IJSE GDSE\\Projects\\Car Rental System\\Front_End\\assets\\savedImages//cars//")[1];
+            let intrImgSrc = "assets/savedImages//cars//" + intrImg;
+
+            $('#primgFront').attr('src',frontImgSrc);
+            $('#primgSide').attr('src',sideImgSrc);
+            $('#primgBack').attr('src',backImgSrc);
+            $('#primgInterior').attr('src',intrImgSrc);
+
+
         }
     })
 });
