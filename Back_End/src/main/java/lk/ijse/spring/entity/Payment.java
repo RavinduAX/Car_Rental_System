@@ -23,6 +23,8 @@ public class Payment {
     @JoinColumn(name = "nicNo", referencedColumnName = "nicNo")
     private Customer customer;
 
-    @OneToOne(mappedBy = "payment")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "rentalId", referencedColumnName = "rentalId")
     private Rental rental;
+
 }

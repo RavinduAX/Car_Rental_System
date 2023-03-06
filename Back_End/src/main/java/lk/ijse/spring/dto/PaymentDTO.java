@@ -15,4 +15,5 @@ public class PaymentDTO {
     private int rentalFee;
 
     private String nicNo;
+    private String rentalId;
 }

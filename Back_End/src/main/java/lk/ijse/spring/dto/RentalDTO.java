@@ -17,6 +17,7 @@ public class RentalDTO {
     private String returnDate;
     private String returnTime;
     private String status;
+    private String bankSlip;
 
     private String nicNo;
     private String regNo;

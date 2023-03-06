@@ -22,6 +22,7 @@ public class Rental {
     private String returnDate;
     private String returnTime;
     private String status;
+    private String bankSlip;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "nicNo", referencedColumnName = "nicNo")
@@ -35,8 +36,7 @@ public class Rental {
     @JoinColumn(name="licenseNo", referencedColumnName = "licenseNo")
     private Driver driver;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "paymentId", referencedColumnName = "paymentId")
+    @OneToOne(mappedBy = "rental")
     private Payment payment;
 
 }

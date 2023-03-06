@@ -96,3 +96,63 @@ $("#prtxtSelectCar").change(function () {
         }
     })
 });
+
+$('#prbtnSubmit').click(function () {
+
+    let pLocation = $('#prtxtPickupLocation').val();
+    let pDate = $('#prtxtPickupDate').val();
+    let pTime = $('#prtxtPickupTime').val();
+    let rDate = $('#prtxtReturnDate').val();
+    let rTime = $('#prtxtReturnTime').val();
+
+    let status = 'Pending';
+    let regNo = $('#prtxtRegNo').val();
+
+    let nicNo = getNic($('#custPtxtProfile').text());
+
+    let radioValue = $("input[name='selectD']:checked").val();
+    let licenseNo;
+    if(radioValue === 'withD'){
+        licenseNo = 'NoDriver';
+    }else if(radioValue === 'withoutD'){
+        licenseNo = getDriver();
+    }
+
+
+
+});
+
+function getNic(name) {
+    $.ajax({
+        url: crntbaseURL + 'customer',
+        method: 'get',
+        dataType: 'json',
+        success: function (resp) {
+
+        }
+    });
+}
+
+function getDriver(){
+
+}
+
+function uploadBankSlip(id){
+    var fileObjectSlip = $('#prtxtUploadSlip')[0].files[0];
+    var fileNameSlip = id + "-slip-" + $('#prtxtUploadSlip')[0].files[0].name;
+
+    var data = new FormData();
+    data.append("bankSlip", fileObjectSlip, fileNameSlip);
+
+    $.ajax({
+        url: crntbaseURL + "rent/up/" + id,
+        method: "PUT",
+        async: true,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (res) {
+            console.log("Uploaded");
+        }
+    });
+}
