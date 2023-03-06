@@ -74,7 +74,7 @@ public class CarDetailController {
     @GetMapping(params = "brand")
     public ResponseUtil getCarInfo(String brand){
         VehicleDTO dto = service.getVehicleInfo(brand);
-        return new ResponseUtil("200", "Sucess", dto);
+        return new ResponseUtil("200", "Success", dto);
     }
 
 

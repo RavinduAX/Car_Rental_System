@@ -211,62 +211,66 @@
         <div class="d-flex">
             <!--        form-->
             <form style="position: relative; left: 40px; top: 35px; color: white; width: 415px; height: 550px">
-                <h4 style="margin-bottom: 16px">Rental ID : #00001</h4>
+                <h4 id="prtxtRentalId" style="margin-bottom: 16px">Rental ID : #00001</h4>
                 <div class="d-flex" style="margin-bottom: 12px">
                     <div style="margin-right: 25px; position:relative">
-                        <label for="exampleInputEmail1" class="form-label">Select A Car</label>
-                        <select class="form-select text-dark bg-dark-subtle" style="width: 196px; border: 0">
-
+                        <label for="prtxtSelectCar" class="form-label">Select A Car</label>
+                        <select id="prtxtSelectCar" class="form-select text-dark bg-dark-subtle" style="width: 196px; border: 0">
                         </select>
                     </div>
                     <div class="col">
-                        <label for="exampleInputEmail1" class="form-label">PickUp Location</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="prtxtRegNo" class="form-label">Reg No</label>
+                        <input style="height: 35px" type="text" class="form-control" id="prtxtRegNo" readonly>
                     </div>
+                </div>
+                <div class="col" style="margin-bottom: 12px">
+                    <label for="prtxtPickUpLocation" class="form-label">PickUp Location</label>
+                    <input type="text" class="form-control" id="prtxtPickupLocation">
                 </div>
                 <div class="row" style="margin-bottom: 12px">
                     <div class="col">
-                        <label for="exampleInputEmail1" class="form-label">PickUp Date</label>
-                        <input type="date" class="form-control" aria-label="First name">
+                        <label for="prtxtPickupDate" class="form-label">PickUp Date</label>
+                        <input id="prtxtPickupDate" type="date" class="form-control">
                     </div>
                     <div class="col">
-                        <label for="exampleInputEmail1" class="form-label">PickUp Time</label>
-                        <input type="time" class="form-control" aria-label="Last name">
+                        <label for="prtxtPickupTime" class="form-label">PickUp Time</label>
+                        <input id="prtxtPickupTime" type="time" class="form-control">
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 20px">
                     <div class="col">
-                        <label for="exampleInputEmail1" class="form-label">Return Date</label>
-                        <input type="date" class="form-control" aria-label="Return Date">
+                        <label for="prtxtReturnDate" class="form-label">Return Date</label>
+                        <input id="prtxtReturnDate" type="date" class="form-control">
                     </div>
                     <div class="col">
-                        <label for="exampleInputEmail1" class="form-label">Return Time</label>
-                        <input type="time" class="form-control" aria-label="Return Time">
+                        <label for="prtxtReturnTime" class="form-label">Return Time</label>
+                        <input id="prtxtReturnTime" type="time" class="form-control">
                     </div>
                 </div>
                 <div class="col d-flex" style="margin-bottom: 20px">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">With Driver</label>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="prtxtWithD" checked>
+                        <label class="form-check-label" for="prtxtWithD">With Driver</label>
                     </div>
                     <div class="form-check" style="margin-left: 18px">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">Without Driver</label>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="prtxtWithOutD">
+                        <label class="form-check-label" for="prtxtWithOutD">Without Driver</label>
                     </div>
                 </div>
 
-                <div style="position: absolute; right: -95px; bottom: 34px">
+                <div style="position: absolute; right: -95px; bottom: -42px">
                     <label for="exampleInputEmail1" class="form-label">Bank details for Loss Damage Waiver</label>
                     <p>Bank : BOC - Panadura Branch<br>Account no : 215747856458<br>Acc Name : Easy Car Rental Pvt. Ltd.<br><br><span class="text-danger">*</span>For Remark USE RENTAL ID</p>
                 </div>
                 <div style="margin-bottom: 12px">
-                    <label for="exampleInputEmail1" class="form-label"><h5><span class="text-danger">***</span>Loss Damage Waiver : Rs.10000.00</h5></label>
+                    <label id="prtxtLossDamage" class="form-label"><h5><span class="text-danger">***</span>Loss Damage Waiver : Rs.-.00</h5></label>
+<!--                    <h5 id="prtxtLossDamage"><span class="text-danger">***</span>Loss Damage Waiver : Rs.-.00</h5>-->
                 </div>
                 <div style="width: 196px">
-                    <label for="exampleInputEmail1" class="form-label">Pay and upload slip</label>
-                    <input type="File" class="form-control" aria-label="Return Time<">
+                    <label for="prtxtUploadSlip" class="form-label">Pay and upload slip</label>
+                    <input id="prtxtUploadSlip" type="File" class="form-control">
                 </div>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="position: relative; top: 47px; left: 9px; width: 180px; height: 45px; border-radius: 30px">Submit</button>
+                <button id="prbtnSubmit" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="position: relative; top: 47px; left: 9px; width: 180px; height: 45px; border-radius: 30px">Submit</button>
             </form>
 
             <!--        detail-->
@@ -283,7 +287,7 @@
                         <button aria-label="Slide 4" data-bs-slide-to="3" data-bs-target="#carouselExampleIndicators"
                                 type="button"></button>
                     </div>
-                    <div class="carousel-inner">
+                    <div id="primgCarousel" class="carousel-inner">
                         <div class="carousel-item active">
                             <img alt="..." class="d-block w-100" src="assets/img/peroduaAxia/front.jpg">
                         </div>
@@ -309,21 +313,21 @@
                     </button>
                 </div>
                 <div style="position: relative; top: 30px; left: 108px; width: max-content">
-                    <h3 class="text-white" style="margin-bottom: 16px">Perodua Axio</h3>
+                    <h3 id="prtxtCarName" class="text-white" style="margin-bottom: 16px">Perodua Axio</h3>
                     <div class="d-flex text-white">
-                        <ul style="list-style: none; padding: 0">
-                            <li>Brand : Toyota</li>
-                            <li>No of passengers : 4</li>
-                            <li>Transmission Type : Auto</li>
-                            <li>Fuel Type : Petrol</li>
-                            <li>Colour : Silver</li>
+                        <ul id="prlstDetail1" style="list-style: none; padding: 0">
+                            <li>Brand : -</li>
+                            <li>No of passengers : -</li>
+                            <li>Transmission Type : -</li>
+                            <li>Fuel Type : -</li>
+                            <li>Colour : -</li>
                         </ul>
-                        <ul style="list-style: none">
-                            <li>Daily Rate : Rs.2500</li>
-                            <li>Free km : 100km/day</li>
-                            <li>Monthly Rate : Rs.64350</li>
-                            <li>Free km : 2400km/month</li>
-                            <li>Extra km : 30/km</li>
+                        <ul id="prlstDetail2" style="list-style: none">
+                            <li>Daily Rate : Rs.-</li>
+                            <li>Free km : -km/day</li>
+                            <li>Monthly Rate : Rs.-</li>
+                            <li>Free km : -km/month</li>
+                            <li>Extra km : -/km</li>
                         </ul>
                     </div>
                 </div>
