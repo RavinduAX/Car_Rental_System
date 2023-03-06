@@ -55,10 +55,11 @@
             <div>
                 <ul class="navbar-nav m-1">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warning link-dark" href="#custPDashboardSec" role="button">Profile</a>
+                    <!--<a id="custPbtnProfile" class="nav-link btn btn-warning link-dark" href="#custPDashboardSec" role="button">Profile</a>-->
+                        <h6 id="custPtxtProfile" style="margin-bottom: 0; margin-top: 4px; width: 135px; padding: 8px; border-radius: 10px" class="text-dark text-center bg-warning">Profile</h6>
                     </li>
                     <li class="nav-item ms-2">
-                        <a class="nav-link btn btn-danger link-dark" href="index.html" role="button">Logout</a>
+                        <a id="custPbtnLgOut" class="nav-link btn btn-danger link-dark" href="index.html" role="button">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -211,16 +212,12 @@
             <!--        form-->
             <form style="position: relative; left: 40px; top: 35px; color: white; width: 415px; height: 550px">
                 <h4 style="margin-bottom: 16px">Rental ID : #00001</h4>
-                <div class="row" style="margin-bottom: 12px">
-                    <div class="dropdown" style="width: max-content; position:relative; top: 17px">
-                        <button style="width:195px; font-size: 19px" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select A Car&emsp;
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                <div class="d-flex" style="margin-bottom: 12px">
+                    <div style="margin-right: 25px; position:relative">
+                        <label for="exampleInputEmail1" class="form-label">Select A Car</label>
+                        <select class="form-select text-dark bg-dark-subtle" style="width: 196px; border: 0">
+
+                        </select>
                     </div>
                     <div class="col">
                         <label for="exampleInputEmail1" class="form-label">PickUp Location</label>
@@ -369,5 +366,6 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/custPanelSpa.js"></script>
+<script src="assets/js/scripts/carRent.js"></script>
 </body>
 </html>

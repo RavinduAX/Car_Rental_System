@@ -52,19 +52,6 @@
 </header>
 <main class="position-relative">
     <h2 class="text-info text-bg-light bg-opacity-25" style="padding: 6px 6px 6px 135px">Vehicle Fleet</h2>
-    <div class="dropdown position-absolute" style="right: 16px; top: 6px">
-        <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">
-            Sort By
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">No of passengers</a></li>
-            <li><a class="dropdown-item" href="#">Transmission Type</a></li>
-            <li><a class="dropdown-item" href="#">Brand</a></li>
-            <li><a class="dropdown-item" href="#">Type</a></li>
-            <li><a class="dropdown-item" href="#">Price</a></li>
-            <li><a class="dropdown-item" href="#">Fuel Type</a></li>
-        </ul>
-    </div>
     <!--Fleet-->
     <section id="vfSection" style="width: 100%">
 
@@ -102,17 +89,17 @@
                         <form style="padding: 0 60px 30px 60px">
                             <div class="mb-3">
                                 <label class="form-label" for="exampleInputEmail1" style="margin: 0;">UserName</label>
-                                <input class="form-control" id="exampleInputEmail1" style="border: 1px solid grey;"
+                                <input class="form-control" id="vftxtCustLoginUsrNm" style="border: 1px solid grey;"
                                        type="text">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="exampleInputPassword1"
                                        style="margin: 0;">Password</label>
-                                <input class="form-control" id="exampleInputPassword1" style="border: 1px solid grey;"
+                                <input class="form-control" id="vftxtCusLoginPswd" style="border: 1px solid grey;"
                                        type="password">
                             </div>
                         </form>
-                        <button class="btn text-light position-relative" style="background-color: #3B5998!important; width: 185px; height: 41px; border-radius: 30px!important; margin: 0 0 12px 124px;"
+                        <button id="vfbtnCusLogin" class="btn text-light position-relative" style="background-color: #3B5998!important; width: 185px; height: 41px; border-radius: 30px!important; margin: 0 0 12px 124px;"
                                 type="button">
                             <a href="customerPanel.html" style="text-decoration: none; color: white;">Login</a></button>
                         <h5 class="text-center" style="margin-bottom: 2px">or</h5>
@@ -279,9 +266,6 @@
     <div class="modal fade" id="custMustLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-<!--                <div class="modal-header">-->
-<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--                </div>-->
                 <div class="modal-body bg-info-subtle text-center" style="border-radius: 10px">
                     <h3>You Must Login First</h3><br>
                     <h5>Log for place rent.</h5>

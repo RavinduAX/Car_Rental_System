@@ -168,7 +168,7 @@ function setVFleet(vdata) {
                     <div class="card-body text-center">
                         <h5 class="card-title"><i>${brand}</i></h5>
                         <p class="card-text">Rate(Rs) : ${resp.data.dailyRate}/day<br>Free km : 100/day<br><br>Rate(Rs) : ${resp.data.monthlyRate}/month<br>Free km : 2400/month<br></p>
-                        <button type="button" class="btn btn-danger"><a href="#" data-bs-target="#custMustLogin" data-bs-toggle="modal" style="text-decoration: none; color: white">Rent For Hire</a></button>       
+                        <button type="button" class="btn btn-danger"><a href="#" data-bs-target="#custMustLogin" data-bs-toggle="modal" style="text-decoration: none; color: white">Rent For Hire</a></button>    
                     </div>
                 </div>`;
 
@@ -178,5 +178,13 @@ function setVFleet(vdata) {
         }
     }
 }
+
+$('#vfbtnCusLogin').click(function () {
+    let usrNme = $('#vftxtCustLoginUsrNm').val();
+    localStorage.setItem("userName", usrNme);
+});
+
+
+
 
 
