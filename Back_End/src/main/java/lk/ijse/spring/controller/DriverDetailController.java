@@ -24,7 +24,7 @@ public class DriverDetailController {
     @GetMapping
     public ResponseUtil getAllDrier(){
         ArrayList<DriverDTO> all = service.getAllDrivers();
-        return new ResponseUtil("200", "Sucess", all);
+        return new ResponseUtil("200", "Success", all);
     }
 
     @PutMapping
@@ -38,6 +38,9 @@ public class DriverDetailController {
         service.deleteDriver(id);
         return new ResponseUtil("200", id+" Deleted", null);
     }
+
+    @GetMapping
+
 
 
 }

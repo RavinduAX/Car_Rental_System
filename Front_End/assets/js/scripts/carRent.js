@@ -124,17 +124,24 @@ $('#prbtnSubmit').click(function () {
 
 function getNic(name) {
     $.ajax({
-        url: crntbaseURL + 'customer',
+        url: crntbaseURL + 'customer?name='+name+"",
         method: 'get',
         dataType: 'json',
         success: function (resp) {
-
+            return resp.data.nicNo;
         }
     });
 }
 
 function getDriver(){
-
+    $.ajax({
+        url: crntbaseURL + 'driver',
+        method: 'get',
+        dataType: 'json',
+        success: function (resp) {
+            return resp.data.licenseNo;
+        }
+    });
 }
 
 function uploadBankSlip(id){

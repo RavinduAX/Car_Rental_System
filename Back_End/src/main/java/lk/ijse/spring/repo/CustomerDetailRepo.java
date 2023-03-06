@@ -15,4 +15,8 @@ public interface CustomerDetailRepo extends JpaRepository<Customer, String> {
     void updateCustomerFilePaths(String nicImg, String licenceImg, String nicNo);
 
     Customer findCustomerByNicNo(String nicNo);
+
+    Boolean existsByName(String name);
+
+    Customer findCustomerByName(String name);
 }

@@ -16,4 +16,6 @@ public interface CustomerDetailService {
     public void uploadCustomerImages(String nicImgPath, String licenceImgPath, String id);
 
     public CustomerDTO searchAndLoadImages(String id);
+
+    public CustomerDTO getNicByName(String name);
 }

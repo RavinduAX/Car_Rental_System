@@ -73,4 +73,10 @@ public class CustomerDetailController {
         return new ResponseUtil("200", "Success", dto);
     }
 
+    @GetMapping(params = "name")
+    public ResponseUtil getNicByName(String name){
+        CustomerDTO dto = service.getNicByName(name);
+        return new ResponseUtil("200", "Success", dto);
+    }
+
 }
