@@ -5,10 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -40,4 +39,7 @@ public class Vehicle {
 
     @OneToOne(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Rental rental;
+
+//    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
+//    private List<Rental> rentals = new ArrayList<Rental>();
 }

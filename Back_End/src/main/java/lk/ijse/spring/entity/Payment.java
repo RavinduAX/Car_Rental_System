@@ -27,4 +27,12 @@ public class Payment {
     @JoinColumn(name = "rentalId", referencedColumnName = "rentalId")
     private Rental rental;
 
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "nicNo", referencedColumnName = "nicNo")
+//    private Customer customer;
+//
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "rentalId", referencedColumnName = "rentalId")
+//    private Rental rental;
+
 }

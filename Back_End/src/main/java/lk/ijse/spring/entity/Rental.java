@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -38,5 +40,20 @@ public class Rental {
 
     @OneToOne(mappedBy = "rental", cascade = CascadeType.ALL)
     private Payment payment;
+
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "nicNo", referencedColumnName = "nicNo")
+//    private Customer customer;
+//
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "regNo", referencedColumnName = "regNo")
+//    private Vehicle vehicle;
+//
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name="licenseNo", referencedColumnName = "licenseNo")
+//    private Driver driver;
+//
+//    @OneToMany(mappedBy = "rental", cascade = CascadeType.ALL)
+//    private List<Payment> payments = new ArrayList<Payment>();
 
 }

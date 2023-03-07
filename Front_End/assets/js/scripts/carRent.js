@@ -108,17 +108,22 @@ $('#prbtnSubmit').click(function () {
     let status = 'Pending';
     let regNo = $('#prtxtRegNo').val();
 
-    let nicNo = getNic($('#custPtxtProfile').text());
+    // let nicNo = getNic($('#custPtxtProfile').text());
+    // console.log(nicNo)
 
-    let radioValue = $("input[name='selectD']:checked").val();
-    let licenseNo;
-    if(radioValue === 'withoutD'){
-        licenseNo = 'NoDriver';
-    }else if(radioValue === 'withD'){
-        licenseNo = getDriver();
-    }
+    let licenseNo = 'L001';
+    let nicNo = 'n001';
 
-    let bankSlip = $('#prtxtUploadSlip').val();
+    // let radioValue = $("input[name='selectD']:checked").val();
+    // let licenseNo;
+    // if(radioValue === 'withoutD'){
+    //     licenseNo = 'NoDriver';
+    // }else if(radioValue === 'withD'){
+    //     // licenseNo = getDriver();
+    //     // console.log(licenseNo);
+    // }
+
+    // let bankSlip = $('#prtxtUploadSlip').val();
 
     let rental = {
         rentalId: rentalId,
@@ -132,7 +137,6 @@ $('#prbtnSubmit').click(function () {
         licenseNo: licenseNo,
         regNo: regNo
     }
-
 
     $.ajax({
         url: crntbaseURL+'rent',
@@ -152,29 +156,29 @@ $('#prbtnSubmit').click(function () {
 
 });
 
-
-
-function getNic(name) {
-    $.ajax({
-        url: crntbaseURL + 'customer?name='+name+"",
-        method: 'get',
-        dataType: 'json',
-        success: function (resp) {
-            return resp.data.nicNo;
-        }
-    });
-}
-
-function getDriver(){
-    $.ajax({
-        url: crntbaseURL + 'driver/getd',
-        method: 'get',
-        dataType: 'json',
-        success: function (resp) {
-            return resp.data.licenseNo;
-        }
-    });
-}
+// function getNic(name) {
+//     $.ajax({
+//         url: crntbaseURL + 'customer?name='+name+"",
+//         method: 'get',
+//         dataType: 'json',
+//         success: function (resp) {
+//             console.log(resp.data.nicNo)
+//             return resp.data.nicNo;
+//         }
+//     });
+// }
+//
+// function getDriver(){
+//     $.ajax({
+//         url: crntbaseURL + 'driver/getd',
+//         method: 'get',
+//         dataType: 'json',
+//         success: function (resp) {
+//             console.log(resp.data.licenseNo)
+//             return resp.data.licenseNo;
+//         }
+//     });
+// }
 
 function uploadBankSlip(id){
     var fileObjectSlip = $('#prtxtUploadSlip')[0].files[0];
