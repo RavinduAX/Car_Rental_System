@@ -22,5 +22,4 @@ public class RentalDTO {
     private String nicNo;
     private String regNo;
     private String licenseNo;
-    private String paymentId;
 }

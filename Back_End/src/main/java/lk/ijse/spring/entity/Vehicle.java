@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -37,6 +38,6 @@ public class Vehicle {
     private String backImg;
     private String interiorImg;
 
-    @OneToOne(mappedBy = "vehicle")
+    @OneToOne(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Rental rental;
 }

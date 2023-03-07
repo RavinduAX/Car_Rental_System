@@ -14,4 +14,5 @@ public interface RentService {
 
     public ArrayList<RentalDTO> getRent();
 
+    void uploadBankSlip(String bankSlipPath, String id);
 }

@@ -38,7 +38,7 @@ public class DriverDetailServiceImpl implements DriverDetailService {
     @Override
     public void deleteDriver(String licenseNo) {
         if(!repo.existsById(licenseNo)){
-            throw new RuntimeException("Customer "+licenseNo+" Not Available To Delete");
+            throw new RuntimeException("Driver "+licenseNo+" Not Available To Delete");
         }
         repo.deleteById(licenseNo);
     }
@@ -46,5 +46,10 @@ public class DriverDetailServiceImpl implements DriverDetailService {
     public ArrayList<DriverDTO> getAllDrivers() {
         List<Driver> all = repo.findAll();
         return mapper.map(all, new TypeToken<ArrayList<DriverDTO>>() {}.getType());
+    }
+
+    @Override
+    public DriverDTO getADriver() {
+        return mapper.map(repo.getADriver(), DriverDTO.class);
     }
 }

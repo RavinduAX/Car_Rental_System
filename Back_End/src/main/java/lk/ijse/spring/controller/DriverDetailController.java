@@ -39,8 +39,11 @@ public class DriverDetailController {
         return new ResponseUtil("200", id+" Deleted", null);
     }
 
-    @GetMapping
-
+    @GetMapping(path = "/getd")
+    public ResponseUtil getADriver(){
+        DriverDTO dto = service.getADriver();
+        return new ResponseUtil("200","Success", dto);
+    }
 
 
 }

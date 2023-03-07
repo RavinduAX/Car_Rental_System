@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -25,6 +26,6 @@ public class Driver {
     private int contactNo;
     private String status;
 
-    @OneToOne(mappedBy = "driver")
+    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
     private Rental rental;
 }

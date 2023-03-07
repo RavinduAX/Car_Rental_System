@@ -98,7 +98,7 @@ $("#prtxtSelectCar").change(function () {
 });
 
 $('#prbtnSubmit').click(function () {
-
+    let rentalId = $('#prtxtRentalId').text();
     let pLocation = $('#prtxtPickupLocation').val();
     let pDate = $('#prtxtPickupDate').val();
     let pTime = $('#prtxtPickupTime').val();
@@ -112,15 +112,47 @@ $('#prbtnSubmit').click(function () {
 
     let radioValue = $("input[name='selectD']:checked").val();
     let licenseNo;
-    if(radioValue === 'withD'){
+    if(radioValue === 'withoutD'){
         licenseNo = 'NoDriver';
-    }else if(radioValue === 'withoutD'){
+    }else if(radioValue === 'withD'){
         licenseNo = getDriver();
     }
 
+    let bankSlip = $('#prtxtUploadSlip').val();
 
+    let rental = {
+        rentalId: rentalId,
+        pickupDate: pDate,
+        pickupLocation: pLocation,
+        pickupTime: pTime,
+        returnDate: rDate,
+        returnTime: rTime,
+        status: status,
+        nicNo: nicNo,
+        licenseNo: licenseNo,
+        regNo: regNo
+    }
+
+
+    $.ajax({
+        url: crntbaseURL+'rent',
+        method: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify(rental),
+        dataType: 'json',
+        success: function (res) {
+            // uploadBankSlip(bankSlip);
+            alert(res.message);
+        },
+        error: function (error){
+            var jsObject = JSON.parse(error.responseText);
+            alert(jsObject.message);
+        }
+    });
 
 });
+
+
 
 function getNic(name) {
     $.ajax({
@@ -135,7 +167,7 @@ function getNic(name) {
 
 function getDriver(){
     $.ajax({
-        url: crntbaseURL + 'driver',
+        url: crntbaseURL + 'driver/getd',
         method: 'get',
         dataType: 'json',
         success: function (resp) {

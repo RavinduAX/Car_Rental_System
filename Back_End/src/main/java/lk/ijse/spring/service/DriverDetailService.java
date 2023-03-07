@@ -13,4 +13,6 @@ public interface DriverDetailService {
     public void deleteDriver(String licenseNo);
 
     public ArrayList<DriverDTO> getAllDrivers();
+
+    public DriverDTO getADriver();
 }

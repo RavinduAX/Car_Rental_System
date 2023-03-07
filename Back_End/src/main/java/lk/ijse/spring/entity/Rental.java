@@ -36,7 +36,7 @@ public class Rental {
     @JoinColumn(name="licenseNo", referencedColumnName = "licenseNo")
     private Driver driver;
 
-    @OneToOne(mappedBy = "rental")
+    @OneToOne(mappedBy = "rental", cascade = CascadeType.ALL)
     private Payment payment;
 
 }

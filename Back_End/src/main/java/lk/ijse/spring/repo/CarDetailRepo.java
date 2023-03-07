@@ -19,4 +19,6 @@ public interface CarDetailRepo extends JpaRepository<Vehicle, String> {
     @Query(value = "select * from Vehicle where brand=?1 limit 1", nativeQuery = true)
     Vehicle getVehicleInfo(String brand);
 
+    Vehicle findVehicleByRegNo(String regNo);
+
 }
