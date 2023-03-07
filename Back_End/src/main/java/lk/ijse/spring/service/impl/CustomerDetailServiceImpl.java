@@ -75,5 +75,13 @@ public class CustomerDetailServiceImpl implements CustomerDetailService {
         return mapper.map(repo.findCustomerByName(name), CustomerDTO.class);
     }
 
+    @Override
+    public CustomerDTO getPasswordByNic(String usrNme) {
+        if(!repo.existsById(usrNme)){
+            throw new RuntimeException("Customer Not Found");
+        }
+        return mapper.map(repo.findCustomerByNicNo(usrNme), CustomerDTO.class);
+    }
+
 
 }

@@ -19,7 +19,12 @@ public class RentalDTO {
     private String status;
     private String bankSlip;
 
-    private String nicNo;
-    private String regNo;
-    private String licenseNo;
+//    private CustomerDTO customer;
+//    private VehicleDTO vehicle;
+//    private DriverDTO driver;
+
+    private String customer;
+    private String vehicle;
+    private String driver;
+
 }

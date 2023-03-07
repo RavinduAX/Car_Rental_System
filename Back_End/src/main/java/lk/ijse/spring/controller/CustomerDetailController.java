@@ -79,4 +79,11 @@ public class CustomerDetailController {
         return new ResponseUtil("200", "Success", dto);
     }
 
+    @GetMapping(params = "usrNme")
+    public ResponseUtil getPasswordByNic(String usrNme){
+        CustomerDTO dto = service.getPasswordByNic(usrNme);
+        return new ResponseUtil("200", "Sucess", dto);
+    }
+
+
 }

@@ -181,6 +181,25 @@ function setVFleet(vdata) {
 
 $('#vfbtnCusLogin').click(function () {
     let usrNme = $('#vftxtCustLoginUsrNm').val();
+    let usrPswd = $('#vftxtCusLoginPswd').val();
+
+    $.ajax({
+        url: cfbaseURL + 'customer?usrNme='+usrNme+"",
+        method: 'get',
+        dataType: 'json',
+        success: function (resp) {
+            let pswd = resp.data.password;
+            if(usrPswd === pswd){
+                //logged in alert
+                alert('loged');
+                window.location.href = "customerPanel.html";
+            }else{
+                $('#vfbtnCusLogin>a').attr('href','#');
+                alert('error')
+            }
+        }
+    });
+
     localStorage.setItem("userName", usrNme);
 });
 

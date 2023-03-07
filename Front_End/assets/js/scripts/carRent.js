@@ -112,7 +112,7 @@ $('#prbtnSubmit').click(function () {
     // console.log(nicNo)
 
     let licenseNo = 'L001';
-    let nicNo = 'n001';
+    let nicNo = '6222';
 
     // let radioValue = $("input[name='selectD']:checked").val();
     // let licenseNo;
@@ -133,9 +133,9 @@ $('#prbtnSubmit').click(function () {
         returnDate: rDate,
         returnTime: rTime,
         status: status,
-        nicNo: nicNo,
-        licenseNo: licenseNo,
-        regNo: regNo
+        customer: nicNo,
+        driver: licenseNo,
+        vehicle: regNo
     }
 
     $.ajax({

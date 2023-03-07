@@ -18,4 +18,6 @@ public interface CustomerDetailService {
     public CustomerDTO searchAndLoadImages(String id);
 
     public CustomerDTO getNicByName(String name);
+
+    CustomerDTO getPasswordByNic(String usrNme);
 }
