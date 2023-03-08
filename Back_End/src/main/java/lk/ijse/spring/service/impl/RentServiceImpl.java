@@ -38,7 +38,10 @@ public class RentServiceImpl implements RentService {
         }
 
         rentRepo.save(mapper.map(dto, Rental.class));
-
+//        Customer customer = mapper.map(dto.getCustomer(), Customer.class);
+//        Driver driver = mapper.map(dto.getDriver(), Driver.class);
+//        Vehicle vehicle = mapper.map(dto.getVehicle(), Vehicle.class);
+//        rentRepo.saveCustomer(dto.getRentalId(), dto.getPickupDate(), dto.getPickupLocation(), dto.getPickupTime(), dto.getReturnDate(), dto.getReturnTime(), dto.getStatus(), customer, driver, vehicle, dto.getBankSlip());
     }
 
     @Override

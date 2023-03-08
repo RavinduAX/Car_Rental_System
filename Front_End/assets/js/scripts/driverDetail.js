@@ -12,13 +12,27 @@ $('#dsbtnSave').click(function () {
         data: formData,
         dataType: 'json',
         success: function (res) {
-            alert(res.message);
+            console.log(res.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Driver has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
             dsSetTextFieldValues("","","","","","","");
             loadAllDrivers();
         },
         error: function (error){
             var jsObject = JSON.parse(error.responseText);
-            alert(jsObject.message);
+            console.log(jsObject.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Driver has not been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
         });
 });
@@ -96,12 +110,26 @@ $('#dsbtnUpdate').click(function () {
         data: JSON.stringify(driver),
         dataType: 'json',
         success: function (res) {
-            alert(res.message);
+            console.log(res.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Driver has been updated',
+                showConfirmButton: false,
+                timer: 1500
+            })
             loadAllDrivers();
         },
         error: function (error) {
             let cause = JSON.parse(error.responseText).message;
-            alert(cause);
+            console.log(cause);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'erroe',
+                title: 'Driver has not been updated',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     });
 });
@@ -114,6 +142,13 @@ $('#dsbtnDelete').click(function () {
         url: dsbaseURL+'driver?id='+id+"",
         method: 'delete',
         success: function () {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Driver has been deleted',
+                showConfirmButton: false,
+                timer: 1500
+            })
             loadAllDrivers();
         }
     });

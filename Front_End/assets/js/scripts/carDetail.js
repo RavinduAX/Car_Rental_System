@@ -44,11 +44,25 @@ $('#crsbtnSave').click(function () {
             uploadCarImgs(regNo);
             loadAllCars();
             crsSetTextFieldValues("","","","","","","","","","","","","");
-            alert(res.message);
+            console.log(res.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Car has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            });
         },
         error: function (error){
             var jsObject = JSON.parse(error.responseText);
-            alert(jsObject.message);
+            console.log(jsObject.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Car has not been saved',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 
@@ -183,11 +197,25 @@ $('#crsbtnUpdate').click(function () {
         success: function (res) {
             loadAllCars();
             crsSetTextFieldValues("","","","","","","","","","","","","");
-            alert(res.message);
+            console.log(res.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Car has been updated',
+                showConfirmButton: false,
+                timer: 1500
+            });
         },
         error: function (error){
             var jsObject = JSON.parse(error.responseText);
-            alert(jsObject.message);
+            console.log(jsObject.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Car has not been updated',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 });
@@ -201,6 +229,13 @@ $('#crsbtnDelete').click(function () {
         success: function () {
             loadAllCars();
             crsSetTextFieldValues("","","","","","","","","","","","","");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Car has been deleted',
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 });

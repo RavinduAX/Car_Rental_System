@@ -52,4 +52,12 @@ public class DriverDetailServiceImpl implements DriverDetailService {
     public DriverDTO getADriver() {
         return mapper.map(repo.getADriver(), DriverDTO.class);
     }
+
+    @Override
+    public DriverDTO getPswdByLNo(String license) {
+        if(!repo.existsById(license)){
+            throw new RuntimeException("Driver Not Found");
+        }
+        return mapper.map(repo.findDriverByLicenseNo(license), DriverDTO.class);
+    }
 }

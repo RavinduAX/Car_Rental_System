@@ -12,4 +12,5 @@ public interface DriverDetailRepo extends JpaRepository<Driver, String> {
 
     Driver findDriverByLicenseNo(String licenseNo);
 
+
 }

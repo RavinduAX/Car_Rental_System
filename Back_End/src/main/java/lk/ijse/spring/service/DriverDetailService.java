@@ -15,4 +15,6 @@ public interface DriverDetailService {
     public ArrayList<DriverDTO> getAllDrivers();
 
     public DriverDTO getADriver();
+
+    DriverDTO getPswdByLNo(String license);
 }

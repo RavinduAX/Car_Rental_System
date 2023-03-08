@@ -22,9 +22,26 @@ $('#vfbtnSave').click(function () {
         dataType: 'json',
         success: function (resp) {
             uploadThumbnailImg(vfcName);
-            alert(resp.message);
+            console.log(resp.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Vehicle has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
             loadAllfCars();
             cfSetTextFieldValues("", "", "");
+        },error: function (error){
+            var jsObject = JSON.parse(error.responseText);
+            console.log(jsObject.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Vehicle has not been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     });
 });
@@ -98,6 +115,13 @@ $('#vfbtnDelete').click(function () {
         success: function () {
             loadAllfCars();
             cfSetTextFieldValues("", "", "");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Vehicle has been deleted',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     });
 
@@ -191,11 +215,23 @@ $('#vfbtnCusLogin').click(function () {
             let pswd = resp.data.password;
             if(usrPswd === pswd){
                 //logged in alert
-                alert('loged');
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Login Successful',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 window.location.href = "customerPanel.html";
             }else{
                 $('#vfbtnCusLogin>a').attr('href','#');
-                alert('error')
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Try again. Enter valid data',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
         }
     });
@@ -203,7 +239,43 @@ $('#vfbtnCusLogin').click(function () {
     localStorage.setItem("userName", usrNme);
 });
 
+$('#vfbtnEmpLogin').click(function () {
+    let empUsrNme = $('#vftxtEmpLoginLicenseNo').val();
+    let empPswd = $('#vftxtEmpLoginPswd').val();
 
+    if(empUsrNme === 'admin' & empPswd === 'admin'){
+        alert('loged');
+        window.location.href = "adminPanel.html";
+    }else{
+        $.ajax({
+            url: cfbaseURL + 'driver?license='+empUsrNme+"",
+            method: 'get',
+            dataType: 'json',
+            success: function (resp) {
+                let empCont = resp.data.contactNo;
 
+                if(empCont == empPswd){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Login Successful',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    window.location.href = "driverPanel.html";
+                }else{
+                    // $('#vfbtnEmpLogin>a').attr('href','#');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Try again, Enter valid data',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
 
+            }
+        });
+    }
 
+});

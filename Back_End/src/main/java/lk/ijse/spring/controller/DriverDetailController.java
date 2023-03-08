@@ -45,5 +45,10 @@ public class DriverDetailController {
         return new ResponseUtil("200","Success", dto);
     }
 
+    @GetMapping(params = "license")
+    public ResponseUtil getPswdByLNo(String license){
+        DriverDTO dto = service.getPswdByLNo(license);
+        return new ResponseUtil("200","Success", dto);
+    }
 
 }

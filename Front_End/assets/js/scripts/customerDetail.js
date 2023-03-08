@@ -32,11 +32,25 @@ $('#csregbtnRegister').click(function () {
                 uploadCustomerImgs(nicNo);
                 loadAllCustomers();
                 csSetTextFieldValues("","","","","","","");
-                alert(res.message);
+                console.log(res.message);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Successfully Registered',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             },
             error: function (error){
                 var jsObject = JSON.parse(error.responseText);
-                alert(jsObject.message);
+                console.log(jsObject.message);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Error During Registration, Try Later.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             }
     });
 });
@@ -145,11 +159,25 @@ function csUpdateCustomer(){
         success: function (res) {
             loadAllCustomers();
             csSetTextFieldValues("","","","","","","");
-            alert(res.message);
+            console.log(res.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your details has been updated',
+                showConfirmButton: false,
+                timer: 1500
+            })
         },
         error: function (error){
             var jsObject = JSON.parse(error.responseText);
-            alert(jsObject.message);
+            console.log(jsObject.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Error',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     });
 }
