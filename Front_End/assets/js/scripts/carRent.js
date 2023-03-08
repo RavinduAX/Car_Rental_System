@@ -4,6 +4,7 @@ onLoad();
 
 function onLoad(){
     var dta = localStorage.getItem('userName');
+    $('#custPtxtProfile').empty();
     $('#custPtxtProfile').text(dta);
 
     loadVFleetCars();

@@ -85,5 +85,4 @@ public class CustomerDetailController {
         return new ResponseUtil("200", "Sucess", dto);
     }
 
-
 }

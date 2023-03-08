@@ -1,6 +1,37 @@
 let csbaseURL = "http://localhost:8080/Back_End_war/"
 
 loadAllCustomers();
+onLoad();
+
+function onLoad(){
+
+}
+
+$('#btnCustPInfo').click(function () {
+    loadCustDetails();
+});
+
+function loadCustDetails(){
+    let usrNme = $('#custPtxtProfile').text();
+
+    $.ajax({
+        url: csbaseURL + 'customer?usrNme='+usrNme+"",
+        method: 'get',
+        dataType: 'json',
+        success: function (resp){
+            var cus = resp.data;
+            $('#custxtNic').val(cus.nicNo);
+            $('#custxtUsername').val(cus.name);
+            $('#custxtPassword').val(cus.password);
+            $('#custxtContact').val(cus.contactNo);
+        }
+    });
+
+}
+
+$('#custPbtnLgOut').click(function () {
+    localStorage.clear();
+});
 
 //Add Save Customer
 $('#csregbtnRegister').click(function () {
@@ -131,22 +162,18 @@ $('#csbtnNew').click(function () {
     csSetTextFieldValues("","","","","","","");
 });
 
+$('#cusbtnUpdate').click(function () {
+    csUpdateCustomer();
+});
+
 function csUpdateCustomer(){
-    let nicNo = $('#cstxtNicNo').val();
-    let address = $('#cstxtAddress').val();
-    let contactNo = $('#cstxtContactNo').val();
-    let email = $('#cstxtEmail').val();
-    let licenceNo = $('#cstxtLicenseNo').val();
-    let name = $('#cstxtName').val();
-    let password = $('#cstxtPassword').val();
+    let nicNo = $('#custxtNic').val();
+    let contactNo = $('#custxtContact').val();
+    let password = $('#custxtPassword').val();
 
     let customer = {
         nicNo: nicNo,
-        address: address,
         contactNo: contactNo,
-        email: email,
-        licenceNo: licenceNo,
-        name: name,
         password: password
     }
 
@@ -157,8 +184,6 @@ function csUpdateCustomer(){
         data: JSON.stringify(customer),
         dataType: 'json',   //***
         success: function (res) {
-            loadAllCustomers();
-            csSetTextFieldValues("","","","","","","");
             console.log(res.message);
             Swal.fire({
                 position: 'top-end',

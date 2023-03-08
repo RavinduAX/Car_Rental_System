@@ -56,7 +56,7 @@
                 <ul class="navbar-nav m-1">
                     <li class="nav-item">
                     <!--<a id="custPbtnProfile" class="nav-link btn btn-warning link-dark" href="#custPDashboardSec" role="button">Profile</a>-->
-                        <h6 id="custPtxtProfile" style="margin-bottom: 0; margin-top: 4px; width: 135px; padding: 8px; border-radius: 10px" class="text-dark text-center bg-warning">user2</h6>
+                        <h6 id="custPtxtProfile" style="margin-bottom: 0; margin-top: 4px; width: 135px; padding: 8px; border-radius: 10px" class="text-dark text-center bg-warning"></h6>
                     </li>
                     <li class="nav-item ms-2">
                         <a id="custPbtnLgOut" class="nav-link btn btn-danger link-dark" href="index.html" role="button">Logout</a>
@@ -182,26 +182,26 @@
         <div style="position:absolute; width: 330px; height: max-content; right: 0px; left: 0px; top: 0px; bottom: 0px; margin: auto">
             <form action="" style="border: 1px solid black; border-radius: 10px; padding: 25px">
                 <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmail21" class="form-label">NIC No</label>
-                    <input type="email" class="form-control" id="exampleInputEmail21">
+                    <label for="custxtNic" class="form-label">NIC No</label>
+                    <input type="text" class="form-control" id="custxtNic" disabled>
                 </div>
                 <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmail22" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail22">
+                    <label for="custxtUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="custxtUsername" disabled>
                 </div>
                 <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmail23" class="form-label">Password</label>
-                    <input type="email" class="form-control" id="exampleInputEmail23">
+                    <label for="custxtPassword" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="custxtPassword">
                 </div>
                 <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmai24" class="form-label">Contact No</label>
-                    <input type="email" class="form-control" id="exampleInputEmai24">
+                    <label for="custxtContact" class="form-label">Contact No</label>
+                    <input type="text" class="form-control" id="custxtContact">
                 </div>
-                <div style="margin-bottom: 9px">
-                    <label for="exampleInputEmail25" class="form-label">License No</label>
-                    <input type="email" class="form-control" id="exampleInputEmail25">
-                </div>
-                <button type="button" class="btn btn-warning" style="width: 165px; border-radius: 30px; margin: 25px 0 0 55px">Update</button>
+<!--                <div style="margin-bottom: 9px">-->
+<!--                    <label for="custxtlicense" class="form-label">License No</label>-->
+<!--                    <input type="text" class="form-control" id="custxtlicense">-->
+<!--                </div>-->
+                <button id="cusbtnUpdate" type="button" class="btn btn-warning" style="width: 165px; border-radius: 30px; margin: 25px 0 0 55px">Update</button>
             </form>
         </div>
 
@@ -370,6 +370,7 @@
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/custPanelSpa.js"></script>
 <script src="assets/js/scripts/carRent.js"></script>
+<script src="assets/js/scripts/customerDetail.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

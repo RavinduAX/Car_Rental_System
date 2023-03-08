@@ -235,7 +235,7 @@ $('#vfbtnCusLogin').click(function () {
             }
         }
     });
-
+    //localStorage
     localStorage.setItem("userName", usrNme);
 });
 

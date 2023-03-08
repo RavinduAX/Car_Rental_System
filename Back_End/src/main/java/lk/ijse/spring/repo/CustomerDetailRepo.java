@@ -19,4 +19,7 @@ public interface CustomerDetailRepo extends JpaRepository<Customer, String> {
     Boolean existsByName(String name);
 
     Customer findCustomerByName(String name);
+
+    @Query(value = "update Customer SET password=?2, contactNo=?3 WHERE nicNo=?1", nativeQuery = true)
+    void updateCustomerByNic(String nic, String password, int contact);
 }

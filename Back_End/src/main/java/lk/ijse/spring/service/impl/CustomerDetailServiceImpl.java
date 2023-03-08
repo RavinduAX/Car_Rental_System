@@ -34,7 +34,13 @@ public class CustomerDetailServiceImpl implements CustomerDetailService {
         if(!repo.existsById(dto.getNicNo())){
             throw new RuntimeException("Customer "+dto.getNicNo()+" Not Available To Update");
         }
-        repo.save(mapper.map(dto, Customer.class));
+
+        Customer c = mapper.map(dto, Customer.class);
+        int contactNo = c.getContactNo();
+        String password = c.getPassword();
+        String nicNo = c.getNicNo();
+
+        repo.updateCustomerByNic(nicNo, password, contactNo);
     }
 
     @Override
