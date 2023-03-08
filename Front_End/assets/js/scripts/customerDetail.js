@@ -63,6 +63,7 @@ $('#csregbtnRegister').click(function () {
                 uploadCustomerImgs(nicNo);
                 loadAllCustomers();
                 csSetTextFieldValues("","","","","","","");
+                clearRegTextFields();
                 console.log(res.message);
                 Swal.fire({
                     position: 'top-end',
@@ -246,5 +247,15 @@ function csSearchAndLoadImages(id) {
 
         }
     });
+}
+
+function clearRegTextFields(){
+    $('#csregtxtNicNo').val("");
+    $('#csregtxtAddress').val("");
+    $('#csregtxtContactNo').val("");
+    $('#csregtxtEmail').val("");
+    $('#csregtxtLicenseNo').val("");
+    $('#csregtxtName').val("");
+    $('#csregtxtPassword').val("");
 }
 
