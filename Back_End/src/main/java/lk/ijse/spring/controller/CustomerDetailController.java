@@ -82,7 +82,13 @@ public class CustomerDetailController {
     @GetMapping(params = "usrNme")
     public ResponseUtil getPasswordByNic(String usrNme){
         CustomerDTO dto = service.getPasswordByNic(usrNme);
-        return new ResponseUtil("200", "Sucess", dto);
+        return new ResponseUtil("200", "Success", dto);
+    }
+
+    @GetMapping(path = "/count")
+    public ResponseUtil getCountRegCustomers(){
+        int count = service.getCountRegCustomers();
+        return new ResponseUtil("200","Success", count);
     }
 
 }

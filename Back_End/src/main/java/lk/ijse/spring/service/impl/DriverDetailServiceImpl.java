@@ -60,4 +60,14 @@ public class DriverDetailServiceImpl implements DriverDetailService {
         }
         return mapper.map(repo.findDriverByLicenseNo(license), DriverDTO.class);
     }
+
+    @Override
+    public int getCountAvaDriver() {
+        return repo.getAvaDriverCount();
+    }
+
+    @Override
+    public int getCountOccDriver() {
+        return repo.getOccDriverCount();
+    }
 }

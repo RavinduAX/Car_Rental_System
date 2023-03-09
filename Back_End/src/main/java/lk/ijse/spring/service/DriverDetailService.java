@@ -17,4 +17,8 @@ public interface DriverDetailService {
     public DriverDTO getADriver();
 
     DriverDTO getPswdByLNo(String license);
+
+    int getCountAvaDriver();
+
+    int getCountOccDriver();
 }

@@ -77,6 +77,11 @@ public class CarDetailController {
         return new ResponseUtil("200", "Success", dto);
     }
 
+    @GetMapping(path = "/count")
+    public ResponseUtil getCountAvaCars(){
+        int count = service.getAvaCars();
+        return new ResponseUtil("200","Success", count);
+    }
 
 
 }

@@ -16,4 +16,6 @@ public interface CarDetailService {
     public void uploadCarImages(String frontImgPath, String sideImgPath, String backImgPath, String interiorImgPath, String id);
 
     public VehicleDTO getVehicleInfo(String brand);
+
+    int getAvaCars();
 }

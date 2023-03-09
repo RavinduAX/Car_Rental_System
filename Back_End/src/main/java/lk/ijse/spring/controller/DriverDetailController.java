@@ -51,4 +51,16 @@ public class DriverDetailController {
         return new ResponseUtil("200","Success", dto);
     }
 
+    @GetMapping(path = "/adcount")
+    public ResponseUtil getCountAvaDriver(){
+        int count = service.getCountAvaDriver();
+        return new ResponseUtil("200","Success", count);
+    }
+
+    @GetMapping(path = "/odcount")
+    public ResponseUtil getCountOccDriver(){
+        int count = service.getCountOccDriver();
+        return new ResponseUtil("200","Success", count);
+    }
+
 }

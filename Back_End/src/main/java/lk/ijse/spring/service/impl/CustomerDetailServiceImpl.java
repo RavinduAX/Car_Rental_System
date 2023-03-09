@@ -89,5 +89,10 @@ public class CustomerDetailServiceImpl implements CustomerDetailService {
         return mapper.map(repo.findCustomerByNicNo(usrNme), CustomerDTO.class);
     }
 
+    @Override
+    public int getCountRegCustomers() {
+        return repo.getCusCount();
+    }
+
 
 }

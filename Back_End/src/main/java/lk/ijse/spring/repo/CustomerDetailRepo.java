@@ -4,7 +4,6 @@ import lk.ijse.spring.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface CustomerDetailRepo extends JpaRepository<Customer, String> {
@@ -22,4 +21,7 @@ public interface CustomerDetailRepo extends JpaRepository<Customer, String> {
 
     @Query(value = "update Customer SET password=?2, contactNo=?3 WHERE nicNo=?1", nativeQuery = true)
     void updateCustomerByNic(String nic, String password, int contact);
+
+    @Query(value = "SELECT COUNT(nicNo) FROM Customer;", nativeQuery = true)
+    int getCusCount();
 }

@@ -21,4 +21,6 @@ public interface CarDetailRepo extends JpaRepository<Vehicle, String> {
 
     Vehicle findVehicleByRegNo(String regNo);
 
+    @Query(value = "SELECT COUNT(regNo) FROM Vehicle;", nativeQuery = true)
+    int getAvaCarCount();
 }

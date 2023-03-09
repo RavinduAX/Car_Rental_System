@@ -20,4 +20,6 @@ public interface CustomerDetailService {
     public CustomerDTO getNicByName(String name);
 
     CustomerDTO getPasswordByNic(String usrNme);
+
+    int getCountRegCustomers();
 }

@@ -68,4 +68,9 @@ public class CarDetailServiceImpl implements CarDetailService {
         }
         return mapper.map(repo.getVehicleInfo(brand), VehicleDTO.class);
     }
+
+    @Override
+    public int getAvaCars() {
+        return repo.getAvaCarCount();
+    }
 }

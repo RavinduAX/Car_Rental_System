@@ -12,5 +12,9 @@ public interface DriverDetailRepo extends JpaRepository<Driver, String> {
 
     Driver findDriverByLicenseNo(String licenseNo);
 
+    @Query(value = "SELECT COUNT(licenseNo) FROM Driver Where status = 'free';", nativeQuery = true)
+    int getAvaDriverCount();
 
+    @Query(value = "SELECT COUNT(licenseNo) FROM Driver Where status = 'on_ride';", nativeQuery = true)
+    int getOccDriverCount();
 }
